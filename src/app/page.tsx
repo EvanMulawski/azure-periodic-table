@@ -1,48 +1,119 @@
 'use client';
 
 import { useState } from 'react';
-
-interface Item {
-  text: string;
-}
+import { Categories } from './constants';
+import { columns } from './data';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
+import { CalendarDays, Link2Icon } from 'lucide-react';
+import HoverCardLogic from '@/components/hover-card-logic';
 
 interface CellProps {
   item: Item;
   color: string;
+  zoomLevel?: 0 | 1 | 2;
+  activeCategory: Categories | null;
+  setActiveCategory: (category: Categories | null) => void;
+  select: () => void;
 }
 
-const Cell: React.FC<CellProps> = ({ item, color }) => (
-  <div
-    className={`h-20 w-20 border border-white p-1 ${color} justify-center items-center cursor-pointer hover:brightness-75 transition-all`}
-  >
-    <div className="flex flex-col relative h-full w-full">
-      <div className="flex w-full justify-between items-center">
-        <span>🔥</span>
-        <span>1-80</span>
+const Cell: React.FC<CellProps> = ({
+  item,
+  zoomLevel = 0,
+  activeCategory,
+  setActiveCategory,
+  select,
+}) => {
+  const color = compassData.find((c) => c.name === item.category)?.color;
+
+  const height = zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-24' : 'h-28';
+  const width = zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-24' : 'w-28';
+
+  const isActiveCategory = activeCategory === item.category;
+
+  const colorOption =
+    activeCategory !== null
+      ? isActiveCategory
+        ? color
+        : 'bg-gray-400'
+      : color;
+  const transparent =
+    activeCategory !== null
+      ? activeCategory === item.category
+        ? 'opacity-100'
+        : 'opacity-50'
+      : 'opacity-100';
+
+  const hoverScale =
+    activeCategory === null
+      ? 'hover:scale-150'
+      : activeCategory === item.category
+      ? 'hover:scale-150'
+      : '';
+
+  return (
+    <HoverCardLogic
+      item={item}
+      show={activeCategory === null || isActiveCategory}
+    >
+      <div
+        onClick={select}
+        className={`${height} ${width} border-white border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+      >
+        <div className="flex flex-col relative h-full w-full">
+          <div className="flex w-full justify-between items-center">
+            <span className="text-[0.5rem]">🔥</span>
+            <span className="text-[0.5rem]">{item.range ?? '1-100'}</span>
+          </div>
+          <div className="justify-start w-full mt-auto font-bold text-xs">
+            {item.text}
+          </div>
+          <div className="justify-start w-full mt-auto text-[0.5rem] overflow-hidden">
+            {item.subText ?? 'no'}
+          </div>
+        </div>
       </div>
-      <div className="justify-start w-full mt-auto font-bold text-lg">
-        {item.text}
-      </div>
-      <div className="justify-start w-full mt-auto">{'hi'}</div>
-    </div>
-  </div>
-);
+    </HoverCardLogic>
+  );
+};
 
 interface GridProps {
   color: string;
   items: Item[];
+  activeCategory: Categories | null;
+  setActiveCategory: (category: Categories | null) => void;
+  select: () => void;
 }
 
-const Grid: React.FC<GridProps> = ({ color, items }) => (
-  <div className={`flex flex-col w-full h-full`}>
+const Grid: React.FC<GridProps> = ({
+  color,
+  items,
+  activeCategory,
+  setActiveCategory,
+  select,
+}) => (
+  <div className={`flex flex-col w-fit h-full relative`}>
     {items.map((item, i) => (
-      <Cell key={i} color={color} item={item} />
+      <Cell
+        activeCategory={activeCategory}
+        setActiveCategory={setActiveCategory}
+        key={i}
+        color={color}
+        item={item}
+        select={select}
+      />
     ))}
   </div>
 );
 
-interface Item {
+export interface Item {
   text: string;
+  subText?: string;
+  range?: string;
+  category: Categories;
   // Add more properties here if needed
 }
 
@@ -52,10 +123,15 @@ interface Group {
 }
 
 export default function Page() {
+  const [activeCateogory, setActiveCategory] = useState<Categories | null>(
+    null
+  );
+  const [open, setOpen] = useState(false);
+
   // Add more functionality here if needed, like functions to add/remove groups or items
 
   return (
-    <main className="flex-col min-h-screen items-center justify-center p-24">
+    <main className="flex-col min-h-screen items-center justify-center p-24 bg-slate-950">
       <div className="flex justify-center items-center mb-12">
         <div className="mr-6">
           <AzureLogo />
@@ -70,36 +146,53 @@ export default function Page() {
       </div>
       <div className="flex justify-center items-start my-6">
         {columns.map((group, i) => (
-          <Grid key={i} color={group.color} items={group.items} />
+          <Grid
+            select={() => setOpen(true)}
+            activeCategory={activeCateogory}
+            setActiveCategory={setActiveCategory}
+            key={i}
+            color={group.color}
+            items={group.items}
+          />
         ))}
-        <Compass />
+        <Compass
+          activeCategory={activeCateogory}
+          setActiveCategory={setActiveCategory}
+        />
       </div>
     </main>
   );
 }
 
 const compassData = [
-  { name: 'General', color: 'bg-gray-400' },
-  { name: 'Networking', color: 'bg-red-500' },
-  { name: 'Compute & Web', color: 'bg-orange-500' },
-  { name: 'Containers', color: 'bg-yellow-400' },
-  { name: 'Databases', color: 'bg-lime-400' },
-  { name: 'Storage', color: 'bg-green-500' },
-  { name: 'AI & ML', color: 'bg-cyan-500' },
-  { name: 'Analytics & IoT', color: 'bg-blue-500' },
-  { name: 'Virtual Desktop', color: 'bg-indigo-500' },
-  { name: 'Dev Tools', color: 'bg-violet-700' },
-  { name: 'Integration', color: 'bg-fuchsia-600' },
-  { name: 'Migration', color: 'bg-pink-500' },
-  { name: 'Management', color: 'bg-rose-500' },
+  { name: Categories.GENERAL, color: 'bg-gray-400' },
+  { name: Categories.NETWORKING, color: 'bg-red-500' },
+  { name: Categories.COMPUTEANDWEB, color: 'bg-orange-500' },
+  { name: Categories.CONTAINERS, color: 'bg-yellow-400' },
+  { name: Categories.DATABASES, color: 'bg-lime-400' },
+  { name: Categories.STORAGE, color: 'bg-green-500' },
+  { name: Categories.AIANDML, color: 'bg-cyan-500' },
+  { name: Categories.ANALYTICSANDIOT, color: 'bg-blue-500' },
+  { name: Categories.VIRTUALDESKTOP, color: 'bg-indigo-500' },
+  { name: Categories.DEVTOOLS, color: 'bg-violet-700' },
+  { name: Categories.INTEGRATION, color: 'bg-fuchsia-600' },
+  { name: Categories.MIGRATION, color: 'bg-pink-500' },
+  { name: Categories.MANAGEMENT, color: 'bg-rose-500' },
 ];
 
-const Compass = () => (
-  <div className="flex flex-col ml-12">
+const Compass = ({
+  activeCategory,
+  setActiveCategory,
+}: {
+  activeCategory: Categories | null;
+  setActiveCategory: (category: Categories | null) => void;
+}) => (
+  <div className="flex flex-col ml-12 text-white">
     {compassData.map((item, i) => (
       <div
         key={i}
         className="flex flex-row items-center justify-end cursor-pointer filter transition-colors hover:brightness-75"
+        onClick={() => setActiveCategory(item.name)}
       >
         <span className="  mr-2 whitespace-nowrap">{item.name}</span>
         <div className={`w-6 h-6 rounded my-1 ${item.color}`}></div>
@@ -169,210 +262,3 @@ const AzureLogo = () => (
     ></path>
   </svg>
 );
-
-const columns = [
-  {
-    color: 'bg-gray-400',
-    items: [
-      { text: 'apim' },
-      { text: 'id-' },
-      { text: 'mg-' },
-      { text: 'policy-' },
-      { text: 'rg-' },
-    ],
-  },
-  {
-    color: 'bg-red-500',
-    items: [
-      { text: 'agw-' },
-      { text: 'asg-' },
-      { text: 'bas-' },
-      { text: 'cdnp-' },
-      { text: 'cdne-' },
-      { text: 'con-' },
-      { text: 'dnsz-' },
-      { text: 'pdnsz-' },
-      { text: 'afw-' },
-      { text: 'afwp-' } /* ... */,
-    ],
-  },
-  {
-    color: 'bg-red-500',
-    items: [
-      { text: 'erc-' },
-      { text: 'fd-' },
-      { text: 'fdfp-' },
-      { text: 'lbi-' },
-      { text: 'lbe-' },
-      { text: 'rule-' },
-      { text: 'lgw-' },
-      { text: 'ng-' },
-      { text: 'nic-' },
-      { text: 'nsg-' },
-    ],
-  },
-  {
-    color: 'bg-red-500',
-
-    items: [
-      { text: 'nsgsr-' },
-      { text: 'nw-' },
-      { text: 'pl-' },
-      { text: 'pip-' },
-      { text: 'ippre-' },
-      { text: 'rf-' },
-      { text: 'rt-' },
-      { text: 'se-' },
-      { text: 'traf-' },
-      { text: 'udr-' },
-    ],
-  },
-  {
-    color: 'bg-red-500',
-    items: [
-      { text: 'vnet-' },
-      { text: 'snet-' },
-      { text: 'peer-' },
-      { text: 'vwan-' },
-      { text: 'vpng-' },
-      { text: 'vcn-' },
-      { text: 'vst-' },
-      { text: 'vgw-' },
-      { text: 'waf' },
-      { text: 'wafrg' },
-    ],
-  },
-  {
-    color: 'bg-orange-500',
-    items: [
-      { text: 'ase-' },
-      { text: 'plan-' },
-      { text: 'avail-' },
-      { text: 'arcs-' },
-      { text: 'arck' },
-      { text: 'cld-' },
-      { text: 'des' },
-      { text: 'func-' },
-      { text: 'gal' },
-      { text: 'osdisk' },
-    ],
-  },
-  {
-    color: 'bg-orange-500',
-    items: [
-      { text: 'disk' },
-      { text: 'ntf-' },
-      { text: 'ntfns-' },
-      { text: 'snap-' },
-      { text: 'stapp' },
-      { text: 'vm' },
-      { text: 'vmss-' },
-      { text: 'stvm' },
-      { text: 'app-' },
-    ],
-  },
-  {
-    color: 'bg-yellow-400',
-    items: [{ text: 'aks-' }, { text: 'cr' }, { text: 'ci' }, { text: 'sf-' }],
-  },
-  {
-    color: 'bg-lime-400',
-    items: [
-      { text: 'cdb-' },
-      { text: 'redis-' },
-      { text: 'sql-' },
-      { text: 'sqldb-' },
-      { text: 'syn' },
-      { text: 'synw' },
-      { text: 'syndp' },
-      { text: 'synsp' },
-    ],
-  },
-  {
-    color: 'bg-green-500',
-    items: [
-      { text: 'mysql-' },
-      { text: 'psql-' },
-      { text: 'sqlsdb-' },
-      { text: 'sqlmi-' },
-      { text: 'st' },
-      { text: 'ssimp' },
-      { text: 'srch-' },
-      { text: 'cog-' },
-      { text: 'mlw-' },
-    ],
-  },
-  {
-    color: 'bg-blue-500',
-    items: [
-      { text: 'as' },
-      { text: 'dbw-' },
-      { text: 'asa-' },
-      { text: 'dec' },
-      { text: 'dedb' },
-      { text: 'adf-' },
-      { text: 'dls' },
-      { text: 'dla' },
-      { text: 'evhns-' },
-      { text: 'evh-' } /* ... */,
-    ],
-  },
-  {
-    color: 'bg-blue-500',
-    items: [
-      { text: 'evgd-' },
-      { text: 'evgs-' },
-      { text: 'evgt-' },
-      { text: 'hadp-' },
-      { text: 'hbase-' },
-      { text: 'kafka-' },
-      { text: 'spark-' },
-      { text: 'storm-' },
-      { text: 'mls-' },
-      { text: 'iot-' } /* ... */,
-    ],
-  },
-  {
-    color: 'bg-blue-500',
-    items: [
-      { text: 'provs-' },
-      { text: 'pcert-' },
-      { text: 'pbi-' },
-      { text: 'tsi-' },
-      { text: 'vdp-' },
-      { text: 'vdag-' },
-      { text: 'vdws-' },
-      { text: 'appcs-' },
-      { text: 'sigr-' } /* ... */,
-    ],
-  },
-
-  {
-    color: 'bg-purple-500',
-    items: [
-      { text: 'ia-' },
-      { text: 'logic-' },
-      { text: 'sb-' },
-      { text: 'sbq-' },
-      { text: 'sbt-' },
-      { text: 'migr-' },
-      { text: 'dms-' },
-      { text: 'rsv-' },
-    ],
-  },
-
-  {
-    color: 'bg-red-500',
-    items: [
-      { text: 'aa-' },
-      { text: 'appi-' },
-      { text: 'ag-' },
-      { text: 'pview-' },
-      { text: 'bp-' },
-      { text: 'bps-' },
-      { text: 'kv-' },
-      { text: 'log-' },
-    ],
-  },
-  // Add more groups here
-];
