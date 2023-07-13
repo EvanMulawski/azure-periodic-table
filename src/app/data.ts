@@ -1,24 +1,26 @@
 import { Categories } from './constants';
 
+export type Item = {
+  text: string;
+  subText: string;
+  range: string;
+  category: Categories;
+  icon?: string;
+};
+
 type ColumnType = {
-  color: string;
-  items: {
-    text: string;
-    subText: string;
-    range: string;
-    category: Categories;
-  }[];
+  items: Item[];
 };
 
 export const columns: ColumnType[] = [
   {
-    color: 'bg-gray-400',
     items: [
       {
         text: 'apim',
         subText: 'api management service instance',
         range: '1-50',
         category: Categories.GENERAL,
+        icon: '/icons/integration/api-management.png',
       },
       {
         text: 'id-',
@@ -47,7 +49,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-red-500',
     items: [
       {
         text: 'agw-',
@@ -113,7 +114,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-red-500',
     items: [
       {
         text: 'erc-',
@@ -178,8 +178,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-red-500',
-
     items: [
       {
         text: 'nsgsr-',
@@ -244,7 +242,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-red-500',
     items: [
       {
         text: 'vnet-',
@@ -309,7 +306,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-orange-500',
     items: [
       {
         text: 'ase-',
@@ -375,7 +371,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-orange-500',
     items: [
       {
         text: 'disk',
@@ -434,7 +429,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-yellow-400',
     items: [
       {
         text: 'aks-',
@@ -463,7 +457,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-lime-400',
     items: [
       {
         text: 'cdb-',
@@ -516,7 +509,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-green-500',
     items: [
       {
         text: 'mysql-',
@@ -575,7 +567,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-blue-500',
     items: [
       {
         text: 'as',
@@ -640,7 +631,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-blue-500',
     items: [
       {
         text: 'evgd-',
@@ -706,7 +696,6 @@ export const columns: ColumnType[] = [
     ],
   },
   {
-    color: 'bg-blue-500',
     items: [
       {
         text: 'provs-',
@@ -766,7 +755,6 @@ export const columns: ColumnType[] = [
   },
 
   {
-    color: 'bg-purple-500',
     items: [
       {
         text: 'ia-',
@@ -820,7 +808,6 @@ export const columns: ColumnType[] = [
   },
 
   {
-    color: 'bg-red-500',
     items: [
       {
         text: 'aa-',
