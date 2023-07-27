@@ -1,3 +1,5 @@
+/* src/app/data.ts */
+
 import { Categories } from './constants';
 
 export type Item = {

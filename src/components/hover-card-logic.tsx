@@ -1,3 +1,5 @@
+/* src/components/hover-card-logic.tsx */
+
 import { HoverCardTrigger } from '@radix-ui/react-hover-card';
 import { HoverCard, HoverCardContent } from './ui/hover-card';
 import { Link2Icon } from 'lucide-react';

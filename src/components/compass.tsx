@@ -1,3 +1,5 @@
+/* src/components/compass.tsx */
+
 import { Categories } from '@/app/constants';
 
 export type CompassData = {

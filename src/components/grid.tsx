@@ -1,3 +1,5 @@
+/* src/components/grid.tsx */
+
 import type { Categories } from '@/app/constants';
 import type { CompassData } from './compass';
 import Image from 'next/image';
