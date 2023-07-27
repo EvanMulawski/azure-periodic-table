@@ -52,7 +52,7 @@ export default function Page() {
   return (
     <main className="flex-col min-h-screen items-center justify-center p-24 bg-slate-950">
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
-        <SheetContent className="bg-slate-950 sm:max-w-[500px]">
+        <SheetContent className="bg-slate-950 sm:max-w-[720px]">
           <SheetHeader>
             <SheetTitle>{activeElement?.subText}</SheetTitle>
             <div className="flex justify-start items-center">

@@ -1,0 +1,2286 @@
+{
+    "Microsoft.AnalysisServices": [
+        {
+            "entity": "servers",
+            "scope": "resource group",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters and numbers. Start with lowercase letter."
+        }
+    ],
+    "Microsoft.ApiManagement": [
+        {
+            "entity": "service",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / issues",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / issues / attachments",
+            "scope": "issue",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / issues / comments",
+            "scope": "issue",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / operations",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / operations / tags",
+            "scope": "operation",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / releases",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start and end with alphanumeric or underscore."
+        },
+        {
+            "entity": "service / apis / schemas",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / tagDescriptions",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / apis / tags",
+            "scope": "api",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / api-version-sets",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / authorizationServers",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / backends",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / certificates",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / diagnostics",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / groups",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / groups / users",
+            "scope": "group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / identityProviders",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / loggers",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / notifications",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / notifications / recipientEmails",
+            "scope": "notification",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / openidConnectProviders",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / policies",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / products",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / products / apis",
+            "scope": "product",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / products / groups",
+            "scope": "product",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / products / tags",
+            "scope": "product",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / properties",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / subscriptions",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / tags",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / templates",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "service / users",
+            "scope": "service",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        }
+    ],
+    "Microsoft.App": [
+        {
+            "entity": "containerApps",
+            "scope": "resource group",
+            "length": "2-32",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. . Start with letter and end with alphanumeric."
+        }
+    ],
+    "Microsoft.AppConfiguration": [
+        {
+            "entity": "configurationStores",
+            "scope": "resource group",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        }
+    ],
+    "Microsoft.AppPlatform": [
+        {
+            "entity": "spring",
+            "scope": "global",
+            "length": "4-32",
+            "valid_characters": "Lowercase letters, numbers, and hyphens."
+        }
+    ],
+    "Microsoft.Authorization": [
+        {
+            "entity": "locks",
+            "scope": "scope of assignment",
+            "length": "1-90",
+            "valid_characters": "Alphanumerics, periods, underscores, hyphens, and parenthesis. Can't end in period."
+        },
+        {
+            "entity": "policyAssignments",
+            "scope": "scope of assignment",
+            "length": "1-128 display name1-64 resource name1-24 resource name at management group scope",
+            "valid_characters": "Display name can contain any characters. Resource name can't use:<>*%&:\\?. +/ or control characters.  Can't end with period or space."
+        },
+        {
+            "entity": "policyDefinitions",
+            "scope": "scope of definition",
+            "length": "1-128 display name1-64 resource name",
+            "valid_characters": "Display name can contain any characters. Resource name can't use:<>*%&:\\?. +/ or control characters.  Can't end with period or space."
+        },
+        {
+            "entity": "policyExemptions",
+            "scope": "scope of exemption",
+            "length": "1-128 display name1-64 resource name",
+            "valid_characters": "Display name can contain any characters. Resource name can't use:<>*%&:\\?. +/ or control characters.  Can't end with period or space."
+        },
+        {
+            "entity": "policySetDefinitions",
+            "scope": "scope of definition",
+            "length": "1-128 display name1-64 resource name",
+            "valid_characters": "Display name can contain any characters. Resource name can't use:<>*%&:\\?. +/ or control characters.  Can't end with period or space."
+        },
+        {
+            "entity": "roleAssignments",
+            "scope": "tenant",
+            "length": "36",
+            "valid_characters": "Must be a globally unique identifier (GUID)."
+        },
+        {
+            "entity": "roleDefinitions",
+            "scope": "tenant",
+            "length": "36",
+            "valid_characters": "Must be a globally unique identifier (GUID)."
+        }
+    ],
+    "Microsoft.Automation": [
+        {
+            "entity": "automationAccounts",
+            "scope": "resource group & region (See note below)",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "automationAccounts / certificates",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        },
+        {
+            "entity": "automationAccounts / connections",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        },
+        {
+            "entity": "automationAccounts / credentials",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        },
+        {
+            "entity": "automationAccounts / runbooks",
+            "scope": "automation account",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start with letter."
+        },
+        {
+            "entity": "automationAccounts / schedules",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        },
+        {
+            "entity": "automationAccounts / variables",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        },
+        {
+            "entity": "automationAccounts / watchers",
+            "scope": "automation account",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start with letter."
+        },
+        {
+            "entity": "automationAccounts / webhooks",
+            "scope": "automation account",
+            "length": "1-128",
+            "valid_characters": "Can't use: <>*%&:\\?. +/ or control characters Can't end with space."
+        }
+    ],
+    "Microsoft.Batch": [
+        {
+            "entity": "batchAccounts",
+            "scope": "Region",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "batchAccounts / applications",
+            "scope": "batch account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "batchAccounts / certificates",
+            "scope": "batch account",
+            "length": "5-45",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "batchAccounts / pools",
+            "scope": "batch account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        }
+    ],
+    "Microsoft.Blockchain": [
+        {
+            "entity": "blockchainMembers",
+            "scope": "global",
+            "length": "2-20",
+            "valid_characters": "Lowercase letters and numbers. Start with lowercase letter."
+        }
+    ],
+    "Microsoft.Blueprint": [
+        {
+            "entity": "blueprint",
+            "scope": "Management groups, Subscriptions, Resource groups",
+            "length": "90",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "blueprintAssignments",
+            "scope": "Management groups, Subscriptions, Resource groups",
+            "length": "90",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        }
+    ],
+    "Microsoft.BotService": [
+        {
+            "entity": "botServices",
+            "scope": "global",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "botServices / channels",
+            "scope": "bot service",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "botServices / Connections",
+            "scope": "bot service",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "enterpriseChannels",
+            "scope": "resource group",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric."
+        }
+    ],
+    "Microsoft.Cache": [
+        {
+            "entity": "Redis",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric.  Consecutive hyphens not allowed."
+        },
+        {
+            "entity": "Redis / firewallRules",
+            "scope": "Redis",
+            "length": "1-256",
+            "valid_characters": "Alphanumerics"
+        }
+    ],
+    "Microsoft.Cdn": [
+        {
+            "entity": "profiles",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "profiles / endpoints",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "profiles / originGroups",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "profiles / originGroups / origins",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "profiles / afdEndpoints / routes",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        }
+    ],
+    "Microsoft.CertificateRegistration": [
+        {
+            "entity": "certificateOrders",
+            "scope": "resource group",
+            "length": "3-30",
+            "valid_characters": "Alphanumerics."
+        }
+    ],
+    "Microsoft.CognitiveServices": [
+        {
+            "entity": "accounts",
+            "scope": "resource group",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        }
+    ],
+    "Microsoft.Compute": [
+        {
+            "entity": "availabilitySets",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End with alphanumeric or underscore."
+        },
+        {
+            "entity": "cloudservices",
+            "scope": "resource group",
+            "length": "1-15 See note below.",
+            "valid_characters": "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \\ | ; : .  ' \" , < > / ?Can't start with underscore.  Can't end with period or hyphen."
+        },
+        {
+            "entity": "diskEncryptionSets",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "disks",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "galleries",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics and periods. Start and end with alphanumeric."
+        },
+        {
+            "entity": "galleries / applications",
+            "scope": "gallery",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, and periods. Start and end with alphanumeric."
+        },
+        {
+            "entity": "galleries / applications/versions",
+            "scope": "application",
+            "length": "32-bit integer",
+            "valid_characters": "Numbers and periods. (Each segment is converted to an int32.  So each segment has a max value of 2,147,483,647. )"
+        },
+        {
+            "entity": "galleries / images",
+            "scope": "gallery",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, hyphens, and periods. Start and end with alphanumeric."
+        },
+        {
+            "entity": "galleries / images / versions",
+            "scope": "image",
+            "length": "32-bit integer",
+            "valid_characters": "Numbers and periods. (Each segment is converted to an int32.  So each segment has a max value of 2,147,483,647. )"
+        },
+        {
+            "entity": "images",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End with alphanumeric or underscore."
+        },
+        {
+            "entity": "snapshots",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End with alphanumeric or underscore."
+        },
+        {
+            "entity": "virtualMachines",
+            "scope": "resource group",
+            "length": "1-15 (Windows)1-64 (Linux)See note below.",
+            "valid_characters": "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \\ | ; : .  ' \" , < > / ?Windows VMs can't include period or end with hyphen. Linux VMs can't end with period or hyphen."
+        },
+        {
+            "entity": "virtualMachineScaleSets",
+            "scope": "resource group",
+            "length": "1-15 (Windows)1-64 (Linux)See note below.",
+            "valid_characters": "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \\ | ; : .  ' \" , < > / ?Can't start with underscore.  Can't end with period or hyphen."
+        }
+    ],
+    "Microsoft.Communication": [
+        {
+            "entity": "communicationServices",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics and hyphens. Can't start or end with hyphen. Can't use underscores."
+        }
+    ],
+    "Microsoft.ConfidentialLedger": [
+        {
+            "entity": "ledgers",
+            "scope": "Resource group",
+            "length": "3-32",
+            "valid_characters": "Alphanumerics and hyphens. Can't start or end with hyphen."
+        }
+    ],
+    "Microsoft.Consumption": [
+        {
+            "entity": "budgets",
+            "scope": "subscription or resource group",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        }
+    ],
+    "Microsoft.ContainerInstance": [
+        {
+            "entity": "containerGroups",
+            "scope": "resource group",
+            "length": "1-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen.  Consecutive hyphens aren't allowed."
+        }
+    ],
+    "Microsoft.ContainerRegistry": [
+        {
+            "entity": "registries",
+            "scope": "global",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics."
+        },
+        {
+            "entity": "registries / buildTasks",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics."
+        },
+        {
+            "entity": "registries / buildTasks/steps",
+            "scope": "build task",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics."
+        },
+        {
+            "entity": "registries / replications",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics."
+        },
+        {
+            "entity": "registries / scopeMaps",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "registries / tasks",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "registries / tokens",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "registries / webhooks",
+            "scope": "registry",
+            "length": "5-50",
+            "valid_characters": "Alphanumerics."
+        }
+    ],
+    "Microsoft.ContainerService": [
+        {
+            "entity": "managedClusters",
+            "scope": "resource group",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "openShiftManagedClusters",
+            "scope": "resource group",
+            "length": "1-30",
+            "valid_characters": "Alphanumerics."
+        }
+    ],
+    "Microsoft.CustomerInsights": [
+        {
+            "entity": "hubs",
+            "scope": "resource group",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics. Start with letter."
+        },
+        {
+            "entity": "hubs / authorizationPolicies",
+            "scope": "hub",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, underscores, and periods. Start and end with alphanumeric."
+        },
+        {
+            "entity": "hubs / connectors",
+            "scope": "hub",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / connectors/mappings",
+            "scope": "connector",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / interactions",
+            "scope": "hub",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / kpi",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / links",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / predictions",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / profiles",
+            "scope": "hub",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / relationshipLinks",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / relationships",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / roleAssignments",
+            "scope": "hub",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        },
+        {
+            "entity": "hubs / views",
+            "scope": "hub",
+            "length": "1-512",
+            "valid_characters": "Alphanumerics and underscores. Start with letter."
+        }
+    ],
+    "Microsoft.CustomProviders": [
+        {
+            "entity": "associations",
+            "scope": "resource group",
+            "length": "1-180",
+            "valid_characters": "Can't use:%&\\\\?/ or control charactersCan't end with period or space."
+        },
+        {
+            "entity": "resourceProviders",
+            "scope": "resource group",
+            "length": "3-64",
+            "valid_characters": "Can't use:%&\\\\?/ or control charactersCan't end with period or space."
+        }
+    ],
+    "Microsoft.DataBox": [
+        {
+            "entity": "jobs",
+            "scope": "resource group",
+            "length": "3-24",
+            "valid_characters": "Alphanumerics, hyphens, underscores and periods."
+        }
+    ],
+    "Microsoft.Databricks": [
+        {
+            "entity": "workspaces",
+            "scope": "resource group",
+            "length": "3-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens"
+        }
+    ],
+    "Microsoft.DataFactory": [
+        {
+            "entity": "factories",
+            "scope": "global",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "factories / dataflows",
+            "scope": "factory",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        },
+        {
+            "entity": "factories / datasets",
+            "scope": "factory",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        },
+        {
+            "entity": "factories / integrationRuntimes",
+            "scope": "factory",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "factories / linkedservices",
+            "scope": "factory",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        },
+        {
+            "entity": "factories / pipelines",
+            "scope": "factory",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        },
+        {
+            "entity": "factories / triggers",
+            "scope": "factory",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        },
+        {
+            "entity": "factories / triggers / rerunTriggers",
+            "scope": "trigger",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*#. %&:\\\\+?/ or control charactersStart with alphanumeric."
+        }
+    ],
+    "Microsoft.DataLakeAnalytics": [
+        {
+            "entity": "accounts",
+            "scope": "global",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "accounts / computePolicies",
+            "scope": "account",
+            "length": "3-60",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "accounts / dataLakeStoreAccounts",
+            "scope": "account",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "accounts / firewallRules",
+            "scope": "account",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "accounts / storageAccounts",
+            "scope": "account",
+            "length": "3-60",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        }
+    ],
+    "Microsoft.DataLakeStore": [
+        {
+            "entity": "accounts",
+            "scope": "global",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "accounts / firewallRules",
+            "scope": "account",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "accounts / virtualNetworkRules",
+            "scope": "account",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        }
+    ],
+    "Microsoft.DataMigration": [
+        {
+            "entity": "services",
+            "scope": "resource group",
+            "length": "2-62",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric."
+        },
+        {
+            "entity": "services / projects",
+            "scope": "service",
+            "length": "2-57",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric."
+        }
+    ],
+    "Microsoft.DBforMariaDB": [
+        {
+            "entity": "servers",
+            "scope": "global",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, hyphens and numbers. Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers / databases",
+            "scope": "servers",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "servers / firewallRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "servers / virtualNetworkRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.DBforMySQL": [
+        {
+            "entity": "servers",
+            "scope": "global",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, hyphens and numbers. Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers / databases",
+            "scope": "servers",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "servers / firewallRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "servers / virtualNetworkRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.DBforPostgreSQL": [
+        {
+            "entity": "servers",
+            "scope": "global",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, hyphens and numbers. Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers / databases",
+            "scope": "servers",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "servers / firewallRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "servers / virtualNetworkRules",
+            "scope": "servers",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.Devices": [
+        {
+            "entity": "IotHubs",
+            "scope": "global",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics and hyphens. Can't end with hyphen."
+        },
+        {
+            "entity": "IotHubs / certificates",
+            "scope": "IoT hub",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores."
+        },
+        {
+            "entity": "IotHubs / eventHubEndpoints / ConsumerGroups",
+            "scope": "eventHubEndpoints",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores."
+        },
+        {
+            "entity": "provisioningServices",
+            "scope": "resource group",
+            "length": "3-64",
+            "valid_characters": "Alphanumerics and hyphens. End with alphanumeric."
+        },
+        {
+            "entity": "provisioningServices / certificates",
+            "scope": "provisioningServices",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores."
+        }
+    ],
+    "Microsoft.DevTestLab": [
+        {
+            "entity": "labs",
+            "scope": "resource group",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "labs / customimages",
+            "scope": "lab",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, hyphens, and parentheses."
+        },
+        {
+            "entity": "labs / formulas",
+            "scope": "lab",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, hyphens, and parentheses."
+        },
+        {
+            "entity": "labs / virtualmachines",
+            "scope": "lab",
+            "length": "1-15 (Windows)1-64 (Linux)",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric.  Can't be all numbers."
+        }
+    ],
+    "Microsoft.DocumentDB": [
+        {
+            "entity": "databaseAccounts",
+            "scope": "global",
+            "length": "3-44",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Start with lowercase letter or number."
+        }
+    ],
+    "Microsoft.EventGrid": [
+        {
+            "entity": "domains",
+            "scope": "resource group",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "domains / topics",
+            "scope": "domain",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "eventSubscriptions",
+            "scope": "resource group",
+            "length": "3-64",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "topics",
+            "scope": "region",
+            "length": "3-50",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.EventHub": [
+        {
+            "entity": "clusters",
+            "scope": "resource group",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with letter or number."
+        },
+        {
+            "entity": "namespaces",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with letter or number."
+        },
+        {
+            "entity": "namespaces / AuthorizationRules",
+            "scope": "namespace",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with letter or number."
+        },
+        {
+            "entity": "namespaces / disasterRecoveryConfigs",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with alphanumeric."
+        },
+        {
+            "entity": "namespaces / eventhubs",
+            "scope": "namespace",
+            "length": "1-256",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with letter or number."
+        },
+        {
+            "entity": "namespaces / eventhubs / authorizationRules",
+            "scope": "event hub",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with letter or number."
+        },
+        {
+            "entity": "namespaces / eventhubs / consumergroups",
+            "scope": "event hub",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with letter or number."
+        }
+    ],
+    "Microsoft.HDInsight": [
+        {
+            "entity": "clusters",
+            "scope": "global",
+            "length": "3-59",
+            "valid_characters": "Alphanumerics and hyphensStart and end with letter or number."
+        }
+    ],
+    "Microsoft.ImportExport": [
+        {
+            "entity": "jobs",
+            "scope": "resource group",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter."
+        }
+    ],
+    "Microsoft.Insights": [
+        {
+            "entity": "actionGroups",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use::<>+/&%\\? or control characters Can't end with space or period."
+        },
+        {
+            "entity": "components",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:%&\\?/ or control characters Can't end with space or period."
+        },
+        {
+            "entity": "scheduledQueryRules",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:*<>%{}&:\\\\?/# or control characters Can't end with space or period."
+        },
+        {
+            "entity": "metricAlerts",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:*#&+:<>?@%{}\\/ or control characters Can't end with space or period."
+        },
+        {
+            "entity": "activityLogAlerts",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*%{}&:\\\\?+/# or control characters Can't end with space or period."
+        }
+    ],
+    "Microsoft.IoTCentral": [
+        {
+            "entity": "IoTApps",
+            "scope": "global",
+            "length": "2-63",
+            "valid_characters": "Lowercase letters, numbers and hyphens. Start with lowercase letter or number."
+        }
+    ],
+    "Microsoft.KeyVault": [
+        {
+            "entity": "vaults",
+            "scope": "global",
+            "length": "3-24",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with letter or digit.  Can't contain consecutive hyphens."
+        },
+        {
+            "entity": "vaults / secrets",
+            "scope": "Vault",
+            "length": "1-127",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.Kusto": [
+        {
+            "entity": "clusters",
+            "scope": "global",
+            "length": "4-22",
+            "valid_characters": "Lowercase letters and numbers. Start with letter."
+        },
+        {
+            "entity": "/clusters / databases",
+            "scope": "cluster",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, hyphens, spaces, and periods."
+        },
+        {
+            "entity": "/clusters / databases / dataConnections",
+            "scope": "database",
+            "length": "1-40",
+            "valid_characters": "Alphanumerics, hyphens, spaces, and periods."
+        },
+        {
+            "entity": "/clusters / databases / eventhubconnections",
+            "scope": "database",
+            "length": "1-40",
+            "valid_characters": "Alphanumerics, hyphens, spaces, and periods."
+        }
+    ],
+    "Microsoft.LabServices": [
+        {
+            "entity": "labplans",
+            "scope": "resource group",
+            "length": "1-100",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores. Start with letter and end with alphanumeric."
+        },
+        {
+            "entity": "labs",
+            "scope": "resource group",
+            "length": "1-100",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores. Start with letter and end with alphanumeric."
+        }
+    ],
+    "Microsoft.LoadTestService": [
+        {
+            "entity": "loadtests",
+            "scope": "global",
+            "length": "1-64",
+            "valid_characters": "Can't use:<>*&@:?+/\\,;=. |[]\" or space. Can't start with underscore, hyphen, or number.  Can't end with underscore or hyphen."
+        }
+    ],
+    "Microsoft.Logic": [
+        {
+            "entity": "integrationAccounts",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / assemblies",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / batchConfigurations",
+            "scope": "integration account",
+            "length": "1-20",
+            "valid_characters": "Alphanumerics."
+        },
+        {
+            "entity": "integrationAccounts / certificates",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / maps",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / partners",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / rosettanetprocessconfigurations",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / schemas",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationAccounts / sessions",
+            "scope": "integration account",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        },
+        {
+            "entity": "integrationServiceEnvironments",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores."
+        },
+        {
+            "entity": "integrationServiceEnvironments / managedApis",
+            "scope": "integration service environment",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, hyphens, periods, and underscores."
+        },
+        {
+            "entity": "workflows",
+            "scope": "resource group",
+            "length": "1-43",
+            "valid_characters": "Alphanumerics, hyphens, underscores, periods, and parenthesis."
+        }
+    ],
+    "Microsoft.MachineLearning": [
+        {
+            "entity": "commitmentPlans",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*%&:?+/\\\\ or control charactersCan't end with a space."
+        },
+        {
+            "entity": "webServices",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*%&:?+/\\\\ or control charactersCan't end with a space."
+        },
+        {
+            "entity": "workspaces",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:<>*%&:?+/\\\\ or control charactersCan't end with a space."
+        }
+    ],
+    "Microsoft.MachineLearningServices": [
+        {
+            "entity": "workspaces",
+            "scope": "resource group",
+            "length": "3-33",
+            "valid_characters": "Alphanumerics and hyphens."
+        },
+        {
+            "entity": "workspaces / computes",
+            "scope": "workspace",
+            "length": "3-24 for compute instance3-32 for AML compute2-16 for other compute types",
+            "valid_characters": "Alphanumerics and hyphens."
+        }
+    ],
+    "Microsoft.ManagedIdentity": [
+        {
+            "entity": "userAssignedIdentities",
+            "scope": "resource group",
+            "length": "3-128",
+            "valid_characters": "Alphanumerics, hyphens, and underscoresStart with letter or number."
+        }
+    ],
+    "Microsoft.Maps": [
+        {
+            "entity": "accounts",
+            "scope": "resource group",
+            "length": "1-98 (for resource group name and account name)",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric."
+        }
+    ],
+    "Microsoft.Media": [
+        {
+            "entity": "mediaservices",
+            "scope": "Azure region",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "mediaservices / liveEvents",
+            "scope": "Media service",
+            "length": "1-32",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "mediaservices / liveEvents / liveOutputs",
+            "scope": "Live event",
+            "length": "1-256",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "mediaservices / streamingEndpoints",
+            "scope": "Media service",
+            "length": "1-24",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        }
+    ],
+    "Microsoft.MobileNetwork": [
+        {
+            "entity": "mobileNetworks",
+            "scope": "Resource Group",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "mobileNetworks / sites",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "mobileNetworks / slices",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "mobileNetworks / services",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric.   The following words cannot be used on their own as the name: default, requested, service."
+        },
+        {
+            "entity": "mobileNetworks / dataNetworks",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, hyphens and a period/dot (. )  Start and end with alphanumeric.   Note: A period/dot (. ) must be followed by an alphanumeric character."
+        },
+        {
+            "entity": "mobileNetworks / simPolicies",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "packetCoreControlPlanes",
+            "scope": "Resource Group",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, underscores and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "packetCoreControlPlanes / packetCoreDataPlanes",
+            "scope": "Packet Core Control Plane",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, underscores and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "packetCoreControlPlanes / packetCoreDataPlanes / attachedDataNetworks",
+            "scope": "Mobile Network",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, hyphens and a period/dot (. )  Start and end with alphanumeric.   Note: A period/dot (. ) must be followed by an alphanumeric character."
+        },
+        {
+            "entity": "simGroups",
+            "scope": "Resource Group",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, underscores and hyphens  Start with alphanumeric"
+        },
+        {
+            "entity": "simGroups / sims",
+            "scope": "Sim Group",
+            "length": "1-64",
+            "valid_characters": "Alphanumeric, underscores and hyphens  Start with alphanumeric"
+        }
+    ],
+    "Microsoft.NetApp": [
+        {
+            "entity": "netAppAccounts",
+            "scope": "resource group",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics, underscores, and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / backups",
+            "scope": "NetApp account",
+            "length": "3-225",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / backupPolicies",
+            "scope": "NetApp account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / capacityPools",
+            "scope": "NetApp account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / snapshots",
+            "scope": "NetApp account",
+            "length": "1-255",
+            "valid_characters": "Alphanumerics, underscores, and hyphens.   Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / snapshotPolicies",
+            "scope": "NetApp account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start with alphanumeric."
+        },
+        {
+            "entity": "netAppAccounts / volumes",
+            "scope": "NetApp account",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens.   Start with alphanumeric.   Volume cannot be named bin or default."
+        },
+        {
+            "entity": "netAppAccounts / volumeGroups",
+            "scope": "NetApp account",
+            "length": "3-64",
+            "valid_characters": "Alphanumerics, underscores, and hyphens. Start with alphanumeric."
+        }
+    ],
+    "Microsoft.Network": [
+        {
+            "entity": "applicationGateways",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "applicationSecurityGroups",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "azureFirewalls",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End with alphanumeric or underscore."
+        },
+        {
+            "entity": "bastionHosts",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "connections",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "dnsZones",
+            "scope": "resource group",
+            "length": "1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.",
+            "valid_characters": "Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period."
+        },
+        {
+            "entity": "expressRouteCircuits",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "firewallPolicies",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "firewallPolicies / ruleGroups",
+            "scope": "firewall policy",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "frontDoors",
+            "scope": "global",
+            "length": "5-64",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "frontdoorWebApplicationFirewallPolicies",
+            "scope": "resource group",
+            "length": "1-128",
+            "valid_characters": "Alphanumerics. Start with letter."
+        },
+        {
+            "entity": "loadBalancers",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "loadBalancers / inboundNatRules",
+            "scope": "load balancer",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "localNetworkGateways",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "networkInterfaces",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "networkSecurityGroups",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "networkSecurityGroups / securityRules",
+            "scope": "network security group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "networkWatchers",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "privateDnsZones",
+            "scope": "resource group",
+            "length": "1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.",
+            "valid_characters": "Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period."
+        },
+        {
+            "entity": "privateDnsZones / virtualNetworkLinks",
+            "scope": "private DNS zone",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "privateEndpoints",
+            "scope": "resource group",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "publicIPAddresses",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "publicIPPrefixes",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "routeFilters",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "routeFilters / routeFilterRules",
+            "scope": "route filter",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "routeTables",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "routeTables / routes",
+            "scope": "route table",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "serviceEndpointPolicies",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "trafficmanagerprofiles",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Alphanumerics, hyphens, and periods. Start and end with alphanumeric."
+        },
+        {
+            "entity": "virtualNetworkGateways",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "virtualNetworks",
+            "scope": "resource group",
+            "length": "2-64",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "virtualnetworks / subnets",
+            "scope": "virtual network",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "virtualNetworks / virtualNetworkPeerings",
+            "scope": "virtual network",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "virtualWans",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "vpnGateways",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "vpnGateways / vpnConnections",
+            "scope": "VPN gateway",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        },
+        {
+            "entity": "vpnSites",
+            "scope": "resource group",
+            "length": "1-80",
+            "valid_characters": "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore."
+        }
+    ],
+    "Microsoft.NotificationHubs": [
+        {
+            "entity": "namespaces",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphensStart with letter.  End with alphanumeric."
+        },
+        {
+            "entity": "namespaces / AuthorizationRules",
+            "scope": "namespace",
+            "length": "1-256",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start alphanumeric."
+        },
+        {
+            "entity": "namespaces / notificationHubs",
+            "scope": "namespace",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start alphanumeric."
+        },
+        {
+            "entity": "namespaces / notificationHubs / AuthorizationRules",
+            "scope": "notification hub",
+            "length": "1-256",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start alphanumeric."
+        }
+    ],
+    "Microsoft.OperationalInsights": [
+        {
+            "entity": "clusters",
+            "scope": "resource group",
+            "length": "4-63",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        },
+        {
+            "entity": "workspaces",
+            "scope": "resource group",
+            "length": "4-63",
+            "valid_characters": "Alphanumerics and hyphens. Start and end with alphanumeric."
+        }
+    ],
+    "Microsoft.OperationsManagement": [
+        {
+            "entity": "solutions",
+            "scope": "workspace",
+            "length": "N/A",
+            "valid_characters": "For solutions authored by Microsoft, the name must be in the pattern:SolutionType(WorkspaceName)For solutions authored by third parties, the name must be in the pattern:SolutionType[WorkspaceName]For example, a valid name is:AntiMalware(contoso-IT)The solution type is case-sensitive."
+        }
+    ],
+    "Microsoft.Portal": [
+        {
+            "entity": "dashboards",
+            "scope": "resource group",
+            "length": "3-160",
+            "valid_characters": "Alphanumerics and hyphens. To use restricted characters, add a tag named hidden-title with the dashboard name you want to use.  The portal displays that name when showing the dashboard."
+        }
+    ],
+    "Microsoft.PowerBI": [
+        {
+            "entity": "workspaceCollections",
+            "scope": "region",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics and hyphens. Can't start with hyphen.  Can't use consecutive hyphens."
+        }
+    ],
+    "Microsoft.PowerBIDedicated": [
+        {
+            "entity": "capacities",
+            "scope": "region",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters or numbersStart with lowercase letter."
+        }
+    ],
+    "Microsoft.Quantum": [
+        {
+            "entity": "workspaces",
+            "scope": "region",
+            "length": "2-54",
+            "valid_characters": "Alphanumerics and hyphens. Can't start or end with hyphen."
+        }
+    ],
+    "Microsoft.RecoveryServices": [
+        {
+            "entity": "vaults",
+            "scope": "resource group",
+            "length": "2-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter."
+        },
+        {
+            "entity": "vaults / backupPolicies",
+            "scope": "vault",
+            "length": "3-150",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  Can't end with hyphen."
+        }
+    ],
+    "Microsoft.Relay": [
+        {
+            "entity": "namespaces",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with a letter.  End with a letter or number."
+        },
+        {
+            "entity": "namespaces / AuthorizationRules",
+            "scope": "namespace",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / HybridConnections",
+            "scope": "namespace",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, periods, hyphens, underscores, and slashes. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / HybridConnections/authorizationRules",
+            "scope": "hybrid connection",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / WcfRelays",
+            "scope": "namespace",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, periods, hyphens, underscores, and slashes. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / WcfRelays / authorizationRules",
+            "scope": "Wcf relay",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens and underscores. Start and end with alphanumeric."
+        }
+    ],
+    "Microsoft.Resources": [
+        {
+            "entity": "deployments",
+            "scope": "resource group",
+            "length": "1-64",
+            "valid_characters": "Alphanumerics, underscores, parentheses, hyphens, and periods."
+        },
+        {
+            "entity": "resourcegroups",
+            "scope": "subscription",
+            "length": "1-90",
+            "valid_characters": "Underscores, hyphens, periods, parentheses, and letters or digits as defined by the Char. IsLetterOrDigit function. Valid characters are members of the following categories in UnicodeCategory:UppercaseLetter,LowercaseLetter,TitlecaseLetter,ModifierLetter,OtherLetter,DecimalDigitNumber. Can't end with period."
+        },
+        {
+            "entity": "tagNames",
+            "scope": "resource",
+            "length": "1-512",
+            "valid_characters": "Can't use:<>%&\\?/ or control characters"
+        },
+        {
+            "entity": "tagNames / tagValues",
+            "scope": "tag name",
+            "length": "1-256",
+            "valid_characters": "All characters."
+        },
+        {
+            "entity": "templateSpecs",
+            "scope": "resource group",
+            "length": "1-90",
+            "valid_characters": "Alphanumerics, underscores, parentheses, hyphens, and periods."
+        }
+    ],
+    "Microsoft.Security": [
+        {
+            "entity": "advancedThreatProtectionSettings",
+            "scope": "resource group",
+            "length": "see value",
+            "valid_characters": "Must be current"
+        },
+        {
+            "entity": "alertsSuppressionRules",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "assessmentMetadata",
+            "scope": "assessment type",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "assessments",
+            "scope": "assessment type",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "automations",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "autoProvisioningSettings",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "connectors",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "deviceSecurityGroups",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "informationProtectionPolicies",
+            "scope": "resource group",
+            "length": "see values",
+            "valid_characters": "Use one of:customeffective"
+        },
+        {
+            "entity": "iotSecuritySolutions",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "locations / applicationWhitelistings",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "locations / jitNetworkAccessPolicies",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "ingestionSettings",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "pricings",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "securityContacts",
+            "scope": "subscription",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        },
+        {
+            "entity": "settings",
+            "scope": "subscription",
+            "length": "see values",
+            "valid_characters": "Use one of:MCASSentinelWDATPWDATP_EXCLUDE_LINUX_PUBLIC_PREVIEW"
+        },
+        {
+            "entity": "serverVulnerabilityAssessments",
+            "scope": "resource type",
+            "length": "see value",
+            "valid_characters": "Must be Default"
+        },
+        {
+            "entity": "sqlVulnerabilityAssessments / baselineRules",
+            "scope": "Vulnerability assessment",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, underscores, and hyphens."
+        }
+    ],
+    "Microsoft.ServiceBus": [
+        {
+            "entity": "namespaces",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with a letter.  End with a letter or number. For more information, see Create namespace."
+        },
+        {
+            "entity": "namespaces / AuthorizationRules",
+            "scope": "namespace",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start and end with alphnumeric."
+        },
+        {
+            "entity": "namespaces / disasterRecoveryConfigs",
+            "scope": "global",
+            "length": "6-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with alphanumeric."
+        },
+        {
+            "entity": "namespaces / migrationConfigurations",
+            "scope": "namespace",
+            "length": "",
+            "valid_characters": "Should always be $default."
+        },
+        {
+            "entity": "namespaces / queues",
+            "scope": "namespace",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, periods, hyphens, underscores, and slashes. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / queues / authorizationRules",
+            "scope": "queue",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start and end with alphnumeric."
+        },
+        {
+            "entity": "namespaces / topics",
+            "scope": "namespace",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, periods, hyphens, underscores, and slashes. Start and end with alphanumeric."
+        },
+        {
+            "entity": "namespaces / topics / authorizationRules",
+            "scope": "topic",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start and end with alphnumeric."
+        },
+        {
+            "entity": "namespaces / topics / subscriptions",
+            "scope": "topic",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start and end with alphnumeric."
+        },
+        {
+            "entity": "namespaces / topics / subscriptions / rules",
+            "scope": "subscription",
+            "length": "1-50",
+            "valid_characters": "Alphanumerics, periods, hyphens, and underscores. Start and end with alphnumeric."
+        }
+    ],
+    "Microsoft.ServiceFabric": [
+        {
+            "entity": "clusters",
+            "scope": "region",
+            "length": "4-23",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Start with lowercase letter.  End with lowercase letter or number."
+        }
+    ],
+    "Microsoft.SignalRService": [
+        {
+            "entity": "signalR",
+            "scope": "global",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with letter or number."
+        }
+    ],
+    "Microsoft.Sql": [
+        {
+            "entity": "managedInstances",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens.  Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers / administrators",
+            "scope": "server",
+            "length": "",
+            "valid_characters": "Must be ActiveDirectory."
+        },
+        {
+            "entity": "servers / databases",
+            "scope": "server",
+            "length": "1-128",
+            "valid_characters": "Can't use:<>*%&:\\/? or control charactersCan't end with period or space."
+        },
+        {
+            "entity": "servers / databases / syncGroups",
+            "scope": "database",
+            "length": "1-150",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "servers / elasticPools",
+            "scope": "server",
+            "length": "1-128",
+            "valid_characters": "Can't use:<>*%&:\\/? or control charactersCan't end with period or space."
+        },
+        {
+            "entity": "servers / failoverGroups",
+            "scope": "global",
+            "length": "1-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen."
+        },
+        {
+            "entity": "servers / firewallRules",
+            "scope": "server",
+            "length": "1-128",
+            "valid_characters": "Can't use:<>*%&:;\\/? or control charactersCan't end with period."
+        },
+        {
+            "entity": "servers / keys",
+            "scope": "server",
+            "length": "",
+            "valid_characters": "Must be in format:VaultName_KeyName_KeyVersion."
+        }
+    ],
+    "Microsoft.Storage": [
+        {
+            "entity": "storageAccounts",
+            "scope": "global",
+            "length": "3-24",
+            "valid_characters": "Lowercase letters and numbers."
+        },
+        {
+            "entity": "storageAccounts / blobServices",
+            "scope": "storage account",
+            "length": "",
+            "valid_characters": "Must be default."
+        },
+        {
+            "entity": "storageAccounts / blobServices / containers",
+            "scope": "storage account",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Start with lowercase letter or number.  Can't use consecutive hyphens."
+        },
+        {
+            "entity": "storageAccounts / fileServices",
+            "scope": "storage account",
+            "length": "",
+            "valid_characters": "Must be default."
+        },
+        {
+            "entity": "storageAccounts / fileServices / shares",
+            "scope": "storage account",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen.  Can't use consecutive hyphens."
+        },
+        {
+            "entity": "storageAccounts / managementPolicies",
+            "scope": "storage account",
+            "length": "",
+            "valid_characters": "Must be default."
+        },
+        {
+            "entity": "blob",
+            "scope": "container",
+            "length": "1-1024",
+            "valid_characters": "Any URL characters, case sensitive"
+        },
+        {
+            "entity": "queue",
+            "scope": "storage account",
+            "length": "3-63",
+            "valid_characters": "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen.  Can't use consecutive hyphens."
+        },
+        {
+            "entity": "table",
+            "scope": "storage account",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics. Start with letter."
+        }
+    ],
+    "Microsoft.StorageSync": [
+        {
+            "entity": "storageSyncServices",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, spaces, periods, hyphens, and underscores. Can't end with period or space."
+        },
+        {
+            "entity": "storageSyncServices / syncGroups",
+            "scope": "storage sync service",
+            "length": "1-260",
+            "valid_characters": "Alphanumerics, spaces, periods, hyphens, and underscores. Can't end with period or space."
+        }
+    ],
+    "Microsoft.StorSimple": [
+        {
+            "entity": "managers",
+            "scope": "resource group",
+            "length": "2-50",
+            "valid_characters": "Alphanumerics and hyphens. Start with letter.  End with alphanumeric."
+        }
+    ],
+    "Microsoft.StreamAnalytics": [
+        {
+            "entity": "streamingjobs",
+            "scope": "resource group",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "streamingjobs / functions",
+            "scope": "streaming job",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "streamingjobs / inputs",
+            "scope": "streaming job",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "streamingjobs / outputs",
+            "scope": "streaming job",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        },
+        {
+            "entity": "streamingjobs / transformations",
+            "scope": "streaming job",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics, hyphens, and underscores."
+        }
+    ],
+    "Microsoft.Synapse": [
+        {
+            "entity": "workspaces",
+            "scope": "global",
+            "length": "1-50",
+            "valid_characters": "Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can't contain -ondemand"
+        },
+        {
+            "entity": "workspaces / bigDataPools",
+            "scope": "workspace",
+            "length": "1-15",
+            "valid_characters": "Letters and numbers. Start with letter.  End with letter or number. Can't contain reserved word."
+        },
+        {
+            "entity": "workspaces / sqlPools",
+            "scope": "workspace",
+            "length": "1-60",
+            "valid_characters": "Can't contain <>*%&:\\/?@- or control characters.  Can't end with .  or space.  Can't contain reserved word."
+        }
+    ],
+    "Microsoft.TimeSeriesInsights": [
+        {
+            "entity": "environments",
+            "scope": "resource group",
+            "length": "1-90",
+            "valid_characters": "Can't use:'<>%&:\\?/# or control characters"
+        },
+        {
+            "entity": "environments / accessPolicies",
+            "scope": "environment",
+            "length": "1-90",
+            "valid_characters": "Can't use: '<>%&:\\?/# or control characters"
+        },
+        {
+            "entity": "environments / eventSources",
+            "scope": "environment",
+            "length": "1-90",
+            "valid_characters": "Can't use:'<>%&:\\?/# or control characters"
+        },
+        {
+            "entity": "environments / referenceDataSets",
+            "scope": "environment",
+            "length": "3-63",
+            "valid_characters": "Alphanumerics"
+        }
+    ],
+    "Microsoft.Web": [
+        {
+            "entity": "certificates",
+            "scope": "resource group",
+            "length": "1-260",
+            "valid_characters": "Can't use:/ Can't end with space or period."
+        },
+        {
+            "entity": "serverfarms",
+            "scope": "resource group",
+            "length": "1-40",
+            "valid_characters": "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode"
+        },
+        {
+            "entity": "sites",
+            "scope": "global or per domain. See note below.",
+            "length": "2-60",
+            "valid_characters": "Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan't start or end with hyphen."
+        },
+        {
+            "entity": "sites / slots",
+            "scope": "site",
+            "length": "2-59",
+            "valid_characters": "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode"
+        }
+    ]
+}
