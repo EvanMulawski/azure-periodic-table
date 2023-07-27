@@ -1,3 +1,5 @@
+/* src/components/azure-logo.tsx */
+
 export const AzureLogo = () => (
   <svg viewBox="0 0 128 128" height={82} width={82}>
     <defs>
