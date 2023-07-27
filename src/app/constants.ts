@@ -1,3 +1,5 @@
+/* src/app/constants.ts */
+
 export enum Categories {
   GENERAL = 'General',
   NETWORKING = 'Networking',

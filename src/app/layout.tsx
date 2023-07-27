@@ -1,3 +1,5 @@
+/* src/app/layout.tsx */
+
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 import type { Metadata } from 'next';
