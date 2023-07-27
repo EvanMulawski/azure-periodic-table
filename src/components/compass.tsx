@@ -11,7 +11,7 @@ export const Compass = ({
   compassData,
 }: {
   activeCategory: Categories | null;
-  setActiveCategory: (category: Categories | null) => void;
+  setActiveCategory: (prev: any) => Categories | null;
   compassData: CompassData;
 }) => (
   <div className="flex flex-col ml-12 text-white">
@@ -19,7 +19,11 @@ export const Compass = ({
       <div
         key={i}
         className="flex flex-row items-center justify-end cursor-pointer filter transition-colors hover:brightness-75"
-        onClick={() => setActiveCategory(item.name)}
+        onClick={() =>
+          setActiveCategory((prev: any) =>
+            prev === item.name ? null : item.name
+          )
+        }
       >
         <span className="  mr-2 whitespace-nowrap">{item.name}</span>
         <div className={`w-6 h-6 rounded my-1 ${item.color}`}></div>

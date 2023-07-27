@@ -48,7 +48,9 @@ const Cell: React.FC<CellProps> = ({
     >
       <div className="flex flex-col relative h-full w-full">
         <div className="flex w-full justify-between items-center">
-          <Image width={10} height={10} className="" src={item.icon} />
+          {item.icon ? (
+            <Image width={10} height={10} className="" src={item.icon} />
+          ) : null}
           <span className="text-[0.5rem]">{item.range ?? '1-100'}</span>
         </div>
         <div className="justify-start w-full mt-auto font-bold text-xs">

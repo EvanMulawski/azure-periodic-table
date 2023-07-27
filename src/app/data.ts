@@ -5,7 +5,12 @@ export type Item = {
   subText: string;
   range: string;
   category: Categories;
-  icon?: string;
+  icon?: string | null;
+  terraformUrl?: string;
+  azureUrl?: string | null;
+  learnUrl?: string | null;
+  terraformSnippet?: string | null;
+  formattedName?: string | null;
 };
 
 type ColumnType = {
@@ -18,33 +23,73 @@ export const columns: ColumnType[] = [
       {
         text: 'apim',
         subText: 'api management service instance',
+        formattedName: 'API Management server instance',
         range: '1-50',
         category: Categories.GENERAL,
         icon: '/icons/integration/api-management.png',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/api-management/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management',
+        terraformSnippet: `resource "azurerm_api_management" "example" {
+  name                = "example-apim"
+  location            = azurerm_resource_group.example.location
+  resource_group_name = azurerm_resource_group.example.name
+  publisher_name      = "My Company"
+  publisher_email     = "company@terraform.io"
+  sku_name = "Developer_1"
+}`,
       },
       {
         text: 'id-',
         subText: 'managed identity',
+        formattedName: 'Managed Identity',
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity.html',
+        terraformSnippet: `data "azurerm_subscription" "current" {}
+
+resource "azurerm_virtual_machine" "example" {
+  # ...
+
+  identity {
+    type = "SystemAssigned"
+  }
+}
+
+data "azurerm_role_definition" "contributor" {
+  name = "Contributor"
+}
+
+resource "azurerm_role_assignment" "example" {
+  scope              = data.azurerm_subscription.current.id
+  role_definition_id = "\${data.azurerm_subscription.current.id}\${data.azurerm_role_definition.contributor.id}"
+  principal_id       = azurerm_virtual_machine.example.identity[0].principal_id
+}`,
         range: '3-128',
         category: Categories.GENERAL,
+        icon: '/icons/identity/managed-identities.png',
       },
       {
         text: 'mg-',
         subText: 'management group',
         range: '?',
         category: Categories.GENERAL,
+        icon: '/icons/general/managementgroups.png',
       },
       {
         text: 'policy-',
         subText: 'policy definition',
         range: '1-64',
         category: Categories.GENERAL,
+        // icon: null,
       },
       {
         text: 'rg-',
         subText: 'resource group',
         range: '1-90',
         category: Categories.GENERAL,
+        icon: '/icons/general/resourcegroups.png',
       },
     ],
   },
@@ -55,61 +100,70 @@ export const columns: ColumnType[] = [
         subText: 'application gateway',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/application-gateway.png',
       },
       {
         text: 'asg-',
         subText: 'application security group (asg)',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/application-security-groups.png',
       },
       {
         text: 'bas-',
         subText: 'bastion',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/bastion.png',
       },
       {
         text: 'cdnp-',
         subText: 'cdn profile',
         range: '1-260',
         category: Categories.NETWORKING,
+        icon: '/icons/network/cdn-profiles.png',
       },
       {
         text: 'cdne-',
         subText: 'cdn endpoint',
         range: '1-50',
         category: Categories.NETWORKING,
+        icon: '/icons/network/cdn-profiles.png',
       },
       {
         text: 'con-',
-        subText: 'connetions',
+        subText: 'connections',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/connections.png',
       },
       {
         text: 'dnsz-',
         subText: 'dns',
         range: '1-63',
-
         category: Categories.NETWORKING,
+        icon: '/icons/network/dns-zones.png',
       },
       {
         text: 'pdnsz-',
         subText: 'dns zone',
         range: '1-63',
         category: Categories.NETWORKING,
+        icon: '/icons/network/dns-zones.png',
       },
       {
         text: 'afw-',
         subText: 'azure firewall',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/firewall.png',
       },
       {
         text: 'afwp-',
         subText: 'azure firewall policy',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: null,
       } /* ... */,
     ],
   },
@@ -120,60 +174,70 @@ export const columns: ColumnType[] = [
         subText: 'expressroute circuit',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/expressroute-circuits.png',
       },
       {
         text: 'fd-',
         subText: 'front door instance',
         range: '5-64',
         category: Categories.NETWORKING,
+        icon: '/icons/network/front-doors.png',
       },
       {
         text: 'fdfp-',
         subText: 'front door firewall policy',
         range: '1-128',
         category: Categories.NETWORKING,
+        icon: null,
       },
       {
         text: 'lbi-',
         subText: 'load balancer (internal)',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/load-balancers.png',
       },
       {
         text: 'lbe-',
         subText: 'load balancer (external)',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/load-balancers.png',
       },
       {
         text: 'rule-',
         subText: 'load balancer rule',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: null,
       },
       {
         text: 'lgw-',
         subText: 'local network gateway',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/local-network-gateways.png',
       },
       {
         text: 'ng-',
         subText: 'nat gateway',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: null,
       },
       {
         text: 'nic-',
         subText: 'network interface (nic)',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/network-interfaces.png',
       },
       {
         text: 'nsg-',
         subText: 'network security group (nsg)',
         range: '1-80',
         category: Categories.NETWORKING,
+        icon: '/icons/network/network-security-groups-classic.png',
       },
     ],
   },

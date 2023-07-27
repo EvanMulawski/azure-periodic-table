@@ -18,6 +18,7 @@ module.exports = {
     extend: {
       colors: {
         background: '',
+        accent: '#3bc8f4',
       },
       keyframes: {
         'accordion-down': {
