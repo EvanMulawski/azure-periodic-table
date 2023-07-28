@@ -6,7 +6,7 @@ export const columns: ColumnType[] = [
         slug: "apim-",
         description: "Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.",
         length: "1-50",
-        category: Categories.General,
+        category: Categories.Integration,
         learnUrl: "https://docs.microsoft.com/en-us/azure/api-management/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management",
         restrictions: "Alphanumerics and hyphens. Start with letter and end with alphanumeric.",
