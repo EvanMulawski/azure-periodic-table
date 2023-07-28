@@ -26,13 +26,11 @@ export default function Page() {
   return (
     <main className="flex-col min-h-screen items-center justify-center p-24 bg-slate-900">
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
-      <SheetContent className="bg-[rgba(0,0,0,0.8)] sm:max-w-[720px]">
+        <SheetContent className="bg-[rgba(0,0,0,0.8)] sm:max-w-[720px]">
           <SheetHeader className="space-y-4">
-            <div className="flex flex-col items-start space-y-4">
-              <div>
-                <Image width={60} height={60} src={activeElement?.icon} />
-              </div>
+            <div className="flex items-start space-y-4">
               <div className="flex items-center space-x-4">
+                <Image width={60} height={60} src={activeElement?.icon} />
                 <span
                   className={`mr-2 bg-slate-700 text-white px-4 py-2 rounded-md text-xl font-semibold`}
                 >
@@ -41,6 +39,10 @@ export default function Page() {
                 <h1 className="text-3xl font-bold text-gray-100 inline">{activeElement?.name}</h1>
               </div>
             </div>
+            
+            <CodeSnippet codeString={activeElement?.code ?? ''} />
+
+            <p className="text-gray-100">{activeElement?.description}</p>
             <div className="flex justify-start items-center space-x-4">
               {activeElement?.terraformUrl && (
                 <a
@@ -67,20 +69,18 @@ export default function Page() {
                 </a>
               )}
             </div>
-            <CodeSnippet codeString={activeElement?.code ?? ''} />
-
-            <p className="text-gray-100">{activeElement?.description}</p>
-            <h2 className="text-lg font-bold text-accent">Restrictions:</h2>
+            <h2 className="text-lg font-bold text-accent">Rules and restrictions:</h2>
             <div className="flex flex-col space-y-2">
               <div>
                 <h3 className="text-lg font-semibold text-gray-100">Length:</h3>
-                <p className="text-gray-100">{activeElement?.length}</p>
+                <p className="text-gray-100 ml-4">{activeElement?.length}</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-gray-100">Valid Characters:</h3>
-                <p className="text-gray-100">{activeElement?.validCharacters}</p>
+                <p className="text-gray-100 ml-4">{activeElement?.restrictions}</p>
               </div>
             </div>
+            
           </SheetHeader>
         </SheetContent>
       </Sheet>
