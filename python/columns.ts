@@ -201,7 +201,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure firewall",
+        name: "firewall",
         slug: "afw-",
         description: "Azure Firewall is a highly available and scalable firewall service in Microsoft Azure that provides inbound protection for non-HTTP/S protocols, outbound network-level protection for all ports and protocols, and application-level protection for outbound HTTP/S.",
         length: "1-80",
@@ -216,7 +216,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure firewall policy",
+        name: "firewall policy",
         slug: "afwp-",
         description: "Azure Firewall Policy is a security policy that is associated with one or more Azure Firewall instances. It provides fully qualified domain name (FQDN) filtering for outbound HTTP/S traffic and SQL server filtering for outbound TCP traffic. Threat intelligence-based filtering can also be enabled for outbound traffic.",
         length: "1-80",
@@ -742,7 +742,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure arc enabled server",
+        name: "arc enabled server",
         slug: "arcs-",
         description: "Azure Arc-enabled servers allow you to manage your Windows and Linux machines hosted outside of Azure, on your corporate network, or other cloud provider, similar to how you manage native Azure virtual machines.",
         length: "1-40",
@@ -757,7 +757,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure arc enabled kubernetes cluster",
+        name: "arc enabled kubernetes cluster",
         slug: "arck",
         description: "Azure Arc-enabled Kubernetes enables you to attach and configure Kubernetes clusters anywhere using Azure. When a Kubernetes cluster is attached to Azure Arc, it will appear in the Azure portal, where you can use familiar Azure services and management capabilities.",
         length: "1-63",
@@ -1054,7 +1054,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: "azure cosmos db database account",
+        name: "cosmos db database account",
         slug: "cdb-",
         description: "Azure Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide.",
         length: "3-44",
@@ -1069,7 +1069,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure cache for redis instance",
+        name: "cache for redis instance",
         slug: "redis-",
         description: "Azure Cache for Redis offers an in-memory data store based on software Redis. It gives you access to a secure, dedicated Redis cache, managed by Microsoft.",
         length: "1-63",
@@ -1084,7 +1084,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure sql database server",
+        name: "sql database server",
         slug: "sql-",
         description: "Azure SQL Database is a general-purpose relational database service, provided as a fully managed platform by Microsoft. You can build data-driven applications and websites in the programming language of your choice without needing to manage infrastructure.",
         length: "1-63",
@@ -1099,7 +1099,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure sql database",
+        name: "sql database",
         slug: "sqldb-",
         description: "Azure SQL Database is a fully managed platform as a service (PaaS) database engine that handles most of the database management functions such as upgrading, patching, backups, and monitoring without user involvement.",
         length: "1-128",
@@ -1253,7 +1253,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure storsimple",
+        name: "storsimple",
         slug: "ssimp",
         description: "Azure StorSimple is a hybrid cloud storage solution that integrates your on-premises IT environment with the Azure storage infrastructure. It provides primary storage, archive, backup, and disaster recovery, while reducing cost and IT workload.",
         length: "2-50",
@@ -1268,7 +1268,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure congnitive search",
+        name: "congnitive search",
         slug: "srch-",
         description: "Azure Cognitive Search is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what's relevant to user queries.",
         length: "2-64",
@@ -1283,7 +1283,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure cognitive services",
+        name: "cognitive services",
         slug: "cog-",
         description: "Azure Cognitive Services is a collection of APIs, SDKs, and services available to help developers build intelligent applications without having direct AI or data science skills or knowledge, by enabling them to easily add cognitive features into their applications.",
         length: "2-64",
@@ -1298,7 +1298,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure machine learning workspace",
+        name: "machine learning workspace",
         slug: "mlw-",
         description: "Azure Machine Learning workspace is a centralized place to work with all the artifacts you create when you use Azure Machine Learning. The workspace keeps a history of all training runs, including logs, metrics, output, and a snapshot of your scripts.",
         length: "1-260",
@@ -1317,7 +1317,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: "azure analysis services server",
+        name: "analysis services server",
         slug: "as",
         description: "Azure Analysis Services is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. It is a part of Microsoft's business analytics stack that lets you develop semantic data models to simplify data analysis and reporting.",
         length: "3-63",
@@ -1332,7 +1332,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure databricks workspace",
+        name: "databricks workspace",
         slug: "dbw-",
         description: "Azure Databricks is an Apache Spark-based analytics platform optimized for the Microsoft Azure cloud services platform. It provides a workspace environment where you can create Apache Spark clusters, write notebooks, and build workflows.",
         length: "3-64",
@@ -1347,7 +1347,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure stream analytics",
+        name: "stream analytics",
         slug: "asa-",
         description: "Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.",
         length: "3-63",
@@ -1362,7 +1362,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure data explorer cluster",
+        name: "data explorer cluster",
         slug: "dec",
         description: "Azure Data Explorer (ADX) is a fast, fully managed data analytics service for real-time analysis on large volumes of data streaming from applications, websites, IoT devices, and more. You can use Azure Data Explorer to collect, store, and analyze diverse data to improve products, enhance customer experiences, monitor devices, and boost operations.",
         length: "4-22",
@@ -1377,7 +1377,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure data explorer cluster database",
+        name: "data explorer cluster database",
         slug: "dedb",
         description: "A database in Azure Data Explorer (ADX) is a logical container for data. Each database belongs to a cluster and contains a set of tables where each table is a collection of ordered columns.",
         length: "1-260",
@@ -1392,7 +1392,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure data factory",
+        name: "data factory",
         slug: "adf-",
         description: "Azure Data Factory is a cloud-based data integration service that allows you to create data-driven workflows for orchestrating and automating data movement and data transformation.",
         length: "3-63",
@@ -1839,7 +1839,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure migrate project",
+        name: "migrate project",
         slug: "migr-",
         description: "Azure Migrate provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.",
         length: "2-57",
@@ -1918,7 +1918,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure monitor action group",
+        name: "monitor action group",
         slug: "ag-",
         description: "Azure Monitor Action Groups provide a collection of notification preferences defined by the user. Azure Monitor and Service Health alerts use action groups to notify users that an alert has been triggered.",
         length: "1-260",
@@ -1933,7 +1933,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "azure purview instances",
+        name: "purview instances",
         slug: "pview-",
         description: "Azure Purview is a unified data governance service that helps organizations achieve a complete understanding of their data. Purview helps you catalog, understand, and manage data across your enterprise.",
         length: "6-50",
