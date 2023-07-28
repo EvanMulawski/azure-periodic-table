@@ -4,78 +4,78 @@ export const columns: ColumnType[] = [
       {
         name: "api management",
         slug: "apim-",
-        description: "Azure API Management is a solution for publishing, managing, securing, and analyzing APIs in a secure and scalable environment. It provides a unified way to manage and protect your APIs, both on-premises and cloud-based.",
+        description: "Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.",
         length: "1-50",
         category: Categories.General,
-        learnUrl: "https://learn.microsoft.com/en-us/azure/api-management/",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/api-management/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management",
         restrictions: "Alphanumerics and hyphens. Start with letter and end with alphanumeric.",
         resource: "Microsoft.ApiManagement",
         entity: "service",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/general/api-management.png",
+        code: "",
       },
       {
         name: "managed identity",
         slug: "id-",
-        description: "Azure Managed Identity eliminates the need for developers to manage credentials. It provides an identity for applications to use when connecting to resources, so they can focus on their work instead of worrying about managing secrets or credentials.",
+        description: "Azure Managed Identities for Azure resources provides Azure services with an automatically managed identity in Azure Active Directory. You can use this identity to authenticate to services that support Azure AD authentication, without needing any credentials in your code.",
         length: "3-128",
         category: Categories.General,
-        learnUrl: "https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview",
-        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/guides/managed_service_identity.html",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity",
         restrictions: "Alphanumerics, hyphens, and underscores. Start with letter or number.",
         resource: "Microsoft.ManagedIdentity",
         entity: "userAssignedIdentities",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/identity/managed-identities.png",
+        code: "",
       },
       {
         name: "management group",
         slug: "mg-",
-        description: "Azure Management Groups offer a level of scope above subscriptions. They provide a way to efficiently manage access, policies, and compliance across an enterprise through inheritance of control planes.",
-        length: "",
+        description: "Azure Management Groups provide a level of scope above subscriptions. They allow you to organize subscriptions into containers called 'management groups' and apply your governance conditions to the management groups. All subscriptions within a management group automatically inherit the conditions applied to the management group.",
+        length: "1-90",
         category: Categories.General,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "",
-        resource: "",
-        entity: "",
-        scope: "",
-        icon: "",
-        code: ""
+        learnUrl: "https://docs.microsoft.com/en-us/azure/governance/management-groups/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/management_group",
+        restrictions: "Alphanumerics, hyphens, and parentheses. Cannot begin or end with a hyphen. Cannot contain consecutive hyphens.",
+        resource: "Microsoft.Management",
+        entity: "managementGroups",
+        scope: "tenant",
+        icon: "/icons/general/managementgroups.png",
+        code: "",
       },
       {
         name: "policy definition",
         slug: "policy-",
-        description: "Azure Policy Definition is a declaration of a desired state in Azure. It is used to enforce organizational standards and to assess compliance at-scale. With it, you can ensure services are properly and consistently configured.",
+        description: "Azure Policy Definitions enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy does this by running evaluations of your resources and scanning for those not compliant with the policies you have created.",
         length: "1-128 display name1-64 resource name",
         category: Categories.General,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Display name can contain any characters. Resource name can't use:<>*%&:\\?. +/ or control characters. Can't end with period or space.",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/governance/policy/overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition",
+        restrictions: "Display name can contain any characters. Resource name Can not use:<>*%&:\?. +/ or control characters. Can not end with period or space.",
         resource: "Microsoft.Authorization",
         entity: "policyDefinitions",
         scope: "scope of definition",
-        icon: "",
-        code: ""
+        icon: "/icons/general/information.png",
+        code: "",
       },
       {
         name: "resource group",
         slug: "rg-",
-        description: "Azure Resource Group is a container that holds related resources for an Azure solution. It's a logical group for resources that are deployed within an Azure subscription.",
+        description: "Azure Resource Groups are logical containers for resources deployed within an Azure subscription. This group includes those resources that you want to manage as a group. You decide how to allocate resources to resource groups based on what makes the most sense for your organization.",
         length: "1-90",
         category: Categories.General,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Underscores, hyphens, periods, parentheses, and letters or digits as defined by the Char. IsLetterOrDigit function. Valid characters are members of the following categories in UnicodeCategory:UppercaseLetter,LowercaseLetter,TitlecaseLetter,ModifierLetter,OtherLetter,DecimalDigitNumber. Can't end with period.",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group",
+        restrictions: "Underscores, hyphens, periods, parentheses, and letters or digits as defined by the Char. IsLetterOrDigit function. Valid characters are members of the following categories in UnicodeCategory:UppercaseLetter,LowercaseLetter,TitlecaseLetter,ModifierLetter,OtherLetter,DecimalDigitNumber. Can not end with period.",
         resource: "Microsoft.Resources",
         entity: "resourcegroups",
         scope: "subscription",
-        icon: "",
-        code: ""
-      }
+        icon: "/icons/general/resourcegroups.png",
+        code: "",
+      },
     ]
   },
   {
@@ -83,152 +83,152 @@ export const columns: ColumnType[] = [
       {
         name: "application gateway",
         slug: "agw-",
-        description: "Azure Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications.",
+        description: "Azure Application Gateway is a web traffic load balancer that enables management of traffic to web applications. It provides routing services and can make routing decisions based on additional attributes of an HTTP request.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/application-gateway/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_gateway",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "applicationGateways",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/application-gateway.png",
+        code: "",
       },
       {
         name: "application security group (asg)",
         slug: "asg-",
-        description: "Application Security Groups in Azure enable you to configure network security as a natural extension of an application’s structure.",
+        description: "Application Security Groups (ASG) in Azure enable fine-grained network control over your network architecture and the ability to secure direct access to applications based on role.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/virtual-network/security-overview#application-security-groups",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "applicationSecurityGroups",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/application-security-groups.png",
+        code: "",
       },
       {
         name: "bastion",
         slug: "bas-",
-        description: "Azure Bastion is a fully managed network security service that provides secure and seamless RDP and SSH access to your virtual machines.",
+        description: "Azure Bastion is a fully managed network security service that provides secure and seamless Remote Desktop Protocol (RDP) and Secure Shell (SSH) access to your virtual machines directly from the Azure portal.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/bastion/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "bastionHosts",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/bastion.png",
+        code: "",
       },
       {
         name: "cdn profile",
         slug: "cdnp-",
-        description: "Azure CDN profiles allow you to manage delivery of content with high bandwidth and low latency.",
+        description: "Azure CDN profiles allow you to manage the delivery of your content through Microsoft's global CDN network. It is designed to send audio, video, applications, images, and other files faster and more reliably to customers using servers that are closest to each user.",
         length: "1-260",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/cdn/cdn-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_profile",
         restrictions: "Alphanumerics and hyphens. Start and end with alphanumeric.",
         resource: "Microsoft.Cdn",
         entity: "profiles",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/cdn-profiles.png",
+        code: "",
       },
       {
         name: "cdn endpoint",
         slug: "cdne-",
-        description: "CDN Endpoints in Azure are the points of presence (PoP) for your content to be delivered faster to your users.",
+        description: "Azure CDN Endpoints are the specific points of presence (PoPs) in the CDN where your content is cached. Endpoints enable faster delivery of content to users who are in close proximity to these locations.",
         length: "1-50",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/cdn/cdn-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cdn_endpoint",
         restrictions: "Alphanumerics and hyphens. Start and end with alphanumeric.",
         resource: "Microsoft.Cdn",
         entity: "profiles / endpoints",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/network/cdn-profiles.png",
+        code: "",
       },
       {
         name: "connections",
         slug: "con-",
-        description: "Azure Connections are the links created between two virtual networks, allowing them to work as a single, logical network.",
+        description: "Azure Connections represent the peerings that exist between virtual networks. Through Azure Connections, you can create complex network topologies or chain virtual networks together for resource access.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
-        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_peering",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "connections",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/connections.png",
+        code: "",
       },
       {
         name: "dns zone",
         slug: "dnsz-",
-        description: "Azure DNS Zone is a service that hosts your domain's DNS records and provides name resolution for your domain.",
+        description: "Azure DNS Zone is a service that allows you to host your domain's DNS records on Azure, providing name resolution using Microsoft Azure infrastructure. By hosting your domains in Azure, you can manage your DNS records using the same credentials and billing and support contract as your other Azure services.",
         length: "1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_zone",
         restrictions: "Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.",
         resource: "Microsoft.Network",
         entity: "dnsZones",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/dns-zones.png",
+        code: "",
       },
       {
         name: "private dns zone",
         slug: "pdnsz-",
-        description: "Azure Private DNS Zone is a service that provides custom domain name resolution inside a virtual network.",
+        description: "Azure Private DNS Zone is a service that provides an ability to use your own custom domain names, rather than the Azure-provided names. It helps in name resolution for virtual machines (VMs) within a virtual network and between virtual networks.",
         length: "1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/dns/private-dns-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_dns_zone",
         restrictions: "Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.",
         resource: "Microsoft.Network",
         entity: "privateDnsZones",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/dns-private-zones.png",
+        code: "",
       },
       {
         name: "azure firewall",
         slug: "afw-",
-        description: "Azure Firewall is a managed, cloud-based network security service that protects your Azure Virtual Network resources.",
+        description: "Azure Firewall is a highly available and scalable firewall service in Microsoft Azure that provides inbound protection for non-HTTP/S protocols, outbound network-level protection for all ports and protocols, and application-level protection for outbound HTTP/S.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/firewall/overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall",
         restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End with alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "azureFirewalls",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/firewall.png",
+        code: "",
       },
       {
         name: "azure firewall policy",
         slug: "afwp-",
-        description: "Azure Firewall Policy is a global resource that enables you to manage and centrally control your firewalls using rules and concepts such as threat intelligence and service tags.",
+        description: "Azure Firewall Policy is a security policy that is associated with one or more Azure Firewall instances. It provides fully qualified domain name (FQDN) filtering for outbound HTTP/S traffic and SQL server filtering for outbound TCP traffic. Threat intelligence-based filtering can also be enabled for outbound traffic.",
         length: "1-80",
         category: Categories.NETWORKING,
-        learnUrl: "",
-        terraformUrl: "",
+        learnUrl: "https://docs.microsoft.com/en-us/azure/firewall-manager/policy-overview",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/firewall_policy",
         restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.",
         resource: "Microsoft.Network",
         entity: "firewallPolicies",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/security/defender.png",
+        code: "",
       },
     ]
   },
@@ -246,8 +246,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "expressRouteCircuits",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/expressroute-circuits.png",
+        code: "",
       },
       {
         name: "front door instance",
@@ -261,8 +261,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "frontDoors",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/network/front-doors.png",
+        code: "",
       },
       {
         name: "front door firewall policy",
@@ -276,8 +276,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "frontdoorWebApplicationFirewallPolicies",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/front-doors.png",
+        code: "",
       },
       {
         name: "load balancer (internal)",
@@ -291,8 +291,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "loadBalancers",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/load-balancers.png",
+        code: "",
       },
       {
         name: "load balancer (external)",
@@ -306,8 +306,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "loadBalancers",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/load-balancers.png",
+        code: "",
       },
       {
         name: "load balancer rule",
@@ -321,8 +321,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "loadBalancers / inboundNatRules",
         scope: "load balancer",
-        icon: "",
-        code: ""
+        icon: "/icons/network/load-balancers.png",
+        code: "",
       },
       {
         name: "local network gateway",
@@ -336,8 +336,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "localNetworkGateways",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/local-network-gateways.png",
+        code: "",
       },
       {
         name: "nat gateway",
@@ -351,8 +351,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "natGateways",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-watcher.png",
+        code: "",
       },
       {
         name: "network interface (nic)",
@@ -366,8 +366,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "networkInterfaces",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-interfaces.png",
+        code: "",
       },
       {
         name: "network security group (nsg)",
@@ -381,8 +381,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "networkSecurityGroups",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-security-groups-classic.png",
+        code: "",
       },
     ]
   },
@@ -400,8 +400,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "networkSecurityGroups / securityRules",
         scope: "network security group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-security-groups-classic.png",
+        code: "",
       },
       {
         name: "network watcher",
@@ -415,8 +415,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "networkWatchers",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-watcher.png",
+        code: "",
       },
       {
         name: "private link",
@@ -430,8 +430,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "privateEndpoints",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/network-interfaces.png",
+        code: "",
       },
       {
         name: "public ip address",
@@ -445,8 +445,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "publicIPAddresses",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/public-ip-addresses.png",
+        code: "",
       },
       {
         name: "public ip prefix",
@@ -460,8 +460,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "publicIPPrefixes",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/public-ip-addresses.png",
+        code: "",
       },
       {
         name: "route filter",
@@ -475,8 +475,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "routeFilters",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/route-filters.png",
+        code: "",
       },
       {
         name: "route table",
@@ -490,8 +490,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "routeTables",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/route-tables.png",
+        code: "",
       },
       {
         name: "service endpoint policies",
@@ -505,8 +505,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "serviceEndpointPolicies",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/service-endpoint-policies.png",
+        code: "",
       },
       {
         name: "traffic manager profile",
@@ -520,8 +520,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "trafficmanagerprofiles",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/network/traffic-manager-profiles.png",
+        code: "",
       },
       {
         name: "user defined route (udr)",
@@ -535,8 +535,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "routeTables / routes",
         scope: "route table",
-        icon: "",
-        code: ""
+        icon: "/icons/network/route-tables.png",
+        code: "",
       },
     ]
   },
@@ -554,8 +554,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "virtualNetworks",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-networks.png",
+        code: "",
       },
       {
         name: "subnet",
@@ -569,8 +569,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "virtualnetworks / subnets",
         scope: "virtual network",
-        icon: "",
-        code: ""
+        icon: "/icons/network/subnets.png",
+        code: "",
       },
       {
         name: "virtual network peering",
@@ -584,8 +584,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "virtualNetworks / virtualNetworkPeerings",
         scope: "virtual network",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-networks.png",
+        code: "",
       },
       {
         name: "virtual wide-area-network",
@@ -599,8 +599,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "virtualWans",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-wans.png",
+        code: "",
       },
       {
         name: "vpn gateway",
@@ -614,8 +614,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "vpnGateways",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-network-gateways.png",
+        code: "",
       },
       {
         name: "vpn connection",
@@ -629,8 +629,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "vpnGateways / vpnConnections",
         scope: "VPN gateway",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-network-gateways.png",
+        code: "",
       },
       {
         name: "vpn site",
@@ -644,8 +644,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "vpnSites",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-network-gateways.png",
+        code: "",
       },
       {
         name: "virtual network gateway",
@@ -659,8 +659,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "virtualNetworkGateways",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/network/virtual-network-gateways.png",
+        code: "",
       },
       {
         name: "web application firewall (waf) policy",
@@ -674,8 +674,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "firewallPolicies",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/security/firewall.png",
+        code: "",
       },
       {
         name: "(waf) policy rule group",
@@ -689,8 +689,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Network",
         entity: "firewallPolicies / ruleGroups",
         scope: "firewall policy",
-        icon: "",
-        code: ""
+        icon: "/icons/security/firewall.png",
+        code: "",
       },
     ]
   },
@@ -704,12 +704,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/app-service/environment/intro",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_environment",
-        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan't start or end with hyphen.",
+        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan not start or end with hyphen.",
         resource: "Microsoft.Web",
         entity: "sites",
         scope: "global or per domain. See note below.",
-        icon: "",
-        code: ""
+        icon: "/icons/web/app-service-environments.png",
+        code: "",
       },
       {
         name: "app service plan",
@@ -723,8 +723,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Web",
         entity: "serverfarms",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/web/app-service-plans.png",
+        code: "",
       },
       {
         name: "availability set",
@@ -738,8 +738,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "availabilitySets",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/availability-sets.png",
+        code: "",
       },
       {
         name: "azure arc enabled server",
@@ -753,8 +753,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Web",
         entity: "serverfarms",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/vm.png",
+        code: "",
       },
       {
         name: "azure arc enabled kubernetes cluster",
@@ -768,8 +768,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ContainerService",
         entity: "managedClusters",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/kubernetes-services.png",
+        code: "",
       },
       {
         name: "cloud service",
@@ -779,12 +779,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-choose-me",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cloud_service",
-        restrictions: "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ; : . ' ". ? Can't start with underscore. Can't end with period or hyphen.",
-      resource: "Microsoft.Compute",
+        restrictions: "Can not use spaces, control characters, or these characters:~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ;. Can not start with underscore. Can not end with period or hyphen.",
+        resource: "Microsoft.Compute",
         entity: "cloudservices",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/cloud-services.png",
+        code: "",
       },
       {
         name: "disk encryption set",
@@ -798,8 +798,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "diskEncryptionSets",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/disk-encryption-sets.png",
+        code: "",
       },
       {
         name: "function app",
@@ -809,12 +809,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/function_app",
-        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan't start or end with hyphen.",
+        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan not start or end with hyphen.",
         resource: "Microsoft.Web",
         entity: "sites",
         scope: "global or per domain. See note below.",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/function-apps.png",
+        code: "",
       },
       {
         name: "gallery",
@@ -828,8 +828,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "galleries",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/shared-image-galleries.png",
+        code: "",
       },
       {
         name: "managed disk (os)",
@@ -843,8 +843,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "disks",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/disks.png",
+        code: "",
       },
     ]
   },
@@ -862,8 +862,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "disks",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/disks.png",
+        code: "",
       },
       {
         name: "notification hubs",
@@ -877,8 +877,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.NotificationHubs",
         entity: "namespaces / notificationHubs",
         scope: "namespace",
-        icon: "",
-        code: ""
+        icon: "/icons/mobile/notification-hubs.png",
+        code: "",
       },
       {
         name: "notification hubs namespace",
@@ -892,8 +892,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.NotificationHubs",
         entity: "namespaces",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/mobile/notification-hubs.png",
+        code: "",
       },
       {
         name: "snapshot",
@@ -907,8 +907,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Compute",
         entity: "snapshots",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/disk-snapshots.png",
+        code: "",
       },
       {
         name: "static web app",
@@ -918,12 +918,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/static-web-apps/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/static_site",
-        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can't start or end with hyphen.",
+        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.",
         resource: "Microsoft.Web",
         entity: "sites",
         scope: "global or per domain. See note below.",
-        icon: "",
-        code: ""
+        icon: "/icons/web/app-services.png",
+        code: "",
       },
       {
         name: "virtual machine",
@@ -933,12 +933,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/virtual-machines/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine",
-        restrictions: "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ; : . ' ". ? Windows VMs can't include period or end with hyphen. Linux VMs can't end with period or hyphen.",
-      resource: "Microsoft.Compute",
+        restrictions: "Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ;. Windows VMs Can not include period or end with hyphen. Linux VMs Can not end with period or hyphen.",
+        resource: "Microsoft.Compute",
         entity: "virtualMachines",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/vm.png",
+        code: "",
       },
       {
         name: "virtual machine scale set",
@@ -948,12 +948,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_scale_set",
-        restrictions: "Can't use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ; : . ' ". ? Can't start with underscore. Can't end with period or hyphen.",
-      resource: "Microsoft.Compute",
+        restrictions: "Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \ | ;. Can not start with underscore. Can not end with period or hyphen.",
+        resource: "Microsoft.Compute",
         entity: "virtualMachineScaleSets",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/vm-scale-set.png",
+        code: "",
       },
       {
         name: "vm storage account",
@@ -967,8 +967,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Storage",
         entity: "storageAccounts",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/storage/storage-accounts.png",
+        code: "",
       },
       {
         name: "web app",
@@ -978,12 +978,12 @@ export const columns: ColumnType[] = [
         category: Categories.COMPUTEANDWEB,
         learnUrl: "https://docs.microsoft.com/en-us/azure/app-service/overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service",
-        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can't start or end with hyphen.",
+        restrictions: "Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.",
         resource: "Microsoft.Web",
         entity: "sites",
         scope: "global or per domain. See note below.",
-        icon: "",
-        code: ""
+        icon: "/icons/web/app-services.png",
+        code: "",
       },
     ]
   },
@@ -1001,8 +1001,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ContainerService",
         entity: "managedClusters",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/kubernetes-services.png",
+        code: "",
       },
       {
         name: "container registry",
@@ -1016,8 +1016,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ContainerRegistry",
         entity: "registries",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/container-registries.png",
+        code: "",
       },
       {
         name: "container instance",
@@ -1027,12 +1027,12 @@ export const columns: ColumnType[] = [
         category: Categories.CONTAINERS,
         learnUrl: "https://docs.microsoft.com/en-us/azure/container-instances/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_group",
-        restrictions: "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen. Consecutive hyphens aren't allowed.",
+        restrictions: "Lowercase letters, numbers, and hyphens. Can not start or end with hyphen. Consecutive hyphens aren't allowed.",
         resource: "Microsoft.ContainerInstance",
         entity: "containerGroups",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/container-instances.png",
+        code: "",
       },
       {
         name: "service fabric cluster",
@@ -1046,8 +1046,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ServiceFabric",
         entity: "clusters",
         scope: "region",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/service-fabric-clusters.png",
+        code: "",
       },
     ]
   },
@@ -1065,8 +1065,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DocumentDB",
         entity: "databaseAccounts",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/database/cosmos-db.png",
+        code: "",
       },
       {
         name: "azure cache for redis instance",
@@ -1080,8 +1080,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Cache",
         entity: "Redis",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/database/cache-for-redis.png",
+        code: "",
       },
       {
         name: "azure sql database server",
@@ -1091,12 +1091,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_server",
-        restrictions: "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen.",
+        restrictions: "Lowercase letters, numbers, and hyphens. Can not start or end with hyphen.",
         resource: "Microsoft.Sql",
         entity: "servers",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/database/sql-servers.png",
+        code: "",
       },
       {
         name: "azure sql database",
@@ -1106,12 +1106,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_database",
-        restrictions: "Can't use:<>%&:/? or control charactersCan't end with period or space.",
+        restrictions: "Can not use:<>%&:/? or control charactersCan not end with period or space.",
         resource: "Microsoft.Sql",
         entity: "servers / databases",
         scope: "server",
-        icon: "",
-        code: ""
+        icon: "/icons/database/sql-databases.png",
+        code: "",
       },
       {
         name: "synapse analytics",
@@ -1121,12 +1121,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/synapse-analytics/",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_workspace",
-        restrictions: "Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can't contain -ondemand",
+        restrictions: "Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can not contain -ondemand",
         resource: "Microsoft.Synapse",
         entity: "workspaces",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/database/synapse-analytics.png",
+        code: "",
       },
       {
         name: "synapse analytics workspace",
@@ -1136,12 +1136,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/synapse-analytics/overview-what-is-workspace",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_workspace",
-        restrictions: "Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can't contain -ondemand",
+        restrictions: "Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can not contain -ondemand",
         resource: "Microsoft.Synapse",
         entity: "workspaces",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/synapse-analytics.png",
+        code: "",
       },
       {
         name: "synapse analytics sql dedicated pool",
@@ -1151,12 +1151,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_sql_pool",
-        restrictions: "Can't contain <>%&:/?@- or control characters. Can't end with . or space. Can't contain reserved word.",
+        restrictions: "Can not contain <>%&:/?@- or control characters. Can not end with . or space. Can not contain reserved word.",
         resource: "Microsoft.Synapse",
         entity: "workspaces / sqlPools",
         scope: "workspace",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/synapse-analytics.png",
+        code: "",
       },
       {
         name: "synapse analytics spark pool",
@@ -1166,12 +1166,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_spark_pool",
-        restrictions: "Letters and numbers. Start with letter. End with letter or number. Can't contain reserved word.",
+        restrictions: "Letters and numbers. Start with letter. End with letter or number. Can not contain reserved word.",
         resource: "Microsoft.Synapse",
         entity: "workspaces / bigDataPools",
         scope: "workspace",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/synapse-analytics.png",
+        code: "",
       },
     ]
   },
@@ -1189,8 +1189,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DBforMySQL",
         entity: "servers / databases",
         scope: "servers",
-        icon: "",
-        code: ""
+        icon: "/icons/database/database-for-mysql-servers.png",
+        code: "",
       },
       {
         name: "postgresql database",
@@ -1204,8 +1204,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DBforPostgreSQL",
         entity: "servers / databases",
         scope: "servers",
-        icon: "",
-        code: ""
+        icon: "/icons/database/database-for-postgresql-servers.png",
+        code: "",
       },
       {
         name: "sql server stretch database",
@@ -1215,12 +1215,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/sql-server-stretch-database/stretch-database",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_database",
-        restrictions: "Can't use:<>%&:/? or control charactersCan't end with period or space.",
+        restrictions: "Can not use:<>%&:/? or control charactersCan not end with period or space.",
         resource: "Microsoft.Sql",
         entity: "servers / databases",
         scope: "server",
-        icon: "",
-        code: ""
+        icon: "/icons/database/sql-server-stretch-databases.png",
+        code: "",
       },
       {
         name: "sql managed instance",
@@ -1230,12 +1230,12 @@ export const columns: ColumnType[] = [
         category: Categories.DATABASES,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_managed_instance",
-        restrictions: "Lowercase letters, numbers, and hyphens. Can't start or end with hyphen.",
+        restrictions: "Lowercase letters, numbers, and hyphens. Can not start or end with hyphen.",
         resource: "Microsoft.Sql",
         entity: "managedInstances",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/database/sql-managed-instances.png",
+        code: "",
       },
       {
         name: "storage account",
@@ -1249,8 +1249,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Storage",
         entity: "storageAccounts",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/storage/storage-accounts.png",
+        code: "",
       },
       {
         name: "azure storsimple",
@@ -1264,8 +1264,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.StorSimple",
         entity: "managers",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/storage/storsimple-device-managers.png",
+        code: "",
       },
       {
         name: "azure congnitive search",
@@ -1279,8 +1279,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Search",
         entity: "searchServices",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/web/search.png",
+        code: "",
       },
       {
         name: "azure cognitive services",
@@ -1295,7 +1295,7 @@ export const columns: ColumnType[] = [
         entity: "accounts",
         scope: "resource group",
         icon: "",
-        code: ""
+        code: "",
       },
       {
         name: "azure machine learning workspace",
@@ -1305,12 +1305,12 @@ export const columns: ColumnType[] = [
         category: Categories.AIANDML,
         learnUrl: "https://docs.microsoft.com/en-us/azure/machine-learning/concept-workspace",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/machine_learning_workspace",
-        restrictions: "Can't use:<>%&:?+/\ or control charactersCan't end with a space.",
+        restrictions: "Can not use:<>%&:?+/\ or control charactersCan not end with a space.",
         resource: "Microsoft.MachineLearning",
         entity: "workspaces",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/ml/machine-learning-service-workspaces.png",
+        code: "",
       },
     ]
   },
@@ -1328,8 +1328,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.AnalysisServices",
         entity: "servers",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/analysis-services.png",
+        code: "",
       },
       {
         name: "azure databricks workspace",
@@ -1343,8 +1343,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Databricks",
         entity: "workspaces",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/databricks.png",
+        code: "",
       },
       {
         name: "azure stream analytics",
@@ -1358,8 +1358,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.StreamAnalytics",
         entity: "streamingjobs",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/stream-analytics-jobs.png",
+        code: "",
       },
       {
         name: "azure data explorer cluster",
@@ -1373,8 +1373,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Kusto",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/data-explorer-clusters.png",
+        code: "",
       },
       {
         name: "azure data explorer cluster database",
@@ -1388,8 +1388,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Kusto",
         entity: "/clusters / databases",
         scope: "cluster",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/data-explorer-clusters.png",
+        code: "",
       },
       {
         name: "azure data factory",
@@ -1403,8 +1403,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DataFactory",
         entity: "factories",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/data-factories.png",
+        code: "",
       },
       {
         name: "data lake store account",
@@ -1418,8 +1418,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DataLakeAnalytics",
         entity: "accounts / dataLakeStoreAccounts",
         scope: "account",
-        icon: "",
-        code: ""
+        icon: "/icons/database/data-lake.png",
+        code: "",
       },
       {
         name: "data lake analytics account",
@@ -1433,8 +1433,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DataLakeAnalytics",
         entity: "accounts",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/data-lake-analytics.png",
+        code: "",
       },
       {
         name: "event hub namespace",
@@ -1448,8 +1448,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.EventHub",
         entity: "namespaces",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/event-hubs.png",
+        code: "",
       },
       {
         name: "event hub",
@@ -1463,8 +1463,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.EventHub",
         entity: "clusters",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/event-hubs.png",
+        code: "",
       },
     ]
   },
@@ -1482,8 +1482,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.EventGrid",
         entity: "domains",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/event-grid-topics.png",
+        code: "",
       },
       {
         name: "event grid subscription",
@@ -1497,8 +1497,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.EventGrid",
         entity: "eventSubscriptions",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/event-grid-subscriptions.png",
+        code: "",
       },
       {
         name: "event grid topic",
@@ -1512,8 +1512,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.EventGrid",
         entity: "domains / topics",
         scope: "domain",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/event-grid-topics.png",
+        code: "",
       },
       {
         name: "hdinsight - hadoop cluster",
@@ -1527,8 +1527,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "hdinsight - hbase cluster",
@@ -1542,8 +1542,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "hdinsight - kafka cluster",
@@ -1557,8 +1557,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "hdinsight - spark cluster",
@@ -1572,8 +1572,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "hdinsight - storm cluster",
@@ -1587,8 +1587,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "hdinsight - ml services cluster",
@@ -1602,8 +1602,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.HDInsight",
         entity: "clusters",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/hdinsightclusters.png",
+        code: "",
       },
       {
         name: "iot hub",
@@ -1613,12 +1613,12 @@ export const columns: ColumnType[] = [
         category: Categories.ANALYTICSANDIOT,
         learnUrl: "https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/iothub",
-        restrictions: "Alphanumerics and hyphens. Can't end with hyphen.",
+        restrictions: "Alphanumerics and hyphens. Can not end with hyphen.",
         resource: "Microsoft.Devices",
         entity: "IotHubs",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/iot/iot-hub.png",
+        code: "",
       },
     ]
   },
@@ -1636,8 +1636,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Devices",
         entity: "provisioningServices",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/iot/device-provisioning-services.png",
+        code: "",
       },
       {
         name: "provisioning services certificate",
@@ -1651,8 +1651,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Devices",
         entity: "provisioningServices / certificates",
         scope: "provisioningServices",
-        icon: "",
-        code: ""
+        icon: "/icons/iot/device-provisioning-services.png",
+        code: "",
       },
       {
         name: "power bi",
@@ -1662,12 +1662,12 @@ export const columns: ColumnType[] = [
         category: Categories.ANALYTICSANDIOT,
         learnUrl: "https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/powerbi_embedded",
-        restrictions: "Alphanumerics and hyphens. Can't start with hyphen. Can't use consecutive hyphens.",
+        restrictions: "Alphanumerics and hyphens. Can not start with hyphen. Can not use consecutive hyphens.",
         resource: "Microsoft.PowerBI",
         entity: "workspaceCollections",
         scope: "region",
-        icon: "",
-        code: ""
+        icon: "/icons/general/allresources.png",
+        code: "",
       },
       {
         name: "time series insights",
@@ -1677,12 +1677,12 @@ export const columns: ColumnType[] = [
         category: Categories.ANALYTICSANDIOT,
         learnUrl: "https://docs.microsoft.com/en-us/azure/time-series-insights/time-series-insights-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/time_series_insights_environment_standard",
-        restrictions: "Can't use:'<>%&:\?/# or control characters",
+        restrictions: "Can not use:'<>%&:\?/# or control characters",
         resource: "Microsoft.TimeSeriesInsights",
         entity: "environments",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/iot/time-series-insights-environments.png",
+        code: "",
       },
       {
         name: "virtual desktop host pool",
@@ -1696,8 +1696,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DesktopVirtualization",
         entity: "hostPools",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/cloudsimple-virtual-machines.png",
+        code: "",
       },
       {
         name: "virtual desktop application group",
@@ -1711,8 +1711,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DesktopVirtualization",
         entity: "applicationGroups",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/cloudsimple-virtual-machines.png",
+        code: "",
       },
       {
         name: "virtual desktop workspace",
@@ -1726,8 +1726,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DesktopVirtualization",
         entity: "workspaces",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/workspaces.png",
+        code: "",
       },
       {
         name: "app configuration store",
@@ -1741,8 +1741,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.AppConfiguration",
         entity: "configurationStores",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/app-configuration.png",
+        code: "",
       },
       {
         name: "signalr",
@@ -1756,8 +1756,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.SignalRService",
         entity: "signalR",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/web/signalr.png",
+        code: "",
       },
     ]
   },
@@ -1775,8 +1775,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Logic",
         entity: "integrationAccounts",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/integration-accounts.png",
+        code: "",
       },
       {
         name: "logic apps",
@@ -1790,8 +1790,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Logic",
         entity: "workflows",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/logic-apps.png",
+        code: "",
       },
       {
         name: "service bus",
@@ -1805,8 +1805,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ServiceBus",
         entity: "namespaces",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/service-bus.png",
+        code: "",
       },
       {
         name: "service bus queue",
@@ -1820,8 +1820,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ServiceBus",
         entity: "namespaces / queues",
         scope: "namespace",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/service-bus.png",
+        code: "",
       },
       {
         name: "service bus topic",
@@ -1835,8 +1835,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ServiceBus",
         entity: "namespaces / topics",
         scope: "namespace",
-        icon: "",
-        code: ""
+        icon: "/icons/integration/service-bus.png",
+        code: "",
       },
       {
         name: "azure migrate project",
@@ -1850,11 +1850,11 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DataMigration",
         entity: "services / projects",
         scope: "service",
-        icon: "",
-        code: ""
+        icon: "/icons/migration/migration-projects.png",
+        code: "",
       },
       {
-        name: "database migration service instance",
+        name: "database migration",
         slug: "dms-",
         description: "Azure Database Migration Service (DMS) is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.",
         length: "2-62",
@@ -1866,7 +1866,7 @@ export const columns: ColumnType[] = [
         entity: "services",
         scope: "resource group",
         icon: "",
-        code: ""
+        code: "",
       },
       {
         name: "recovery services vault",
@@ -1880,8 +1880,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.RecoveryServices",
         entity: "vaults",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/migration/recovery-services-vaults.png",
+        code: "",
       },
     ]
   },
@@ -1899,8 +1899,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Automation",
         entity: "automationAccounts",
         scope: "resource group & region (See note below)",
-        icon: "",
-        code: ""
+        icon: "/icons/compute/automanaged-vm.png",
+        code: "",
       },
       {
         name: "application insights",
@@ -1910,12 +1910,12 @@ export const columns: ColumnType[] = [
         category: Categories.MANAGEMENT,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_insights",
-        restrictions: "Can't use:%&\?/ or control characters Can't end with space or period.",
+        restrictions: "Can not use:%&\?/ or control characters Can not end with space or period.",
         resource: "Microsoft.Insights",
         entity: "components",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/devops/application-insights.png",
+        code: "",
       },
       {
         name: "azure monitor action group",
@@ -1925,12 +1925,12 @@ export const columns: ColumnType[] = [
         category: Categories.MANAGEMENT,
         learnUrl: "https://docs.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_action_group",
-        restrictions: "Can't use::<>+/&%\? or control characters Can't end with space or period.",
+        restrictions: "Can not use::<>+/&%\? or control characters Can not end with space or period.",
         resource: "Microsoft.Insights",
         entity: "actionGroups",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/general/allresources.png",
+        code: "",
       },
       {
         name: "azure purview instances",
@@ -1944,8 +1944,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Purview",
         entity: "accounts",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/general/allresources.png",
+        code: "",
       },
       {
         name: "blueprint",
@@ -1959,8 +1959,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Blueprint",
         entity: "blueprint",
         scope: "Management groups, Subscriptions, Resource groups",
-        icon: "",
-        code: ""
+        icon: "/icons/general/allresources.png",
+        code: "",
       },
       {
         name: "blueprint assignment",
@@ -1974,8 +1974,8 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.Blueprint",
         entity: "blueprintAssignments",
         scope: "Management groups, Subscriptions, Resource groups",
-        icon: "",
-        code: ""
+        icon: "/icons/general/allresources.png",
+        code: "",
       },
       {
         name: "key vault",
@@ -1985,12 +1985,12 @@ export const columns: ColumnType[] = [
         category: Categories.MANAGEMENT,
         learnUrl: "https://docs.microsoft.com/en-us/azure/key-vault/general/overview",
         terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault",
-        restrictions: "Alphanumerics and hyphens. Start with letter. End with letter or digit. Can't contain consecutive hyphens.",
+        restrictions: "Alphanumerics and hyphens. Start with letter. End with letter or digit. Can not contain consecutive hyphens.",
         resource: "Microsoft.KeyVault",
         entity: "vaults",
         scope: "global",
-        icon: "",
-        code: ""
+        icon: "/icons/security/key-vaults.png",
+        code: "",
       },
       {
         name: "log analytics workspace",
@@ -2004,9 +2004,9 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.OperationalInsights",
         entity: "workspaces",
         scope: "resource group",
-        icon: "",
-        code: ""
+        icon: "/icons/analytics/log-analytics-workspaces.png",
+        code: "",
       },
     ]
   },
-];
+]
