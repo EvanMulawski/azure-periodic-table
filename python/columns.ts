@@ -1268,7 +1268,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "congnitive search",
+        name: "search service",
         slug: "srch-",
         description: "Azure Cognitive Search is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what's relevant to user queries.",
         length: "2-64",
