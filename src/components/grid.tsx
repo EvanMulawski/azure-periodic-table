@@ -36,8 +36,8 @@ const Cell: React.FC<CellProps> = ({
 
   const isActiveSearch =
     textSearch === '' ||
-    item.text.toLowerCase().includes(textSearch.toLowerCase()) ||
-    item.subText.toLowerCase().includes(textSearch.toLowerCase());
+    item.name.toLowerCase().includes(textSearch.toLowerCase()) ||
+    item.code.toLowerCase().includes(textSearch.toLowerCase());
 
   // disable if there is a search and the item is not in the search
   // or if there is a category and the item is not in the category
@@ -49,6 +49,8 @@ const Cell: React.FC<CellProps> = ({
   const transparent = isDisabled ? 'opacity-50' : 'opacity-100';
 
   const hoverScale = isDisabled ? '' : 'hover:scale-150';
+
+  console.log(item.icon);
 
   return (
     <div
@@ -64,13 +66,13 @@ const Cell: React.FC<CellProps> = ({
           {item.icon ? (
             <Image width={10} height={10} className="" src={item.icon} />
           ) : null}
-          <span className="text-[0.5rem]">{item.range ?? '1-100'}</span>
+          <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
         </div>
         <div className="justify-start w-full mt-auto font-bold text-xs">
-          {item.text}
+          {item.name}
         </div>
         <div className="justify-start w-full mt-auto text-[0.5rem] overflow-hidden">
-          {item.subText ?? 'no'}
+          {item.code ?? ''}
         </div>
       </div>
     </div>
