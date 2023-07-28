@@ -24,7 +24,7 @@ export const Compass = ({
         return (
           <div
             key={i}
-            className={`flex flex-row items-center justify-end cursor-pointer filter transition-colors ${
+            className={`flex flex-row items-center dark:text-white text-stone-800 justify-end cursor-pointer filter transition-colors ${
               isActive ? 'brightness-100' : 'brightness-75'
             }  hover:brightness-90`}
             onClick={() =>

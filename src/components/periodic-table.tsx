@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import { Grid } from './grid';
 
 import { Compass, type CompassData } from './compass';
-import { columns } from '@/app/data';
+import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
 
 export const compassData: CompassData = [
@@ -26,8 +27,8 @@ export default function PeriodicTable({
   setActiveElement,
   textSearch,
 }: {
-  setOpen: () => void;
-  setActiveElement: () => void;
+  setOpen: Dispatch<SetStateAction<boolean>>;
+  setActiveElement: Dispatch<SetStateAction<Item | null>>;
   textSearch: string;
 }) {
   const [activeCateogory, setActiveCategory] = useState<Categories | null>(

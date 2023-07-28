@@ -19,6 +19,8 @@ module.exports = {
       colors: {
         background: '',
         accent: '#3bc8f4',
+        hover: 'var(--hover)',
+        bg: 'var(--bg)',
       },
       keyframes: {
         'accordion-down': {

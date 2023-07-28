@@ -37,7 +37,7 @@ const Cell: React.FC<CellProps> = ({
   const isActiveSearch =
     textSearch === '' ||
     item.name.toLowerCase().includes(textSearch.toLowerCase()) ||
-    item.code.toLowerCase().includes(textSearch.toLowerCase());
+    item.slug.toLowerCase().includes(textSearch.toLowerCase());
 
   // disable if there is a search and the item is not in the search
   // or if there is a category and the item is not in the category
@@ -59,7 +59,7 @@ const Cell: React.FC<CellProps> = ({
         setActiveElement(item);
         select();
       }}
-      className={`${height} ${width} border-white border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+      className={`${height} ${width} dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
     >
       <div className="flex flex-col relative h-full w-full">
         <div className="flex w-full justify-between items-center">

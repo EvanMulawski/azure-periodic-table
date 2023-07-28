@@ -827,7 +827,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies',
         scope: 'resource group',
-        icon: '/icons/security/firewall.png',
+        icon: '/icons/network/firewall.png',
         code: '',
       },
       {
@@ -846,7 +846,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies / ruleGroups',
         scope: 'firewall policy',
-        icon: '/icons/security/firewall.png',
+        icon: '/icons/network/firewall.png',
         code: '',
       },
     ],

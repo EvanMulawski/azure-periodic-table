@@ -3,3 +3,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --hover-light: hsla(210, 50%, 85%, 0.483); /* Light color */
+  --hover-dark: hsl(210, 50%, 15%); /* Dark color */
+
+  --bg-dark: rgb(2, 6, 23); /* Dark color */
+  --bg-light: hsl(0, 0%, 100%); /* Light color */
+}
+
+.dark {
+  --hover: var(--hover-dark);
+  --bg: var(--bg-dark);
+}
+
+.light {
+  --hover: var(--hover-light);
+  --bg: var(--bg-light);
+}
