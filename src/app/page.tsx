@@ -1,7 +1,7 @@
 /* src/app/page.tsx */
 
 'use client';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Item, columns } from './data';
 import {
   Sheet,
@@ -17,11 +17,21 @@ import { CodeSnippet } from '@/components/code-snippet';
 import PeriodicTable, { compassData } from '@/components/periodic-table';
 import { Input } from '@/components/ui/input';
 import Image from 'next/image';
+import { Check, CopyCheckIcon, CopyIcon } from 'lucide-react';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
   const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const [textSearch, setTextSearch] = useState('');
+  const [showCopy, setShowCopy] = useState(false);
+
+  // after 2 seconds have copied be false if active
+  useEffect(() => {
+    if (copied) {
+      setTimeout(() => setCopied(false), 2000);
+    }
+  }, [copied]);
 
   // Add more functionality here if needed, like functions to add/remove groups or items
 
@@ -30,17 +40,48 @@ export default function Page() {
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
         <SheetContent className="bg-slate-950 sm:max-w-[720px]">
           <SheetHeader>
-            <Image width={30} height={30} src={activeElement?.icon} />
+            <div className="flex justify-start items-center">
+              <Image width={44} height={44} src={activeElement?.icon} />
+              <div
+                onMouseEnter={() => setShowCopy(true)}
+                onMouseLeave={() => setShowCopy(false)}
+                onClick={() => {
+                  navigator.clipboard.writeText(activeElement?.slug ?? '');
+                  setCopied(true);
+                }}
+                className={`relative ml-4 flex justify-start items-center text-sm flex break-all border py-2 px-6 cursor-pointer rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4`}
+              >
+                {showCopy && (
+                  <div className="absolute top-[-3px] right-1">
+                    {copied ? <Check width={12} /> : <CopyIcon width={12} />}
+                  </div>
+                )}
+
+                <span>{activeElement?.slug}</span>
+              </div>
+            </div>
+
             <SheetTitle>
-              <div className="my-4">
-                <span
-                  className={`mr-2 bg-slate-700 text-white px-4 py-2 rounded-md`}
-                >
-                  {activeElement?.slug}
-                </span>
-                {activeElement?.name}
+              <div className="flex justify-start items-center mt-4 mb-2">
+                <span className="font-bold text-xl">{activeElement?.name}</span>
               </div>
             </SheetTitle>
+            <CodeSnippet codeString={activeElement?.code ?? ''} />
+            <span>{activeElement?.description}</span>
+            <div className="mt-6">
+              <span className="font-bold">Length</span>
+              <div>
+                <span>{activeElement?.length}</span>
+              </div>
+            </div>
+            <div className="mt-6">
+              <span className="font-bold">Restrictions:</span>
+              <div>
+                <span>{activeElement?.restrictions}</span>
+                <span>{activeElement?.length}</span>
+              </div>
+            </div>
+
             <div className="flex justify-start items-center">
               {activeElement?.terraformUrl && (
                 <a
@@ -67,16 +108,10 @@ export default function Page() {
                 </a>
               )}
             </div>
-            <CodeSnippet codeString={activeElement?.code ?? ''} />
-
-            <span>{activeElement?.description}</span>
-            <span className="font-bold">Restrictions:</span>
-            <span>{activeElement?.restrictions}</span>
-            <span>{activeElement?.length}</span>
           </SheetHeader>
         </SheetContent>
       </Sheet>
-      <div className="flex justify-center items-center mb-12">
+      <div className="flex justify-center items-center mb-4">
         <div className="mr-6">
           <AzureLogo />
         </div>
@@ -88,10 +123,14 @@ export default function Page() {
           </span>
         </div>
       </div>
-      <Input
-        onChange={(e) => setTextSearch(e?.target?.value)}
-        className="bg-transparent"
-      />
+      <div className="flex justify-center items-center">
+        <Input
+          onChange={(e) => setTextSearch(e?.target?.value)}
+          className="bg-transparent w-80"
+          placeholder="Search Azure resources..."
+        />
+      </div>
+
       <PeriodicTable
         textSearch={textSearch}
         setActiveElement={setActiveElement}

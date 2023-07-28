@@ -1142,7 +1142,7 @@ export const columns: ColumnType[] = [
         slug: 'vm',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
-        length: '1-15 (Windows)1-64 (Linux)See note below.',
+        length: '1-15/1-64',
         category: Categories.COMPUTEANDWEB,
         learnUrl: 'https://docs.microsoft.com/en-us/azure/virtual-machines/',
         terraformUrl:
@@ -1160,7 +1160,7 @@ export const columns: ColumnType[] = [
         slug: 'vmss-',
         description:
           'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
-        length: '1-15 (Windows)1-64 (Linux)See note below.',
+        length: '1-15/1-64',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/',
