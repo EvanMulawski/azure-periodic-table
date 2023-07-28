@@ -13,7 +13,7 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.ApiManagement",
         entity: "service",
         scope: "global",
-        icon: "/icons/general/api-management.png",
+        icon: "/icons/integration/api-management.png",
         code: "",
       },
       {
