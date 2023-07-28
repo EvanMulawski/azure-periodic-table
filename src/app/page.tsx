@@ -1,5 +1,3 @@
-/* src/app/page.tsx */
-
 'use client';
 import { useState } from 'react';
 import { Item, columns } from './data';
@@ -26,27 +24,29 @@ export default function Page() {
   // Add more functionality here if needed, like functions to add/remove groups or items
 
   return (
-    <main className="flex-col min-h-screen items-center justify-center p-24 bg-slate-950">
+    <main className="flex-col min-h-screen items-center justify-center p-24 bg-slate-900">
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
-        <SheetContent className="bg-slate-950 sm:max-w-[720px]">
-          <SheetHeader>
-            <Image width={60} height={60} src={activeElement?.icon} />
-            <SheetTitle>
-              <div className="my-4">
+      <SheetContent className="bg-[rgba(0,0,0,0.8)] sm:max-w-[720px]">
+          <SheetHeader className="space-y-4">
+            <div className="flex flex-col items-start space-y-4">
+              <div>
+                <Image width={60} height={60} src={activeElement?.icon} />
+              </div>
+              <div className="flex items-center space-x-4">
                 <span
-                  className={`mr-2 bg-slate-700 text-white px-4 py-2 rounded-md`}
+                  className={`mr-2 bg-slate-700 text-white px-4 py-2 rounded-md text-xl font-semibold`}
                 >
                   {activeElement?.slug}
                 </span>
-                {activeElement?.name}
+                <h1 className="text-3xl font-bold text-gray-100 inline">{activeElement?.name}</h1>
               </div>
-            </SheetTitle>
-            <div className="flex justify-start items-center">
+            </div>
+            <div className="flex justify-start items-center space-x-4">
               {activeElement?.terraformUrl && (
                 <a
                   target="_blank"
                   href={activeElement?.terraformUrl}
-                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 hover:bg-gray-700 transition-all"
                 >
                   <div className="mr-2">
                     <TerraformLogo width={24} height={24} />
@@ -58,7 +58,7 @@ export default function Page() {
                 <a
                   target="_blank"
                   href={activeElement?.learnUrl}
-                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 hover:bg-gray-700 transition-all"
                 >
                   <div className="mr-2">
                     <Microsoft width={24} height={24} />
@@ -69,10 +69,18 @@ export default function Page() {
             </div>
             <CodeSnippet codeString={activeElement?.code ?? ''} />
 
-            <span>{activeElement?.description}</span>
-            <span className="font-bold">Restrictions:</span>
-            <span>{activeElement?.restrictions}</span>
-            <span>{activeElement?.length}</span>
+            <p className="text-gray-100">{activeElement?.description}</p>
+            <h2 className="text-lg font-bold text-accent">Restrictions:</h2>
+            <div className="flex flex-col space-y-2">
+              <div>
+                <h3 className="text-lg font-semibold text-gray-100">Length:</h3>
+                <p className="text-gray-100">{activeElement?.length}</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-100">Valid Characters:</h3>
+                <p className="text-gray-100">{activeElement?.validCharacters}</p>
+              </div>
+            </div>
           </SheetHeader>
         </SheetContent>
       </Sheet>
@@ -81,8 +89,8 @@ export default function Page() {
           <AzureLogo />
         </div>
 
-        <div className="flex flex-col">
-          <span className="font-bold text-4xl">Azure Resource</span>
+        <div className="flex flex-col text-center">
+          <span className="font-bold text-4xl text-gray-100">Azure Resource</span>
           <span className="font-semibold text-2xl text-accent">
             Naming Convention Periodic Table
           </span>
@@ -90,7 +98,8 @@ export default function Page() {
       </div>
       <Input
         onChange={(e) => setTextSearch(e?.target?.value)}
-        className="bg-transparent"
+        className="bg-slate-800 px-4 py-2 rounded-lg w-full max-w-sm mx-auto shadow-lg text-slate-200"
+        placeholder="Search here..."
       />
       <PeriodicTable
         textSearch={textSearch}

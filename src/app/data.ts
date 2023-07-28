@@ -22,24 +22,6 @@ export const columns: ColumnType[] = [
   {
       items: [
           {
-              name: 'api management',
-              slug: 'apim-',
-              description:
-                  'Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.',
-              length: '1-50',
-              category: Categories.INTEGRATION,
-              learnUrl: 'https://docs.microsoft.com/en-us/azure/api-management/',
-              terraformUrl:
-                  'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management',
-              restrictions:
-                  'Alphanumerics and hyphens. Start with letter and end with alphanumeric.',
-              resource: 'Microsoft.ApiManagement',
-              entity: 'service',
-              scope: 'global',
-              icon: '/icons/integration/api-management.png',
-              code: '',
-          },
-          {
               name: 'managed identity',
               slug: 'id-',
               description:
@@ -864,7 +846,7 @@ export const columns: ColumnType[] = [
               resource: 'Microsoft.Network',
               entity: 'firewallPolicies',
               scope: 'resource group',
-              icon: '/icons/security/firewall.png',
+              icon: '/icons/network/firewall.png',
               code: '',
           },
           {
@@ -883,7 +865,7 @@ export const columns: ColumnType[] = [
               resource: 'Microsoft.Network',
               entity: 'firewallPolicies / ruleGroups',
               scope: 'firewall policy',
-              icon: '/icons/security/firewall.png',
+              icon: '/icons/network/firewall.png',
               code: '',
           },
       ],
@@ -2193,6 +2175,24 @@ export const columns: ColumnType[] = [
   },
   {
       items: [
+        {
+          name: 'api management',
+          slug: 'apim-',
+          description:
+              'Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.',
+          length: '1-50',
+          category: Categories.INTEGRATION,
+          learnUrl: 'https://docs.microsoft.com/en-us/azure/api-management/',
+          terraformUrl:
+              'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management',
+          restrictions:
+              'Alphanumerics and hyphens. Start with letter and end with alphanumeric.',
+          resource: 'Microsoft.ApiManagement',
+          entity: 'service',
+          scope: 'global',
+          icon: '/icons/integration/api-management.png',
+          code: '',
+      },
           {
               name: 'integration account',
               slug: 'ia-',
