@@ -2,7 +2,6 @@
 
 'use client';
 import { useState } from 'react';
-import { Categories } from './constants';
 import { Item, columns } from './data';
 import {
   Sheet,
@@ -14,38 +13,14 @@ import {
 import { AzureLogo } from '@/components/azure-logo';
 import { Compass, type CompassData } from '@/components/compass';
 import { Grid } from '@/components/grid';
-import CodeBlock from '@tiptap/extension-code-block';
-import { EditorContent, ReactNodeViewRenderer, useEditor } from '@tiptap/react';
-import CodeBlockLowlight from '@tiptap/extension-code-block-lowlight';
-import Document from '@tiptap/extension-document';
-import Paragraph from '@tiptap/extension-paragraph';
-import Text from '@tiptap/extension-text';
-import { lowlight } from 'lowlight/lib/core';
-import terraform from 'highlight.js/lib/languages/ruby';
 import { CodeSnippet } from '@/components/code-snippet';
+import PeriodicTable from '@/components/periodic-table';
+import { Input } from '@/components/ui/input';
 
 export default function Page() {
-  const [activeCateogory, setActiveCategory] = useState<Categories | null>(
-    null
-  );
   const [activeElement, setActiveElement] = useState<Item | null>(null);
   const [open, setOpen] = useState(false);
-
-  const compassData: CompassData = [
-    { name: Categories.GENERAL, color: 'bg-gray-400' },
-    { name: Categories.NETWORKING, color: 'bg-red-500' },
-    { name: Categories.COMPUTEANDWEB, color: 'bg-orange-500' },
-    { name: Categories.CONTAINERS, color: 'bg-yellow-400' },
-    { name: Categories.DATABASES, color: 'bg-lime-400' },
-    { name: Categories.STORAGE, color: 'bg-green-500' },
-    { name: Categories.AIANDML, color: 'bg-cyan-500' },
-    { name: Categories.ANALYTICSANDIOT, color: 'bg-blue-500' },
-    { name: Categories.VIRTUALDESKTOP, color: 'bg-indigo-500' },
-    { name: Categories.DEVTOOLS, color: 'bg-violet-700' },
-    { name: Categories.INTEGRATION, color: 'bg-fuchsia-600' },
-    { name: Categories.MIGRATION, color: 'bg-pink-500' },
-    { name: Categories.MANAGEMENT, color: 'bg-rose-500' },
-  ];
+  const [textSearch, setTextSearch] = useState('');
 
   // Add more functionality here if needed, like functions to add/remove groups or items
 
@@ -99,24 +74,15 @@ export default function Page() {
           </span>
         </div>
       </div>
-      <div className="flex justify-center items-start my-6">
-        {columns.map((group, i) => (
-          <Grid
-            select={() => setOpen(true)}
-            activeCategory={activeCateogory}
-            setActiveCategory={setActiveCategory}
-            key={i}
-            items={group.items}
-            setActiveElement={setActiveElement}
-            compassData={compassData}
-          />
-        ))}
-        <Compass
-          activeCategory={activeCateogory}
-          setActiveCategory={setActiveCategory}
-          compassData={compassData}
-        />
-      </div>
+      <Input
+        onChange={(e) => setTextSearch(e?.target?.value)}
+        className="bg-transparent"
+      />
+      <PeriodicTable
+        textSearch={textSearch}
+        setActiveElement={setActiveElement}
+        setOpen={setOpen}
+      />
     </main>
   );
 }

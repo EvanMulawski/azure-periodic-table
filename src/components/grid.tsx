@@ -13,6 +13,7 @@ interface CellProps {
   select: () => void;
   setActiveElement: (element: any) => void;
   compassData: CompassData;
+  textSearch: string;
 }
 
 const Cell: React.FC<CellProps> = ({
@@ -23,15 +24,25 @@ const Cell: React.FC<CellProps> = ({
   select,
   setActiveElement,
   compassData,
+  textSearch,
 }) => {
   const color = compassData.find((c) => c.name === item.category)?.color;
 
   const height = zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-24' : 'h-28';
   const width = zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-24' : 'w-28';
 
-  const isActiveCategory = activeCategory === item.category;
+  const isActiveCategory =
+    activeCategory === null || activeCategory === item.category;
 
-  const isDisabled = activeCategory !== null && !isActiveCategory;
+  const isActiveSearch =
+    textSearch === '' ||
+    item.text.toLowerCase().includes(textSearch.toLowerCase()) ||
+    item.subText.toLowerCase().includes(textSearch.toLowerCase());
+
+  // disable if there is a search and the item is not in the search
+  // or if there is a category and the item is not in the category
+
+  const isDisabled = !isActiveCategory || !isActiveSearch;
 
   const colorOption = isDisabled ? 'bg-gray-400' : color;
 
@@ -73,6 +84,7 @@ interface GridProps {
   select: () => void;
   setActiveElement: (element: any) => void;
   compassData: CompassData;
+  textSearch: string;
 }
 
 export const Grid: React.FC<GridProps> = ({
@@ -82,10 +94,12 @@ export const Grid: React.FC<GridProps> = ({
   select,
   setActiveElement,
   compassData,
+  textSearch,
 }) => (
   <div className={`flex flex-col w-fit h-full relative`}>
     {items.map((item, i) => (
       <Cell
+        textSearch={textSearch}
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
         key={i}
