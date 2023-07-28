@@ -29,7 +29,7 @@ export default function Page() {
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
         <SheetContent className="bg-slate-950 sm:max-w-[720px]">
           <SheetHeader>
-            <SheetTitle>{activeElement?.subText}</SheetTitle>
+            <SheetTitle>{activeElement?.name}</SheetTitle>
             <div className="flex justify-start items-center">
               {activeElement?.terraformUrl && (
                 <a
@@ -56,9 +56,13 @@ export default function Page() {
                 </a>
               )}
             </div>
-            <CodeSnippet codeString={activeElement?.terraformSnippet ?? ''} />
+            <CodeSnippet codeString={activeElement?.code ?? ''} />
 
-            <SheetDescription>{activeElement?.subText}</SheetDescription>
+            <SheetDescription>{activeElement?.slug}</SheetDescription>
+            <span>{activeElement?.description}</span>
+            <span className="font-bold">Restrictions:</span>
+            <span>{activeElement?.restrictions}</span>
+            <span>{activeElement?.length}</span>
           </SheetHeader>
         </SheetContent>
       </Sheet>
