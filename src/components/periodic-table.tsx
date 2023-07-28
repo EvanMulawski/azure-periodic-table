@@ -5,7 +5,7 @@ import { Compass, type CompassData } from './compass';
 import { columns } from '@/app/data';
 import { Categories } from '@/app/constants';
 
-const compassData: CompassData = [
+export const compassData: CompassData = [
   { name: Categories.GENERAL, color: 'bg-gray-400' },
   { name: Categories.NETWORKING, color: 'bg-red-500' },
   { name: Categories.COMPUTEANDWEB, color: 'bg-orange-500' },

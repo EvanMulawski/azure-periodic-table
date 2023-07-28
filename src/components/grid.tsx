@@ -69,10 +69,10 @@ const Cell: React.FC<CellProps> = ({
           <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
         </div>
         <div className="justify-start w-full mt-auto font-bold text-xs">
-          {item.name}
+          {item.slug}
         </div>
         <div className="justify-start w-full mt-auto text-[0.5rem] overflow-hidden">
-          {item.code ?? ''}
+          {item.name}
         </div>
       </div>
     </div>
