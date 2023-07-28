@@ -5,24 +5,6 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'api management',
-        slug: 'apim-',
-        description:
-          'Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.',
-        length: '1-50',
-        category: Categories.INTEGRATION,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/api-management/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management',
-        restrictions:
-          'Alphanumerics and hyphens. Start with letter and end with alphanumeric.',
-        resource: 'Microsoft.ApiManagement',
-        entity: 'service',
-        scope: 'global',
-        icon: '/icons/integration/api-management.png',
-        code: '',
-      },
-      {
         name: 'managed identity',
         slug: 'id-',
         description:
@@ -218,8 +200,7 @@ export const columns: ColumnType[] = [
         slug: 'dnsz-',
         description:
           "Azure DNS Zone is a service that allows you to host your domain's DNS records on Azure, providing name resolution using Microsoft Azure infrastructure. By hosting your domains in Azure, you can manage your DNS records using the same credentials and billing and support contract as your other Azure services.",
-        length:
-          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
+        length: '1-63',
         category: Categories.NETWORKING,
         learnUrl: 'https://learn.microsoft.com/en-us/azure/dns/dns-overview',
         terraformUrl:
@@ -237,8 +218,7 @@ export const columns: ColumnType[] = [
         slug: 'pdnsz-',
         description:
           'Azure Private DNS Zone is a service that provides an ability to use your own custom domain names, rather than the Azure-provided names. It helps in name resolution for virtual machines (VMs) within a virtual network and between virtual networks.',
-        length:
-          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
+        length: '1-63',
         category: Categories.NETWORKING,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/dns/private-dns-overview',
@@ -2176,6 +2156,24 @@ export const columns: ColumnType[] = [
   },
   {
     items: [
+      {
+        name: 'api management',
+        slug: 'apim-',
+        description:
+          'Azure API Management is a full-featured service that enables customers to create, secure, publish, and analyze APIs in minutes. It helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.',
+        length: '1-50',
+        category: Categories.INTEGRATION,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/api-management/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/api_management',
+        restrictions:
+          'Alphanumerics and hyphens. Start with letter and end with alphanumeric.',
+        resource: 'Microsoft.ApiManagement',
+        entity: 'service',
+        scope: 'global',
+        icon: '/icons/integration/api-management.png',
+        code: '',
+      },
       {
         name: 'integration account',
         slug: 'ia-',

@@ -14,8 +14,9 @@ import { AzureLogo } from '@/components/azure-logo';
 import { Compass, type CompassData } from '@/components/compass';
 import { Grid } from '@/components/grid';
 import { CodeSnippet } from '@/components/code-snippet';
-import PeriodicTable from '@/components/periodic-table';
+import PeriodicTable, { compassData } from '@/components/periodic-table';
 import { Input } from '@/components/ui/input';
+import Image from 'next/image';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -29,7 +30,17 @@ export default function Page() {
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
         <SheetContent className="bg-slate-950 sm:max-w-[720px]">
           <SheetHeader>
-            <SheetTitle>{activeElement?.name}</SheetTitle>
+            <Image width={30} height={30} src={activeElement?.icon} />
+            <SheetTitle>
+              <div className="my-4">
+                <span
+                  className={`mr-2 bg-slate-700 text-white px-4 py-2 rounded-md`}
+                >
+                  {activeElement?.slug}
+                </span>
+                {activeElement?.name}
+              </div>
+            </SheetTitle>
             <div className="flex justify-start items-center">
               {activeElement?.terraformUrl && (
                 <a
@@ -58,7 +69,6 @@ export default function Page() {
             </div>
             <CodeSnippet codeString={activeElement?.code ?? ''} />
 
-            <SheetDescription>{activeElement?.slug}</SheetDescription>
             <span>{activeElement?.description}</span>
             <span className="font-bold">Restrictions:</span>
             <span>{activeElement?.restrictions}</span>
