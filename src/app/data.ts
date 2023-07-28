@@ -139,7 +139,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'application security group (asg)',
+              name: 'app security group (asg)',
               slug: 'asg-',
               description:
                   'Application Security Groups (ASG) in Azure enable fine-grained network control over your network architecture and the ability to secure direct access to applications based on role.',
@@ -330,7 +330,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'front door instance',
+              name: 'front door',
               slug: 'fd-',
               description:
                   'Azure Front Door offers a scalable and secure entry point for fast delivery of your global web applications.',
@@ -849,7 +849,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'web application firewall (waf) policy',
+              name: 'web app firewall (waf) policy',
               slug: 'waf',
               description:
                   'Azure Web Application Firewall (WAF) policy provides centralized protection of your web applications from common exploits and vulnerabilities. WAF on Azure Front Door protects your applications from common threats such as SQL injection and cross-site scripting.',
@@ -1346,7 +1346,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'cache for redis instance',
+              name: 'cache for redis',
               slug: 'redis-',
               description:
                   'Azure Cache for Redis offers an in-memory data store based on software Redis. It gives you access to a secure, dedicated Redis cache, managed by Microsoft.',
@@ -2117,7 +2117,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'virtual desktop application group',
+              name: 'virtual desktop app group',
               slug: 'vdag-',
               description:
                   "Azure Virtual Desktop Application Group is a logical grouping of applications installed on a host pool's session hosts. Users are granted access to an application group to use the apps.",
@@ -2367,7 +2367,7 @@ export const columns: ColumnType[] = [
               code: '',
           },
           {
-              name: 'application insights',
+              name: 'app insights',
               slug: 'appi-',
               description:
                   'Azure Application Insights is a feature of Azure Monitor and provides application performance management (APM) services for developers and IT professionals. It helps to detect issues, solve problems, and continuously improve web applications.',
