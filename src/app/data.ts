@@ -1161,13 +1161,13 @@ export const columns: ColumnType[] = [
               slug: 'vm',
               description:
                   'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
-              length: '1-15 (Windows)1-64 (Linux)See note below.',
+              length: '1-15',
               category: Categories.COMPUTEANDWEB,
               learnUrl: 'https://docs.microsoft.com/en-us/azure/virtual-machines/',
               terraformUrl:
                   'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine',
               restrictions:
-                  'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Windows VMs Can not include period or end with hyphen. Linux VMs Can not end with period or hyphen.',
+                  'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Windows VMs Can not include period or end with hyphen. Linux VMs Can not end with period or hyphen and can have 1-64 characters rather than 15.',
               resource: 'Microsoft.Compute',
               entity: 'virtualMachines',
               scope: 'resource group',
