@@ -30,7 +30,7 @@ export default function Page() {
       <Sheet onOpenChange={() => setOpen((prev) => !prev)} open={open}>
         <SheetContent className="bg-slate-950 sm:max-w-[720px]">
           <SheetHeader>
-            <Image width={30} height={30} src={activeElement?.icon} />
+            <Image width={60} height={60} src={activeElement?.icon} />
             <SheetTitle>
               <div className="my-4">
                 <span
