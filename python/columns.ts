@@ -1294,7 +1294,7 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.CognitiveServices",
         entity: "accounts",
         scope: "resource group",
-        icon: "",
+        icon: "/icons/ml/cognitive-services.png",
         code: "",
       },
       {
@@ -1839,9 +1839,9 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "migrate project",
+        name: "migration project",
         slug: "migr-",
-        description: "Azure Migrate provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.",
+        description: "Azure Migration Projects provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.",
         length: "2-57",
         category: Categories.MIGRATION,
         learnUrl: "https://docs.microsoft.com/en-us/azure/migrate/migrate-overview",
@@ -1854,7 +1854,7 @@ export const columns: ColumnType[] = [
         code: "",
       },
       {
-        name: "database migration",
+        name: "database migration service",
         slug: "dms-",
         description: "Azure Database Migration Service (DMS) is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.",
         length: "2-62",
@@ -1865,7 +1865,7 @@ export const columns: ColumnType[] = [
         resource: "Microsoft.DataMigration",
         entity: "services",
         scope: "resource group",
-        icon: "",
+        icon: "/icons/migration/database-migration-services.png",
         code: "",
       },
       {
