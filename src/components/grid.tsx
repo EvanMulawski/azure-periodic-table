@@ -20,7 +20,6 @@ const Cell: React.FC<CellProps> = ({
   item,
   zoomLevel = 0,
   activeCategory,
-  setActiveCategory,
   select,
   setActiveElement,
   compassData,
@@ -50,8 +49,6 @@ const Cell: React.FC<CellProps> = ({
 
   const hoverScale = isDisabled ? '' : 'hover:scale-150';
 
-  console.log(item.icon);
-
   return (
     <div
       onClick={() => {
@@ -64,7 +61,13 @@ const Cell: React.FC<CellProps> = ({
       <div className="flex flex-col relative h-full w-full">
         <div className="flex w-full justify-between items-center">
           {item.icon ? (
-            <Image width={10} height={10} className="" src={item.icon} />
+            <Image
+              alt={`icon for ${item.name}`}
+              width={10}
+              height={10}
+              className=""
+              src={item.icon}
+            />
           ) : null}
           <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
         </div>

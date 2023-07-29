@@ -1,6 +1,7 @@
+'use client';
+
 /* src/app/page.tsx */
 
-'use client';
 import { useState } from 'react';
 import { Item } from './data';
 import PeriodicTable from '@/components/periodic-table';
@@ -8,7 +9,6 @@ import Search from '@/components/search';
 import Sidebar from '@/components/sidebar';
 import Topbar from '@/components/topbar';
 import { Icons } from '@/components/ui/icons';
-import PaletteSelector from '@/components/palette-selector';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
