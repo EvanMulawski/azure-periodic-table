@@ -34,7 +34,7 @@ export default function PeriodicTable({
   textSearch: string;
 }) {
   return (
-    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex  justify-start md:justify-center items-start my-6 overflow-scroll flex-nowrap">
+    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex  justify-start md:justify-center items-start py-6 overflow-scroll flex-nowrap">
       <div className="flex justify-start md:justify-center items-start">
         {columns.map((group, i) => (
           <Grid

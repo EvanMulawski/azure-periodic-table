@@ -28,7 +28,7 @@ export default function Page() {
 
   return (
     <main className="relative flex-col min-h-screen items-center justify-center p-8 bg-white dark:bg-slate-950">
-      <div className="static top-0 left-0 w-full md:flex flex-col items-center justify-center">
+      <div className="static lg:relative top-0 left-0 w-full md:flex flex-col items-center justify-center">
         <Topbar />
         <Sidebar activeElement={activeElement} open={open} setOpen={setOpen} />
         <div className="flex justify-start md:justify-center items-center my-4">
