@@ -48,7 +48,7 @@ export default function Page() {
           <Search setTextSearch={setTextSearch} />
           <div className="flex xl:hidden">
             <DropdownMenu>
-              <DropdownMenuTrigger>
+              <DropdownMenuTrigger asChild>
                 <Button
                   onClick={() => setOpen((prev) => !prev)}
                   variant={'ghost'}

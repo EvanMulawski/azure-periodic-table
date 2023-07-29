@@ -4,6 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
 import { useEffect, useState } from 'react';
 import type { Item } from '@/app/data';
 import { Check, CopyIcon } from 'lucide-react';
+import { compassData } from './periodic-table';
 
 export default function Sidebar({
   setOpen,
@@ -24,6 +25,8 @@ export default function Sidebar({
     }
   }, [copied]);
 
+  if (!activeElement) return null;
+
   return (
     <Sheet onOpenChange={() => setOpen((prev: boolean) => !prev)} open={open}>
       <SheetContent className="bg-bg sm:max-w-[720px]">
@@ -32,14 +35,14 @@ export default function Sidebar({
             <Image
               width={44}
               height={44}
-              alt={`icon for ${activeElement?.name}`}
-              src={activeElement?.icon ?? ''}
+              alt={`icon for ${activeElement.name}`}
+              src={activeElement.icon}
             />
             <div
               onMouseEnter={() => setShowCopy(true)}
               onMouseLeave={() => setShowCopy(false)}
               onClick={() => {
-                navigator.clipboard.writeText(activeElement?.slug ?? '');
+                navigator.clipboard.writeText(activeElement.slug);
                 setCopied(true);
               }}
               className={`relative ml-4 justify-start items-center text-sm flex break-all border py-2 px-6 cursor-pointer rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4`}
@@ -50,17 +53,34 @@ export default function Sidebar({
                 </div>
               )}
 
-              <span>{activeElement?.slug}</span>
+              <span>{activeElement.slug}</span>
             </div>
           </div>
 
           <SheetTitle>
-            <div className="flex justify-start items-center mt-4 mb-2">
-              <span className="font-bold text-xl">{activeElement?.name}</span>
+            <div className="flex flex-col justify-center items-start mt-4 mb-2">
+              <div className="flex">
+                <span className="font-bold text-xl">{activeElement.name}</span>
+              </div>
             </div>
           </SheetTitle>
           <CodeSnippet codeString={activeElement?.code ?? ''} />
           <span className="text-left">{activeElement?.description}</span>
+          <div className="flex flex-col justify-center items-start">
+            <span className="mr-2 whitespace-nowrap">
+              <span className="font-bold">Category: </span>
+            </span>
+            <div className="flex justify-center items-center">
+              <span className="mr-2">{activeElement.category}</span>
+              <div
+                className={`lg:mx-0 w-6 h-6 rounded my-1 ${
+                  compassData.find(
+                    (item) => item.name === activeElement.category
+                  )?.color
+                }`}
+              />
+            </div>
+          </div>
           <div className="mt-6 text-left">
             <span className="font-bold">Length</span>
             <div>

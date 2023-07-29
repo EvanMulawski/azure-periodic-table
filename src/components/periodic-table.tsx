@@ -3,21 +3,22 @@ import { Grid } from './grid';
 import { Compass, type CompassData } from './compass';
 import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
+import { colorConfig } from '@/config';
 
 export const compassData: CompassData = [
-  { name: Categories.GENERAL, color: 'bg-gray-400' },
-  { name: Categories.NETWORKING, color: 'bg-red-500' },
-  { name: Categories.COMPUTEANDWEB, color: 'bg-orange-500' },
-  { name: Categories.CONTAINERS, color: 'bg-yellow-400' },
-  { name: Categories.DATABASES, color: 'bg-lime-400' },
-  { name: Categories.STORAGE, color: 'bg-green-500' },
-  { name: Categories.AIANDML, color: 'bg-cyan-500' },
-  { name: Categories.ANALYTICSANDIOT, color: 'bg-blue-500' },
-  { name: Categories.VIRTUALDESKTOP, color: 'bg-indigo-500' },
-  { name: Categories.DEVTOOLS, color: 'bg-violet-700' },
-  { name: Categories.INTEGRATION, color: 'bg-fuchsia-600' },
-  { name: Categories.MIGRATION, color: 'bg-pink-500' },
-  { name: Categories.MANAGEMENT, color: 'bg-rose-500' },
+  { name: Categories.GENERAL, color: colorConfig.gray },
+  { name: Categories.NETWORKING, color: colorConfig.red },
+  { name: Categories.COMPUTEANDWEB, color: colorConfig.orange },
+  { name: Categories.CONTAINERS, color: colorConfig.yellow },
+  { name: Categories.DATABASES, color: colorConfig.lime },
+  { name: Categories.STORAGE, color: colorConfig.green },
+  { name: Categories.AIANDML, color: colorConfig.cyan },
+  { name: Categories.ANALYTICSANDIOT, color: colorConfig.blue },
+  { name: Categories.VIRTUALDESKTOP, color: colorConfig.indigo },
+  { name: Categories.DEVTOOLS, color: colorConfig.violet },
+  { name: Categories.INTEGRATION, color: colorConfig.fuchsia },
+  { name: Categories.MIGRATION, color: colorConfig.pink },
+  { name: Categories.MANAGEMENT, color: colorConfig.rose },
 ];
 
 export default function PeriodicTable({
@@ -34,7 +35,7 @@ export default function PeriodicTable({
   textSearch: string;
 }) {
   return (
-    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex  justify-start md:justify-center items-start py-6 overflow-scroll flex-nowrap">
+    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll flex-nowrap">
       <div className="flex justify-start md:justify-center items-start">
         {columns.map((group, i) => (
           <Grid
