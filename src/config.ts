@@ -1,8 +1,23 @@
 export const siteConfig = {
   title: 'Onward Platforms',
+  url: 'localhost:3000',
   github: 'https://github.com/onwardplatforms/azure-periodic-table',
   twitter: 'https://twitter.com/reillyjodonnell',
   linkedin: 'https://www.linkedin.com/in/justin-o-connor-67376483/',
+};
+
+const twitterUsername = 'justinOConnor';
+const website = 'https://localhost:3000';
+const encodedWebsite = encodeURIComponent(website);
+const encodedUsername = encodeURIComponent('@' + twitterUsername);
+const hashtag = '%23Azure';
+
+export const socialConfig = {
+  twitterUsername: 'reillyjodonnell',
+  linkedinUsername: 'justin-o-connor-67376483',
+  tweet: `Check%20out%20the%20Azure%20Resource%20Naming%20Convention%20Periodic%20Table!%20Created%20by%20${encodedUsername}%0A${encodedWebsite}%0A${hashtag}`,
+  twitter: 'https://twitter.com/intent/tweet?text=',
+  linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${siteConfig.url}`,
 };
 
 export const colorConfig = {

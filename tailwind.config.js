@@ -21,6 +21,11 @@ module.exports = {
         accent: '#3bc8f4',
         hover: 'var(--hover)',
         bg: 'var(--bg)',
+        background: 'var(--bg)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)',
+        border: 'var(--border)',
+        input: 'var(--input)',
       },
       keyframes: {
         'accordion-down': {

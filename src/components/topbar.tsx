@@ -90,21 +90,29 @@ export default function Topbar() {
       </div>
 
       <div className="ml-auto hidden md:flex">
-        <Link href={siteConfig.github} target="_blank">
+        <a href={siteConfig.github} target="_blank">
           <Button className="" variant={'ghost'}>
             <Icons.GitHub className="h-5 w-5 fill-current" />
           </Button>
-        </Link>
-        <Link href={siteConfig.linkedin}>
+        </a>
+        <a
+          href={siteConfig.linkedin}
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
           <Button variant={'ghost'}>
             <Icons.Linkedin className="h-5 w-5 fill-current" />
           </Button>
-        </Link>
-        <Link href={siteConfig.twitter}>
+        </a>
+        <a
+          href={siteConfig.twitter}
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
           <Button variant={'ghost'}>
             <Icons.Twitter className="h-5 w-5 fill-current" />
           </Button>
-        </Link>
+        </a>
         <Button
           onClick={() =>
             theme === themes.DARK

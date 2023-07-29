@@ -17,7 +17,8 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Categories } from './constants';
-import { Box, BoxIcon, BoxSelect, PlusSquare } from 'lucide-react';
+import { PlusSquare } from 'lucide-react';
+import { Share } from '@/components/share';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -31,7 +32,7 @@ export default function Page() {
       <div className="static lg:relative top-0 left-0 w-full md:flex flex-col items-center justify-center">
         <Topbar />
         <Sidebar activeElement={activeElement} open={open} setOpen={setOpen} />
-        <div className="flex justify-start md:justify-center items-center my-4">
+        <div className="flex justify-start sm:justify-center items-center my-4">
           <div className="mr-2 md:mr-6  md:my-0">
             <Icons.Azure className="w-8 h-8 md:w-32 md:h-32" />
           </div>
@@ -46,6 +47,10 @@ export default function Page() {
         </div>
         <div className="flex justify-center items-center">
           <Search setTextSearch={setTextSearch} />
+          <div className="mx-2 hidden xl:flex">
+            <Share />
+          </div>
+
           <div className="flex xl:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
@@ -53,7 +58,7 @@ export default function Page() {
                   onClick={() => setOpen((prev) => !prev)}
                   variant={'ghost'}
                 >
-                  <PlusSquare className="h-5 w-5" />
+                  <PlusSquare className="h-8 w-8" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-bg justify-center items-center flex-col max-h-52 overflow-scroll">
