@@ -4,6 +4,8 @@ import type { Categories } from '@/app/constants';
 import type { CompassData } from './compass';
 import Image from 'next/image';
 import type { Item } from '@/app/data';
+import { createRef, useEffect, useLayoutEffect, useRef } from 'react';
+import useMobile from '@/custom-hooks/use-mobile';
 
 interface CellProps {
   item: Item;
@@ -25,6 +27,8 @@ const Cell: React.FC<CellProps> = ({
   compassData,
   textSearch,
 }) => {
+  const ref = useRef<HTMLDivElement>(null); // Create a ref
+
   const color = compassData.find((c) => c.name === item.category)?.color;
 
   const height = zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-24' : 'h-28';
@@ -49,8 +53,24 @@ const Cell: React.FC<CellProps> = ({
 
   const hoverScale = isDisabled ? '' : 'hover:scale-150';
 
+  const isMobile = useMobile();
+
+  // Detect when the cell becomes the active category and scroll into view
+  useLayoutEffect(() => {
+    if (activeCategory === item.category && isMobile) {
+      if (!ref.current) return;
+
+      console.log(ref.current, ' is scrolling into view');
+
+      ref.current.scrollIntoView({
+        behavior: 'auto',
+      });
+    }
+  }, [activeCategory, item.category, ref, isMobile]);
+
   return (
     <div
+      ref={ref} // Pass the ref to the div
       onClick={() => {
         if (isDisabled) return;
         setActiveElement(item);
@@ -100,19 +120,21 @@ export const Grid: React.FC<GridProps> = ({
   setActiveElement,
   compassData,
   textSearch,
-}) => (
-  <div className={`flex flex-col w-fit h-full relative`}>
-    {items.map((item, i) => (
-      <Cell
-        textSearch={textSearch}
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-        key={i}
-        item={item}
-        select={select}
-        setActiveElement={setActiveElement}
-        compassData={compassData}
-      />
-    ))}
-  </div>
-);
+}) => {
+  return (
+    <div className={`flex flex-col w-fit h-full relative`}>
+      {items.map((item, i) => (
+        <Cell
+          textSearch={textSearch}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
+          key={i}
+          item={item}
+          select={select}
+          setActiveElement={setActiveElement}
+          compassData={compassData}
+        />
+      ))}
+    </div>
+  );
+};
