@@ -56,72 +56,73 @@ export default function Sidebar({
               <span>{activeElement.slug}</span>
             </div>
           </div>
-
-          <SheetTitle>
-            <div className="flex flex-col justify-center items-start mt-4 mb-2">
-              <div className="flex">
-                <span className="font-bold text-xl">{activeElement.name}</span>
-              </div>
-            </div>
-          </SheetTitle>
-          <CodeSnippet codeString={activeElement?.code ?? ''} />
-          <span className="text-left">{activeElement?.description}</span>
-          <div className="flex flex-col justify-center items-start">
-            <span className="mr-2 whitespace-nowrap">
-              <span className="font-bold">Category: </span>
-            </span>
-            <div className="flex justify-center items-center">
-              <span className="mr-2">{activeElement.category}</span>
-              <div
-                className={`lg:mx-0 w-6 h-6 rounded my-1 ${
-                  compassData.find(
-                    (item) => item.name === activeElement.category
-                  )?.color
-                }`}
-              />
-            </div>
-          </div>
-          <div className="mt-6 text-left">
-            <span className="font-bold">Length</span>
-            <div>
-              <span>{activeElement?.length}</span>
-            </div>
-          </div>
-          <div className="mt-6 text-left">
-            <span className="font-bold">Restrictions:</span>
-            <div>
-              <span>{activeElement?.restrictions}</span>
-              <span>{activeElement?.length}</span>
-            </div>
-          </div>
-          <div />
-          <div className="flex justify-start items-center">
-            {activeElement?.terraformUrl && (
-              <a
-                target="_blank"
-                href={activeElement?.terraformUrl}
-                className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
-              >
-                <div className="mr-2">
-                  <TerraformLogo width={24} height={24} />
-                </div>
-                <span>Terraform</span>
-              </a>
-            )}
-            {activeElement?.learnUrl && (
-              <a
-                target="_blank"
-                href={activeElement?.learnUrl}
-                className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
-              >
-                <div className="mr-2">
-                  <Microsoft width={24} height={24} />
-                </div>
-                <span>Microsoft Learn</span>
-              </a>
-            )}
-          </div>
         </SheetHeader>
+
+        <SheetTitle>
+          <div className="flex flex-col justify-center items-start mt-4 mb-2">
+            <div className="flex">
+              <span className="font-bold text-xl">{activeElement.name}</span>
+            </div>
+          </div>
+        </SheetTitle>
+        <CodeSnippet codeString={activeElement?.code ?? ''} />
+        <span className="text-left break-words w-full">
+          {activeElement?.description}
+        </span>
+        <div className="flex flex-col justify-center items-start my-2">
+          <span className="mr-2 whitespace-nowrap">
+            <span className="font-bold">Category: </span>
+          </span>
+          <div className="flex justify-center items-center">
+            <span className="mr-2">{activeElement.category}</span>
+            <div
+              className={`lg:mx-0 w-6 h-6 rounded my-1 ${
+                compassData.find((item) => item.name === activeElement.category)
+                  ?.color
+              }`}
+            />
+          </div>
+        </div>
+        <div className="my-2 text-left">
+          <span className="font-bold">Length</span>
+          <div>
+            <span>{activeElement?.length}</span>
+          </div>
+        </div>
+        <div className="my-2 text-left">
+          <span className="font-bold">Restrictions:</span>
+          <div>
+            <span>{activeElement?.restrictions}</span>
+            <span>{activeElement?.length}</span>
+          </div>
+        </div>
+        <div />
+        <div className="flex justify-start items-center my-2">
+          {activeElement?.terraformUrl && (
+            <a
+              target="_blank"
+              href={activeElement?.terraformUrl}
+              className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
+            >
+              <div className="mr-2">
+                <TerraformLogo width={24} height={24} />
+              </div>
+              <span>Terraform</span>
+            </a>
+          )}
+          {activeElement?.learnUrl && (
+            <a
+              target="_blank"
+              href={activeElement?.learnUrl}
+              className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+            >
+              <div className="mr-2">
+                <Microsoft width={24} height={24} />
+              </div>
+              <span>Microsoft Learn</span>
+            </a>
+          )}
+        </div>
       </SheetContent>
     </Sheet>
   );
