@@ -30,16 +30,7 @@ export default function Topbar() {
             >
               <Button className="" variant={'ghost'}>
                 <Icons.GitHub className="h-6 w-6 fill-current" />
-                <span className="px-2 font-bold text-lg">GitHub</span>
-              </Button>
-            </Link>
-            <Link
-              className="flex w-full my-2 justify-start items-center"
-              href={siteConfig.linkedin}
-            >
-              <Button variant={'ghost'}>
-                <Icons.Linkedin className="h-6 w-6 fill-current" />
-                <span className="px-2 font-bold text-lg">LinkedIn</span>
+                <span className="px-4 font-bold text-lg">GitHub</span>
               </Button>
             </Link>
             <Link
@@ -48,9 +39,19 @@ export default function Topbar() {
             >
               <Button variant={'ghost'}>
                 <Icons.Twitter className="h-6 w-6 fill-current" />
-                <span className="px-2 font-bold text-lg">Twitter</span>
+                <span className="px-4 font-bold text-lg">Twitter</span>
               </Button>
             </Link>
+            <Link
+              className="flex w-full my-2 justify-start items-center"
+              href={siteConfig.linkedin}
+            >
+              <Button variant={'ghost'}>
+                <Icons.Linkedin className="h-6 w-6 fill-current" />
+                <span className="px-4 font-bold text-lg">LinkedIn</span>
+              </Button>
+            </Link>
+
             <Button
               onClick={() =>
                 theme === themes.DARK
@@ -63,12 +64,12 @@ export default function Topbar() {
               {theme === themes.DARK ? (
                 <div className="flex my-2 justify-start items-center">
                   <Icons.Moon className="h-6 w-6 fill-current" />
-                  <span className="px-2 font-bold text-lg">Dark</span>
+                  <span className="px-4 font-bold text-lg">Dark Mode</span>
                 </div>
               ) : (
                 <div className="flex my-2 justify-start items-center">
                   <Icons.Sun className="h-6 w-6 fill-current" />
-                  <span className="px-2 font-bold text-lg">Light</span>
+                  <span className="px-4 font-bold text-lg">Light Mode</span>
                 </div>
               )}
             </Button>
