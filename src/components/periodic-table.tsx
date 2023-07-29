@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import { Grid } from './grid';
-
 import { Compass, type CompassData } from './compass';
 import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
-import PaletteSelector from './palette-selector';
 
 export const compassData: CompassData = [
   { name: Categories.GENERAL, color: 'bg-gray-400' },
@@ -26,13 +23,16 @@ export const compassData: CompassData = [
 export default function PeriodicTable({
   setOpen,
   setActiveElement,
+  activeCategory,
+  setActiveCategory,
   textSearch,
 }: {
   setOpen: Dispatch<SetStateAction<boolean>>;
+  activeCategory: Categories | null;
+  setActiveCategory: Dispatch<SetStateAction<Categories | null>>;
   setActiveElement: Dispatch<SetStateAction<Item | null>>;
   textSearch: string;
 }) {
-  const [activeCategory, setActiveCategory] = useState<Categories | null>(null);
   return (
     <div className="flex-col-reverse flex w-full lg:flex-row lg:flex  justify-start md:justify-center items-start my-6 overflow-scroll flex-nowrap">
       <div className="flex justify-start md:justify-center items-start">

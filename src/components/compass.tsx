@@ -13,11 +13,11 @@ export const Compass = ({
   compassData,
 }: {
   activeCategory: Categories | null;
-  setActiveCategory: (prev: any) => Categories | null;
+  setActiveCategory: Function;
   compassData: CompassData;
 }) => {
   return (
-    <div className="hidden md:flex flex-shrink flex-wrap lg:flex-col md:ml-12 w-auto overflow-scroll text-white">
+    <div className="hidden xl:flex flex-shrink flex-wrap lg:flex-col md:ml-12 w-auto overflow-scroll text-white">
       {compassData.map((item, i) => {
         const isActive =
           activeCategory === null || activeCategory === item.name;
