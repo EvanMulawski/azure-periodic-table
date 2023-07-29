@@ -17,92 +17,124 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Categories } from './constants';
-import { PlusSquare } from 'lucide-react';
+import { Expand, PlusSquare, Shrink } from 'lucide-react';
 import { Share } from '@/components/share';
+import useFullScreen from '@/custom-hooks/use-full-screen';
+import { size } from '@/lib/utils';
+import useMobile from '@/custom-hooks/use-mobile';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
   const [open, setOpen] = useState(false);
   const [textSearch, setTextSearch] = useState('');
-
   const [activeCategory, setActiveCategory] = useState<Categories | null>(null);
-
+  const isMobile = useMobile();
+  const { toggleFullScreen, isFullScreen } = useFullScreen();
   return (
     <main className="relative flex-col min-h-screen items-center justify-center p-8 bg-white dark:bg-slate-950">
       <div className="static lg:relative top-0 left-0 w-full md:flex flex-col items-center justify-center">
-        <Topbar />
-        <Sidebar activeElement={activeElement} open={open} setOpen={setOpen} />
-        <div className="flex justify-start sm:justify-center items-center my-4">
-          <div className="mr-2 md:mr-6  md:my-0">
-            <Icons.Azure className="w-8 h-8 md:w-32 md:h-32" />
-          </div>
-          <div className="flex flex-col">
-            <span className="font-bold text-md lg:text-4xl dark:text-white text-slate-800">
-              Azure Resource
-            </span>
-            <span className="font-semibold text-md lg:text-2xl text-accent">
-              Naming Convention Periodic Table
-            </span>
-          </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <Search setTextSearch={setTextSearch} />
-          <div className="mx-2 hidden xl:flex">
-            <Share />
-          </div>
+        {isFullScreen ? null : (
+          <>
+            <Topbar />
+            <div className="flex justify-start sm:justify-center items-center my-4">
+              <div className="mr-2 md:mr-6  md:my-0">
+                <Icons.Azure className="w-8 h-8 md:w-32 md:h-32" />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-md lg:text-4xl dark:text-white text-slate-800">
+                  Azure Resource
+                </span>
+                <span className="font-semibold text-md lg:text-2xl text-accent">
+                  Naming Convention Periodic Table
+                </span>
+              </div>
+            </div>
+          </>
+        )}
 
-          <div className="flex xl:hidden">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
+        <main
+          className={
+            isFullScreen ? 'flex flex-col justify-center items-center' : ''
+          }
+        >
+          <Sidebar
+            activeElement={activeElement}
+            open={open}
+            setOpen={setOpen}
+          />
+
+          <div className="flex justify-center items-center w-full">
+            <Search className="mx-2" setTextSearch={setTextSearch} />
+            <div className=" flex justify-center items-center">
+              <div className="mx-2 hidden xl:flex">
+                <Share />
+              </div>
+              {!isMobile ? (
                 <Button
-                  onClick={() => setOpen((prev) => !prev)}
-                  variant={'ghost'}
+                  variant={'outline'}
+                  onClick={() => {
+                    toggleFullScreen();
+                  }}
+                  className="mx-2 hidden xl:flex"
                 >
-                  <PlusSquare className="h-8 w-8" />
+                  {isFullScreen ? <Shrink /> : <Expand />}
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-bg justify-center items-center flex-col max-h-52 overflow-scroll">
-                {compassData.map((item, i) => {
-                  const isActive =
-                    activeCategory === null || activeCategory === item.name;
-                  return (
-                    <DropdownMenuItem
-                      key={i}
-                      className="justify-center items-center"
-                    >
-                      <Button
-                        onClick={() => {
-                          setActiveCategory((prev: any) =>
-                            prev === item.name ? null : item.name
-                          );
-                          setOpen(false);
-                        }}
-                        variant={'ghost'}
-                        className={`flex justify-start items-center w-full ${
-                          isActive ? 'brightness-100' : 'brightness-75'
-                        }  hover:brightness-90`}
-                      >
-                        <div
-                          className={`px-1 lg:mx-0 w-6 h-6 rounded my-1 ${item.color}`}
-                        ></div>
-                        <span className="text-sm px-2">{item.name}</span>
-                      </Button>
-                    </DropdownMenuItem>
-                  );
-                })}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-        </div>
-      </div>
+              ) : null}
+            </div>
 
-      <PeriodicTable
-        activeCategory={activeCategory}
-        setActiveCategory={setActiveCategory}
-        textSearch={textSearch}
-        setActiveElement={setActiveElement}
-        setOpen={setOpen}
-      />
+            <div className="flex xl:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    onClick={() => setOpen((prev) => !prev)}
+                    variant={'ghost'}
+                  >
+                    <PlusSquare className="h-8 w-8" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="bg-bg justify-center items-center flex-col max-h-52 overflow-scroll">
+                  {compassData.map((item, i) => {
+                    const isActive =
+                      activeCategory === null || activeCategory === item.name;
+                    return (
+                      <DropdownMenuItem
+                        key={i}
+                        className="justify-center items-center"
+                      >
+                        <Button
+                          onClick={() => {
+                            setActiveCategory((prev: any) =>
+                              prev === item.name ? null : item.name
+                            );
+                            setOpen(false);
+                          }}
+                          variant={'ghost'}
+                          className={`flex justify-start items-center w-full ${
+                            isActive ? 'brightness-100' : 'brightness-75'
+                          }  hover:brightness-90`}
+                        >
+                          <div
+                            className={`px-1 lg:mx-0 w-6 h-6 rounded my-1 ${item.color}`}
+                          ></div>
+                          <span className="text-sm px-2">{item.name}</span>
+                        </Button>
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          </div>
+          <PeriodicTable
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            textSearch={textSearch}
+            setActiveElement={setActiveElement}
+            setOpen={setOpen}
+            zoomLevel={isFullScreen ? 1 : 0}
+          />
+        </main>
+      </div>
     </main>
   );
 }

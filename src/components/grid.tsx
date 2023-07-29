@@ -31,8 +31,10 @@ const Cell: React.FC<CellProps> = ({
 
   const color = compassData.find((c) => c.name === item.category)?.color;
 
-  const height = zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-24' : 'h-28';
-  const width = zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-24' : 'w-28';
+  const height =
+    zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-[70px]' : 'h-28';
+  const width =
+    zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-[70px]' : 'w-28';
 
   const isActiveCategory =
     activeCategory === null || activeCategory === item.category;
@@ -76,9 +78,9 @@ const Cell: React.FC<CellProps> = ({
         setActiveElement(item);
         select();
       }}
-      className={`${height} ${width} dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+      className={`${height} ${width}  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
     >
-      <div className="flex flex-col relative h-full w-full">
+      <div className="flex flex-col  relative h-full w-full">
         <div className="flex w-full justify-between items-center">
           {item.icon ? (
             <Image
@@ -110,6 +112,7 @@ interface GridProps {
   setActiveElement: (element: any) => void;
   compassData: CompassData;
   textSearch: string;
+  zoomLevel: 0 | 1 | 2;
 }
 
 export const Grid: React.FC<GridProps> = ({
@@ -120,6 +123,7 @@ export const Grid: React.FC<GridProps> = ({
   setActiveElement,
   compassData,
   textSearch,
+  zoomLevel,
 }) => {
   return (
     <div className={`flex flex-col w-fit h-full relative`}>
@@ -133,6 +137,7 @@ export const Grid: React.FC<GridProps> = ({
           select={select}
           setActiveElement={setActiveElement}
           compassData={compassData}
+          zoomLevel={zoomLevel}
         />
       ))}
     </div>

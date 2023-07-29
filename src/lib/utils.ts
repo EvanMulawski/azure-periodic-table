@@ -11,3 +11,9 @@ export const themes = {
   LIGHT: 'light',
   DARK: 'dark',
 };
+
+export const size = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+};

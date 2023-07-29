@@ -1,4 +1,4 @@
-import { Check, CopyIcon, Share as ShareIcon, Twitter } from 'lucide-react';
+import { Check, CopyIcon, Share as ShareIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -24,7 +24,8 @@ export function Share() {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button>
+        <Button variant={'outline'}>
+          <ShareIcon className="w-4 h-4 mr-2" />
           <span className="">Share</span>
         </Button>
       </PopoverTrigger>

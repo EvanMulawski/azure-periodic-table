@@ -37,6 +37,7 @@
     "react": "18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "18.2.0",
+    "react-full-screen": "^1.1.1",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-pretty-code": "^0.10.0",
     "rehype-stringify": "^9.0.3",

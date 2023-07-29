@@ -27,12 +27,14 @@ export default function PeriodicTable({
   activeCategory,
   setActiveCategory,
   textSearch,
+  zoomLevel,
 }: {
   setOpen: Dispatch<SetStateAction<boolean>>;
   activeCategory: Categories | null;
   setActiveCategory: Dispatch<SetStateAction<Categories | null>>;
   setActiveElement: Dispatch<SetStateAction<Item | null>>;
   textSearch: string;
+  zoomLevel: 0 | 1 | 2;
 }) {
   return (
     <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll flex-nowrap">
@@ -47,6 +49,7 @@ export default function PeriodicTable({
             textSearch={textSearch}
             setActiveElement={setActiveElement}
             compassData={compassData}
+            zoomLevel={zoomLevel}
           />
         ))}
       </div>

@@ -1,10 +1,18 @@
-'use client';
 import { useState, useEffect } from 'react';
 
 const useMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  // Check for window object existence
+  const hasWindow = typeof window !== 'undefined';
+
+  // Only access window.innerWidth if window is defined
+  const [isMobile, setIsMobile] = useState(
+    hasWindow ? window.innerWidth <= 768 : false
+  );
 
   useEffect(() => {
+    // Do nothing if window is not defined (i.e., we're on the server)
+    if (!hasWindow) return;
+
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -17,7 +25,7 @@ const useMobile = () => {
 
     // Remove event listener on cleanup
     return () => window.removeEventListener('resize', handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, [hasWindow]); // Empty array ensures that effect is only run on mount and unmount
 
   return isMobile;
 };
