@@ -21,3 +21,7 @@
   --hover: var(--hover-light);
   --bg: var(--bg-light);
 }
+
+body {
+  background-color: var(--bg);
+}

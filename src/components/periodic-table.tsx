@@ -5,6 +5,7 @@ import { Grid } from './grid';
 import { Compass, type CompassData } from './compass';
 import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
+import PaletteSelector from './palette-selector';
 
 export const compassData: CompassData = [
   { name: Categories.GENERAL, color: 'bg-gray-400' },
@@ -31,25 +32,26 @@ export default function PeriodicTable({
   setActiveElement: Dispatch<SetStateAction<Item | null>>;
   textSearch: string;
 }) {
-  const [activeCateogory, setActiveCategory] = useState<Categories | null>(
-    null
-  );
+  const [activeCategory, setActiveCategory] = useState<Categories | null>(null);
   return (
-    <div className="flex justify-center items-start my-6">
-      {columns.map((group, i) => (
-        <Grid
-          select={() => setOpen(true)}
-          activeCategory={activeCateogory}
-          setActiveCategory={setActiveCategory}
-          key={i}
-          items={group.items}
-          textSearch={textSearch}
-          setActiveElement={setActiveElement}
-          compassData={compassData}
-        />
-      ))}
+    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex  justify-start md:justify-center items-start my-6 overflow-scroll flex-nowrap">
+      <div className="flex justify-start md:justify-center items-start">
+        {columns.map((group, i) => (
+          <Grid
+            select={() => setOpen(true)}
+            activeCategory={activeCategory}
+            setActiveCategory={setActiveCategory}
+            key={i}
+            items={group.items}
+            textSearch={textSearch}
+            setActiveElement={setActiveElement}
+            compassData={compassData}
+          />
+        ))}
+      </div>
+
       <Compass
-        activeCategory={activeCateogory}
+        activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
         compassData={compassData}
       />

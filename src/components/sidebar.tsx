@@ -60,14 +60,14 @@ export default function Sidebar({
             </div>
           </SheetTitle>
           <CodeSnippet codeString={activeElement?.code ?? ''} />
-          <span>{activeElement?.description}</span>
-          <div className="mt-6">
+          <span className="text-left">{activeElement?.description}</span>
+          <div className="mt-6 text-left">
             <span className="font-bold">Length</span>
             <div>
               <span>{activeElement?.length}</span>
             </div>
           </div>
-          <div className="mt-6">
+          <div className="mt-6 text-left">
             <span className="font-bold">Restrictions:</span>
             <div>
               <span>{activeElement?.restrictions}</span>

@@ -16,7 +16,7 @@ export default function Topbar() {
         </span>
       </div>
 
-      <div className="flex ml-auto">
+      <div className="ml-auto hidden md:flex">
         <Link href={siteConfig.github} target="_blank">
           <Button className="" variant={'ghost'}>
             <Icons.GitHub className="h-5 w-5 fill-current" />
