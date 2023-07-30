@@ -4,8 +4,9 @@ const nextConfig = {
     images: {
         unoptimized: true,
         loader: "imgix",
-        path: "https://onwardplatforms.github.io/azure-periodic-table",
-    }
+        path: "https://onwardplatforms.github.io",
+    },
+    assetPrefix: "/azure-periodic-table/"
 }
 
 module.exports = nextConfig
