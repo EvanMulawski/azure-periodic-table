@@ -9,13 +9,13 @@ export default function Search({ setTextSearch, className }: props) {
   return (
     <Command
       className={cn(
-        'rounded-lg border dark:border-white border-stone-700 w-80',
+        'rounded-lg border dark:border-white border-stone-700 w-96',
         className
       )}
     >
       <CommandInput
         onValueChange={(value) => setTextSearch(value)}
-        className={`bg-transparent w-80 dark:text-white text-black`}
+        className={`bg-transparent w-96 dark:text-white text-black`}
         placeholder="Search Azure resources..."
       />
     </Command>

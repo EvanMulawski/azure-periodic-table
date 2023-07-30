@@ -76,23 +76,9 @@ export default function Page() {
             setOpen={setOpen}
           />
 
-          <div className="flex justify-center items-center w-full">
-            <Search className="mx-2" setTextSearch={setTextSearch} />
-            <div className=" flex justify-center items-center">
-              <div className="mx-2 hidden xl:flex">
-                <Share />
-              </div>
-              {!isMobile ? (
-                <Button
-                  variant={'outline'}
-                  onClick={() => {
-                    toggleFullScreen();
-                  }}
-                  className="mx-2 hidden xl:flex"
-                >
-                  {isFullScreen ? <Shrink /> : <Expand />}
-                </Button>
-              ) : null}
+          <div className="flex justify-center xl:justify-between items-center w-full">
+            <div className="hidden xl:flex flex-1">
+              <Share />
               {!isMobile ? (
                 <Button
                   variant={'outline'}
@@ -102,6 +88,22 @@ export default function Page() {
                   className="mx-2 hidden xl:flex"
                 >
                   <Download />
+                  <span className="ml-2">Download</span>
+                </Button>
+              ) : null}
+            </div>
+
+            <Search className="mx-2 flex-2" setTextSearch={setTextSearch} />
+            <div className=" hidden xl:flex flex-1 justify-end items-center ml-auto">
+              {!isMobile ? (
+                <Button
+                  variant={'outline'}
+                  onClick={() => {
+                    toggleFullScreen();
+                  }}
+                  className=""
+                >
+                  {isFullScreen ? <Shrink /> : <Expand />}
                 </Button>
               ) : null}
             </div>
