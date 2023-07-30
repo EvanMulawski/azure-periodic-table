@@ -63,7 +63,13 @@ jobs:
         run: |
           git add .
           git commit -m "Deploy the GitHub Pages site to the $target_branch branch"
-          git push origin `git subtree split --prefix out main`:$target_branch --force
+          split=$(git subtree split --prefix out main)
+          if [ -z "$split" ]
+          then
+            echo "No new commits to deploy."
+          else
+            git push origin $split:$target_branch --force
+          fi
           if [ "$current_branch" = "null" ]; then
             curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $PAGES_DEPLOY" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
           else
