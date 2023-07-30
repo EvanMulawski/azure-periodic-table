@@ -39,7 +39,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build application
-        run: next build && next export
+        run: yarn build && yarn export
 
       - name: Move build files to out directory
         run: mv out/* .
