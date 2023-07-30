@@ -117,7 +117,7 @@ export default function Sidebar({
               <div className="mr-2">
                 <TerraformLogo width={24} height={24} />
               </div>
-              <span>{isMobile ? 'Deploy' : 'Terraform Code'}</span>
+              <span>{isMobile ? 'Code' : 'Terraform Code'}</span>
             </a>
           )}
           {activeElement?.learnUrl && (

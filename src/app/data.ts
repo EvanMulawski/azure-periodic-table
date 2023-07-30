@@ -26,25 +26,6 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'managed identity',
-        slug: 'id-',
-        description:
-          'Azure Managed Identities for Azure resources provides Azure services with an automatically managed identity in Azure Active Directory. You can use this identity to authenticate to services that support Azure AD authentication, without needing any credentials in your code.',
-        length: '3-128',
-        category: Categories.GENERAL,
-        learnUrl:
-          'https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity',
-        restrictions:
-          'Alphanumerics, hyphens, and underscores. Start with letter or number.',
-        resource: 'Microsoft.ManagedIdentity',
-        entity: 'userAssignedIdentities',
-        scope: 'resource group',
-        icon: '/icons/identity/managed-identities.png',
-        code: '',
-      },
-      {
         name: 'management group',
         slug: 'mg-',
         description:
@@ -64,23 +45,19 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'policy definition',
-        slug: 'policy-',
-        description:
-          'Azure Policy Definitions enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy does this by running evaluations of your resources and scanning for those not compliant with the policies you have created.',
-        length: '1-64',
-        category: Categories.GENERAL,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/governance/policy/overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition',
-        restrictions:
-          'Display name can contain any characters. Resource name Can not use:<>*%&:?. +/ or control characters. Can not end with period or space.',
-        resource: 'Microsoft.Authorization',
-        entity: 'policyDefinitions',
-        scope: 'scope of definition',
-        icon: '/icons/general/information.png',
-        code: '',
+        "name": "Subscriptions",
+        "slug": "sub-",
+        "description": "Subscriptions in Azure act as a single billing unit and provide the ability to administer resources, control resource usage, and organize resources according to individual business needs.",
+        "length": "1-90",
+        "category": Categories.GENERAL,
+        "learnUrl": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org-subscriptions",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subscription",
+        "restrictions": "Alphanumerics, hyphens, and underscores. Cannot begin or end with a hyphen or underscore. Cannot contain consecutive hyphens or underscores.",
+        "resource": "Microsoft.Subscription",
+        "entity": "subscriptions",
+        "scope": "tenant",
+        "icon": "/icons/general/subscriptions.png",
+        "code": ""
       },
       {
         name: 'resource group',
@@ -101,6 +78,44 @@ export const columns: ColumnType[] = [
         icon: '/icons/general/resourcegroups.png',
         code: '',
       },
+      {
+        name: 'managed identity',
+        slug: 'id-',
+        description:
+          'Azure Managed Identities for Azure resources provides Azure services with an automatically managed identity in Azure Active Directory. You can also create user assigned identities that you manage. These identities can be used to authenticate to services that support Azure AD authentication, without needing any credentials in your code.',
+        length: '3-128',
+        category: Categories.GENERAL,
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity',
+        restrictions:
+          'Alphanumerics, hyphens, and underscores. Start with letter or number.',
+        resource: 'Microsoft.ManagedIdentity',
+        entity: 'userAssignedIdentities',
+        scope: 'resource group',
+        icon: '/icons/identity/managed-identities.png',
+        code: '',
+      },
+      {
+        name: 'policy definition',
+        slug: 'def-',
+        description:
+          'Azure Policy Definitions enforce different rules and effects over your resources, so those resources stay compliant with your corporate standards and service level agreements. Azure Policy does this by running evaluations of your resources and scanning for those not compliant with the policies you have created.',
+        length: '1-64',
+        category: Categories.GENERAL,
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/governance/policy/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition',
+        restrictions:
+          'Display name can contain any characters. Resource name Can not use:<>*%&:?. +/ or control characters. Can not end with period or space.',
+        resource: 'Microsoft.Authorization',
+        entity: 'policyDefinitions',
+        scope: 'scope of definition',
+        icon: '/icons/general/information.png',
+        code: '',
+      }
     ],
   },
   {
