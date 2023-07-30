@@ -72,16 +72,22 @@ export default function Sidebar({
         </span>
         <div className="flex flex-col justify-center items-start my-2">
           <span className="mr-2 whitespace-nowrap">
-            <span className="font-bold">Category: </span>
+            <span className="font-bold">Category </span>
           </span>
           <div className="flex justify-center items-center">
-            <span className="mr-2">{activeElement.category}</span>
-            <div
+          <div
               className={`lg:mx-0 w-6 h-6 rounded my-1 ${
                 compassData.find((item) => item.name === activeElement.category)
                   ?.color
               }`}
             />
+            <span className="ml-2">{activeElement.category}</span>
+          </div>
+        </div>
+        <div className="my-2 text-left">
+          <span className="font-bold">Scope</span>
+          <div>
+            <span>{activeElement?.scope}</span>
           </div>
         </div>
         <div className="my-2 text-left">
@@ -91,10 +97,9 @@ export default function Sidebar({
           </div>
         </div>
         <div className="my-2 text-left">
-          <span className="font-bold">Restrictions:</span>
+          <span className="font-bold">Restrictions</span>
           <div>
             <span>{activeElement?.restrictions}</span>
-            <span>{activeElement?.length}</span>
           </div>
         </div>
         <div />
