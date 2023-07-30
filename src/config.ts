@@ -1,14 +1,13 @@
 export const siteConfig = {
   title: 'Onward Platforms',
-  url: 'localhost:3000',
+  url: 'https://azure-periodic-table.onwardplatforms.com/',
   github: 'https://github.com/onwardplatforms/azure-periodic-table',
   twitter: 'https://twitter.com/reillyjodonnell',
   linkedin: 'https://www.linkedin.com/in/justin-o-connor-67376483/',
 };
 
 const twitterUsername = 'justinOConnor';
-const website = 'https://localhost:3000';
-const encodedWebsite = encodeURIComponent(website);
+const encodedWebsite = encodeURIComponent(siteConfig.url);
 const encodedUsername = encodeURIComponent('@' + twitterUsername);
 const hashtag = '%23Azure';
 
