@@ -37,7 +37,7 @@ export default function PeriodicTable({
   zoomLevel: 0 | 1 | 2;
 }) {
   return (
-    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll flex-nowrap">
+    <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll md:overflow-visible flex-nowrap">
       <div className="flex justify-start md:justify-center items-start">
         {columns.map((group, i) => (
           <Grid
