@@ -6,6 +6,7 @@ import type { Item } from '@/app/data';
 import { Check, CopyIcon } from 'lucide-react';
 import { compassData } from './periodic-table';
 import { prefix } from '@/prefix';
+import useMobile from '@/custom-hooks/use-mobile';
 
 export default function Sidebar({
   setOpen,
@@ -18,6 +19,7 @@ export default function Sidebar({
 }) {
   const [showCopy, setShowCopy] = useState(false);
   const [copied, setCopied] = useState(false);
+  const isMobile = useMobile();
 
   // after 2 seconds have copied be false if active
   useEffect(() => {
@@ -30,7 +32,7 @@ export default function Sidebar({
 
   return (
     <Sheet onOpenChange={() => setOpen((prev: boolean) => !prev)} open={open}>
-      <SheetContent className="bg-bg sm:max-w-[720px]">
+      <SheetContent className="bg-bg sm:max-w-[720px] overflow-y-scroll">
         <SheetHeader>
           <div className="flex justify-start items-center">
             <Image
@@ -68,7 +70,7 @@ export default function Sidebar({
         </SheetTitle>
         <div className="mb-4">
           <CodeSnippet codeString={activeElement?.code ?? ''} />
-      </div>
+        </div>
         <span className="text-left break-words w-full mb-4">
           {activeElement?.description}
         </span>
@@ -110,12 +112,12 @@ export default function Sidebar({
             <a
               target="_blank"
               href={activeElement?.terraformUrl}
-              className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
+              className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
             >
               <div className="mr-2">
                 <TerraformLogo width={24} height={24} />
               </div>
-              <span>Deploy as Code</span>
+              <span>{isMobile ? 'Deploy' : 'Terraform Code'}</span>
             </a>
           )}
           {activeElement?.learnUrl && (
@@ -127,7 +129,7 @@ export default function Sidebar({
               <div className="mr-2">
                 <LearnLogo width={24} height={24} />
               </div>
-              <span>Learn More</span>
+              <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
             </a>
           )}
         </div>
