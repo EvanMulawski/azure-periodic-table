@@ -21,6 +21,7 @@ import { Download, Expand, PlusSquare, Shrink } from 'lucide-react';
 import { Share } from '@/components/share';
 import useFullScreen from '@/custom-hooks/use-full-screen';
 import useMobile from '@/custom-hooks/use-mobile';
+import { prefix } from '@/prefix';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -33,7 +34,7 @@ export default function Page() {
   const downloadFile = () => {
     // Provide the path to your local file here.
     // This could be a URL pointing to a file stored locally in your public directory.
-    const url = '/periodic-table.png';
+    const url = `${prefix}/periodic-table.png`;
 
     // Create new 'a' element
     const a = document.createElement('a');
