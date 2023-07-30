@@ -8,7 +8,7 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Azure Resource Naming Convention Periodic Table',
+  title: 'Periodic Table',
   description: 'Azure Resource Naming Convention Periodic Table',
 };
 
