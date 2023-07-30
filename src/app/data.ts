@@ -33,7 +33,7 @@ export const columns: ColumnType[] = [
         length: '3-128',
         category: Categories.GENERAL,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview',
+          'https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/user_assigned_identity',
         restrictions:
