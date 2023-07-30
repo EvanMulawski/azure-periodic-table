@@ -18,6 +18,10 @@ export type Item = {
   code: string;
 };
 
+export type ColumnType = {
+  items: Item[];
+};
+
 export const columns: ColumnType[] = [
   {
     items: [
@@ -217,13 +221,14 @@ export const columns: ColumnType[] = [
         slug: 'dnsz-',
         description:
           "Azure DNS Zone is a service that allows you to host your domain's DNS records on Azure, providing name resolution using Microsoft Azure infrastructure. By hosting your domains in Azure, you can manage your DNS records using the same credentials and billing and support contract as your other Azure services.",
-        length: '1-63',
+        length:
+          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
         category: Categories.NETWORKING,
         learnUrl: 'https://learn.microsoft.com/en-us/azure/dns/dns-overview',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/dns_zone',
         restrictions:
-          'Each label is a set of characters separated by a period. For example, contoso.com has 2 labels. Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.',
+          'Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.',
         resource: 'Microsoft.Network',
         entity: 'dnsZones',
         scope: 'resource group',
@@ -235,14 +240,15 @@ export const columns: ColumnType[] = [
         slug: 'pdnsz-',
         description:
           'Azure Private DNS Zone is a service that provides an ability to use your own custom domain names, rather than the Azure-provided names. It helps in name resolution for virtual machines (VMs) within a virtual network and between virtual networks.',
-        length: '1-63 ',
+        length:
+          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
         category: Categories.NETWORKING,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/dns/private-dns-overview',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_dns_zone',
         restrictions:
-          '2 to 34 labels. Each label is a set of characters separated by a period. For example, contoso.com has 2 labels.Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.',
+          'Each label can contain alphanumerics, underscores, and hyphens. Each label is separated by a period.',
         resource: 'Microsoft.Network',
         entity: 'privateDnsZones',
         scope: 'resource group',
@@ -1177,14 +1183,14 @@ export const columns: ColumnType[] = [
         slug: 'vmss-',
         description:
           'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
-        length: '1-15/1-64',
+        length: '1-15 (Windows)1-64 (Linux)See note below.',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_scale_set',
         restrictions:
-          'Windows length: 1-15. Linux 1-64. Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Can not start with underscore. Can not end with period or hyphen.',
+          'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Can not start with underscore. Can not end with period or hyphen.',
         resource: 'Microsoft.Compute',
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
