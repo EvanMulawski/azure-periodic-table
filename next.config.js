@@ -6,7 +6,7 @@ const nextConfig = {
         loader: "imgix",
         path: "https://onwardplatforms.github.io",
     },
-    assetPrefix: "./"
+    assetPrefix: "/azure-periodic-table/"
 }
 
 module.exports = nextConfig
