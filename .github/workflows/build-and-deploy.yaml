@@ -59,13 +59,13 @@ jobs:
 
       - name: Deploy to GitHub Pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_DEPLOY: ${{ secrets.PAGES_DEPLOY }}
         run: |
           git add .
           git commit -m "Deploy the GitHub Pages site to the $target_branch branch"
           git push origin `git subtree split --prefix out main`:$target_branch --force
           if [ "$current_branch" = "null" ]; then
-            curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
+            curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $PAGES_DEPLOY" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
           else
-            curl -L -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_TOKEN" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
+            curl -L -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $PAGES_DEPLOY" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
           fi
