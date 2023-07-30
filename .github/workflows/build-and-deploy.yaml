@@ -1,0 +1,58 @@
+name: Blue-Green Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+
+      - name: Determine target environment
+        id: determine-target
+        env:
+          ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        run: |
+          current_branch=$(curl -L "Accept: application/vnd.github+json" -H "Authorization: Bearer $ACTIONS_TOKEN" https://api.github.com/repos/${{ github.repository }}/pages | jq -r .source.branch)
+          if [ "$current_branch" = "blue" ]; then
+            echo "target_branch=green" >> $GITHUB_ENV
+          else
+            echo "target_branch=blue" >> $GITHUB_ENV
+          fi
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@users.noreply.github.com"
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build application
+        run: yarn build && next build && next export
+
+      - name: Move build files to out directory
+        run: mv out/* .
+
+      - name: Deploy to GitHub Pages
+        env:
+          ACTIONS_TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+        run: |
+          git add .
+          git commit -m "Deploy the GitHub Pages site to the $target_branch branch"
+          git push origin `git subtree split --prefix out master`:$target_branch --force
+          if [ "$current_branch" = "null" ]; then
+            curl -L -X POST -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $ACTIONS_TOKEN" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
+          else
+            curl -L -X PUT -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $ACTIONS_TOKEN" https://api.github.com/repos/${{ github.repository }}/pages -d '{"source":{"branch": "'"$target_branch"'","path":"/"}}'
+          fi
