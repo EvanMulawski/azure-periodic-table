@@ -6,6 +6,7 @@ import Image from 'next/image';
 import type { Item } from '@/app/data';
 import { createRef, useEffect, useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
+import { prefix } from '@/prefix';
 
 interface CellProps {
   item: Item;
@@ -88,7 +89,7 @@ const Cell: React.FC<CellProps> = ({
               width={10}
               height={10}
               className=""
-              src={item.icon}
+              src={`${prefix}${item.icon}`}
             />
           ) : null}
           <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>

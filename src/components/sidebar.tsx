@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import type { Item } from '@/app/data';
 import { Check, CopyIcon } from 'lucide-react';
 import { compassData } from './periodic-table';
+import { prefix } from '@/prefix';
 
 export default function Sidebar({
   setOpen,
@@ -36,7 +37,7 @@ export default function Sidebar({
               width={44}
               height={44}
               alt={`icon for ${activeElement.name}`}
-              src={activeElement.icon}
+              src={`${prefix}${activeElement.icon}`}
             />
             <div
               onMouseEnter={() => setShowCopy(true)}
