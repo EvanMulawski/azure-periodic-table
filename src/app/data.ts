@@ -1643,8 +1643,7 @@ export const columns: ColumnType[] = [
           "Azure Analysis Services is a fully managed platform as a service (PaaS) that provides enterprise-grade data models in the cloud. It is a part of Microsoft's business analytics stack that lets you develop semantic data models to simplify data analysis and reporting.",
         length: '3-63',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/analysis-services/analysis-services-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/analysis-services/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/analysis_services_server',
         restrictions:
@@ -1662,8 +1661,7 @@ export const columns: ColumnType[] = [
           'Azure Databricks is an Apache Spark-based analytics platform optimized for the Microsoft Azure cloud services platform. It provides a workspace environment where you can create Apache Spark clusters, write notebooks, and build workflows.',
         length: '3-64',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/databricks/scenarios/what-is-azure-databricks',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/databricks/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/databricks_workspace',
         restrictions: 'Alphanumerics, underscores, and hyphens',
@@ -1680,8 +1678,7 @@ export const columns: ColumnType[] = [
           'Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.',
         length: '3-63',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/stream-analytics/stream-analytics-introduction',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/stream-analytics/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/stream_analytics_job',
         restrictions: 'Alphanumerics, hyphens, and underscores.',
@@ -1698,10 +1695,9 @@ export const columns: ColumnType[] = [
           'Azure Data Explorer (ADX) is a fast, fully managed data analytics service for real-time analysis on large volumes of data streaming from applications, websites, IoT devices, and more. You can use Azure Data Explorer to collect, store, and analyze diverse data to improve products, enhance customer experiences, monitor devices, and boost operations.',
         length: '4-22',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/data-explorer/data-explorer-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/data-explorer/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_explorer_cluster',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kusto_cluster.html',
         restrictions: 'Lowercase letters and numbers. Start with letter.',
         resource: 'Microsoft.Kusto',
         entity: 'clusters',
@@ -1716,10 +1712,8 @@ export const columns: ColumnType[] = [
           'A database in Azure Data Explorer (ADX) is a logical container for data. Each database belongs to a cluster and contains a set of tables where each table is a collection of ordered columns.',
         length: '1-260',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/data-explorer/kusto/management/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_explorer_database',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/data-explorer/',
+        terraformUrl: '',
         restrictions: 'Alphanumerics, hyphens, spaces, and periods.',
         resource: 'Microsoft.Kusto',
         entity: '/clusters / databases',
@@ -1734,8 +1728,7 @@ export const columns: ColumnType[] = [
           'Azure Data Factory is a cloud-based data integration service that allows you to create data-driven workflows for orchestrating and automating data movement and data transformation.',
         length: '3-63',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/data-factory/introduction',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/data-factory/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/data_factory',
         restrictions:
@@ -1789,8 +1782,7 @@ export const columns: ColumnType[] = [
           'Azure Event Hubs is a big data streaming platform and event ingestion service. The Event Hubs namespace provides a unique scoping container, in which you create one or more event hubs.',
         length: '6-50',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/event-hubs/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub_namespace',
         restrictions:
@@ -1808,8 +1800,7 @@ export const columns: ColumnType[] = [
           'An Event Hub is a unique entity within an Event Hubs namespace that provides a target for applications to send event data. It can receive and process millions of events per second, so you can process and analyze the massive amounts of data produced by your connected devices and applications.',
         length: '6-50',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/event-hubs/event-hubs-about',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/event-hubs/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventhub',
         restrictions:
@@ -1831,7 +1822,7 @@ export const columns: ColumnType[] = [
           'Azure Event Grid is a service that manages all the events your application needs, from a single place. It allows for uniform event consumption using a publish-subscribe model.',
         length: '3-50',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/event-grid/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/event-grid/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventgrid_domain',
         restrictions: 'Alphanumerics and hyphens.',
@@ -1848,7 +1839,7 @@ export const columns: ColumnType[] = [
           'Event Grid subscriptions represent the relationship between an event source and an endpoint. They define the events you want to track, and where to send the events.',
         length: '3-64',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/event-grid/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/event-grid/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventgrid_event_subscription',
         restrictions: 'Alphanumerics and hyphens.',
@@ -1865,7 +1856,7 @@ export const columns: ColumnType[] = [
           'Event Grid Topics provide a user-defined endpoint that you post your event data to. Subscribers decide which topics they want to subscribe to.',
         length: '3-50',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/event-grid/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/event-grid/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/eventgrid_topic',
         restrictions: 'Alphanumerics and hyphens.',
@@ -1882,8 +1873,7 @@ export const columns: ColumnType[] = [
           'Azure HDInsight Hadoop cluster is a cloud distribution of Hadoop components. It provides a software framework designed for processing, analyzing and deriving insights from data.',
         length: '3-59',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/hdinsight/hadoop/hadoop-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/hdinsight/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_hadoop_cluster',
         restrictions:
@@ -1901,8 +1891,7 @@ export const columns: ColumnType[] = [
           'Azure HDInsight HBase cluster is a NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semi-structured data.',
         length: '3-59',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/hdinsight/hbase/hbase-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/hdinsight/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_hbase_cluster',
         restrictions:
@@ -1920,8 +1909,7 @@ export const columns: ColumnType[] = [
           'Azure HDInsight Kafka cluster is a managed platform that makes it easy to process streams of real-time data. It offers an effective platform to ingest data from IoT devices and real-time applications.',
         length: '3-59',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/hdinsight/kafka/apache-kafka-introduction',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/hdinsight/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_kafka_cluster',
         restrictions:
@@ -1939,8 +1927,7 @@ export const columns: ColumnType[] = [
           'Azure HDInsight Spark cluster is an open-source, parallel-processing framework that supports in-memory processing to boost the performance of big-data analytic applications.',
         length: '3-59',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/hdinsight/spark/apache-spark-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/hdinsight/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_spark_cluster',
         restrictions:
@@ -1960,8 +1947,7 @@ export const columns: ColumnType[] = [
         category: Categories.ANALYTICSANDIOT,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/hdinsight/storm/apache-storm-overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_storm_cluster',
+        terraformUrl: '',
         restrictions:
           'Alphanumerics and hyphens. Start and end with letter or number.',
         resource: 'Microsoft.HDInsight',
@@ -1977,10 +1963,8 @@ export const columns: ColumnType[] = [
           'Azure HDInsight ML Services cluster integrates R Server with Spark and the Apache Hadoop framework, providing an ideal environment for your machine learning workloads.',
         length: '3-59',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/hdinsight/r-server/r-server-overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/hdinsight_rserver_cluster',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/hdinsight/',
+        terraformUrl: '',
         restrictions:
           'Alphanumerics and hyphens. Start and end with letter or number.',
         resource: 'Microsoft.HDInsight',
@@ -1996,8 +1980,7 @@ export const columns: ColumnType[] = [
           'Azure IoT Hub is a managed service that acts as a central message hub for bi-directional communication between your IoT application and the devices it manages.',
         length: '3-50',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/iot-hub/about-iot-hub',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/iot-hub/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/iothub',
         restrictions: 'Alphanumerics and hyphens. Can not end with hyphen.',
@@ -2018,8 +2001,7 @@ export const columns: ColumnType[] = [
           'Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub that enables zero-touch, just-in-time provisioning to the right IoT hub without requiring human intervention.',
         length: '3-64',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/iot-dps/about-iot-dps',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/iot-dps/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/iothub_dps',
         restrictions: 'Alphanumerics and hyphens. End with alphanumeric.',
@@ -2036,8 +2018,7 @@ export const columns: ColumnType[] = [
           'Certificates in the IoT Hub Device Provisioning Service enhance security in device provisioning by enabling provisioning services to verify the identity of devices.',
         length: '1-64',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/iot-dps/how-to-verify-certificates',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/iot-dps/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/iothub_dps_certificate',
         restrictions: 'Alphanumerics, hyphens, periods, and underscores.',
@@ -2054,8 +2035,7 @@ export const columns: ColumnType[] = [
           'Power BI is a suite of business analytics tools by Microsoft that deliver insights throughout your organization. It connects to hundreds of data sources, simplifies data prep and drives ad hoc analysis.',
         length: '3-63',
         category: Categories.ANALYTICSANDIOT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/power-bi/fundamentals/power-bi-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/power-bi/fundamentals/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/powerbi_embedded',
         restrictions:
@@ -2074,9 +2054,9 @@ export const columns: ColumnType[] = [
         length: '1-90',
         category: Categories.ANALYTICSANDIOT,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/time-series-insights/time-series-insights-overview',
+          'https://learn.microsoft.com/en-us/azure/time-series-insights/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/time_series_insights_environment_standard',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/iot_time_series_insights_standard_environment',
         restrictions: "Can not use:'<>%&:?/# or control characters",
         resource: 'Microsoft.TimeSeriesInsights',
         entity: 'environments',
@@ -2091,8 +2071,7 @@ export const columns: ColumnType[] = [
           'Azure Virtual Desktop Host Pool is a collection of VMs in Azure Virtual Desktop environment. It hosts remote apps and desktops that users can access from anywhere.',
         length: '1-64',
         category: Categories.VIRTUALDESKTOP,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-desktop/host-pool',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/virtual-desktop/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_desktop_host_pool',
         restrictions: 'Alphanumerics, hyphens, and underscores.',
@@ -2127,8 +2106,7 @@ export const columns: ColumnType[] = [
           'Azure Virtual Desktop Workspace is a logical grouping of application groups in a host pool. Users are presented with resources from all the application groups in a workspace.',
         length: '1-64',
         category: Categories.VIRTUALDESKTOP,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-desktop/workspace',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/virtual-desktop/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_desktop_workspace',
         restrictions: 'Alphanumerics, hyphens, and underscores.',
@@ -2146,7 +2124,7 @@ export const columns: ColumnType[] = [
         length: '5-50',
         category: Categories.DEVTOOLS,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-app-configuration/overview',
+          'https://learn.microsoft.com/en-us/azure/azure-app-configuration/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_configuration',
         restrictions: 'Alphanumerics, underscores, and hyphens.',
@@ -2163,8 +2141,7 @@ export const columns: ColumnType[] = [
           'Azure SignalR Service is an Azure managed service that adds real-time functionality to applications. SignalR Service is fully-managed, freeing you to focus on your application instead of hosting and scaling a SignalR server.',
         length: '3-63',
         category: Categories.DEVTOOLS,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-signalr/signalr-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/azure-signalr/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/signalr_service',
         restrictions:
@@ -2223,8 +2200,7 @@ export const columns: ColumnType[] = [
           'Azure Logic Apps is a cloud-based service that enables users to schedule, automate, and orchestrate tasks, business processes, and workflows when you need to integrate apps, data, systems, and services across enterprises or organizations.',
         length: '1-43',
         category: Categories.INTEGRATION,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/logic-apps/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/logic_app_workflow',
         restrictions:
@@ -2243,7 +2219,7 @@ export const columns: ColumnType[] = [
         length: '6-50',
         category: Categories.INTEGRATION,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview',
+          'https://learn.microsoft.com/en-us/azure/service-bus-messaging/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_namespace',
         restrictions:
@@ -2262,7 +2238,7 @@ export const columns: ColumnType[] = [
         length: '1-260',
         category: Categories.INTEGRATION,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions',
+          'https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions#queues',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_queue',
         restrictions:
@@ -2281,7 +2257,7 @@ export const columns: ColumnType[] = [
         length: '1-260',
         category: Categories.INTEGRATION,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions',
+          'https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions#topics-and-subscriptions',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_topic',
         restrictions:
@@ -2299,10 +2275,9 @@ export const columns: ColumnType[] = [
           'Azure Migration Projects provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.',
         length: '2-57',
         category: Categories.MIGRATION,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/migrate/migrate-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/migrate/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/migrate_project',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/database_migration_projectt',
         restrictions:
           'Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric.',
         resource: 'Microsoft.DataMigration',
@@ -2318,9 +2293,9 @@ export const columns: ColumnType[] = [
           'Azure Database Migration Service (DMS) is designed as a seamless, end-to-end solution for moving on-premises SQL Server databases to the cloud.',
         length: '2-62',
         category: Categories.MIGRATION,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/dms/dms-overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/dms/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/databox_edge_device',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/database_migration_service',
         restrictions:
           'Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric.',
         resource: 'Microsoft.DataMigration',
@@ -2358,8 +2333,7 @@ export const columns: ColumnType[] = [
           'Azure Automation Account provides a way to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud and enterprise environment. It saves time and increases the reliability of regular administrative tasks.',
         length: '6-50',
         category: Categories.MANAGEMENT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/automation/automation-intro',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/automation/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/automation_account',
         restrictions:
@@ -2415,7 +2389,7 @@ export const columns: ColumnType[] = [
           'Azure Purview is a unified data governance service that helps organizations achieve a complete understanding of their data. Purview helps you catalog, understand, and manage data across your enterprise.',
         length: '6-50',
         category: Categories.MANAGEMENT,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/purview/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/purview/',
         terraformUrl: '',
         restrictions: '',
         resource: 'Microsoft.Purview',
@@ -2432,7 +2406,7 @@ export const columns: ColumnType[] = [
         length: '90',
         category: Categories.MANAGEMENT,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/governance/blueprints/overview',
+          'https://learn.microsoft.com/en-us/azure/governance/blueprints/',
         terraformUrl: '',
         restrictions: 'Alphanumerics, underscores, and hyphens.',
         resource: 'Microsoft.Blueprint',
@@ -2449,7 +2423,7 @@ export const columns: ColumnType[] = [
         length: '90',
         category: Categories.MANAGEMENT,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/governance/blueprints/overview',
+          'https://learn.microsoft.com/en-us/azure/governance/blueprints/',
         terraformUrl: '',
         restrictions: 'Alphanumerics, underscores, and hyphens.',
         resource: 'Microsoft.Blueprint',
@@ -2465,8 +2439,7 @@ export const columns: ColumnType[] = [
           'Azure Key Vault is a tool for securely storing and accessing secrets. A secret could be a credit card number, bank account details, or a connection string for a database.',
         length: '3-24',
         category: Categories.MANAGEMENT,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/key-vault/general/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/key-vault/general/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/key_vault',
         restrictions:
@@ -2485,7 +2458,7 @@ export const columns: ColumnType[] = [
         length: '4-63',
         category: Categories.MANAGEMENT,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-monitor/logs/design-workspace',
+          'https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-workspace-overview',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/log_analytics_workspace',
         restrictions:

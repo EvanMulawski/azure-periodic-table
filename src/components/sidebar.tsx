@@ -94,7 +94,6 @@ export default function Sidebar({
           <span className="font-bold">Restrictions:</span>
           <div>
             <span>{activeElement?.restrictions}</span>
-            <span>{activeElement?.length}</span>
           </div>
         </div>
         <div />
