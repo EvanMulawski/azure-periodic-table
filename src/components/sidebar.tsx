@@ -66,7 +66,9 @@ export default function Sidebar({
             </div>
           </div>
         </SheetTitle>
-        <CodeSnippet codeString={activeElement?.code ?? ''} className="mb-4"/>
+        <div className="mb-4">
+          <CodeSnippet codeString={activeElement?.code ?? ''} />
+      </div>
         <span className="text-left break-words w-full mb-4">
           {activeElement?.description}
         </span>
