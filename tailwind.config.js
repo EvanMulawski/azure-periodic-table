@@ -27,6 +27,10 @@ module.exports = {
         border: 'var(--border)',
         input: 'var(--input)',
       },
+      scale: {
+        '200': '2',
+        '250': '2.5',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },

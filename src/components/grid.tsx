@@ -54,7 +54,7 @@ const Cell: React.FC<CellProps> = ({
 
   const transparent = isDisabled ? 'opacity-50' : 'opacity-100';
 
-  const hoverScale = isDisabled ? '' : 'hover:scale-150';
+  const hoverScale = isDisabled ? '' : 'hover:scale-200';
 
   const isMobile = useMobile();
 
