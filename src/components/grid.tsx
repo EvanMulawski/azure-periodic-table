@@ -97,7 +97,7 @@ const Cell: React.FC<CellProps> = ({
         <div className="justify-start w-full font-bold text-xs">
           {item.slug}
         </div>
-        <div className="justify-center items-center w-full text-[0.5rem] h-full  overflow-hidden">
+        <div className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
           <span>{item.name}</span>
         </div>
       </div>
