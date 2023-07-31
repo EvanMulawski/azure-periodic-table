@@ -46,7 +46,7 @@ export const columns: ColumnType[] = [
       },
       {
         "name": "Subscriptions",
-        "slug": "sub-",
+        "slug": "-",
         "description": "Subscriptions in Azure act as a single billing unit and provide the ability to administer resources, control resource usage, and organize resources according to individual business needs.",
         "length": "1-90",
         "category": Categories.GENERAL,
@@ -162,9 +162,9 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://learn.microsoft.com/en-us/azure/virtual-network/security-overview#application-security-groups',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_security_group',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/application_security_group',
         restrictions:
           'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.',
         resource: 'Microsoft.Network',
@@ -228,16 +228,16 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'connections',
-        slug: 'con-',
+        name: 'gateway connections',
+        slug: 'gc-',
         description:
           'Azure Connections represent the peerings that exist between virtual networks. Through Azure Connections, you can create complex network topologies or chain virtual networks together for resource access.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview',
+          'https://learn.microsoft.com/en-us/windows-365/enterprise/azure-network-connections',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_peering',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_gateway_connection',
         restrictions:
           'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.',
         resource: 'Microsoft.Network',
@@ -334,7 +334,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/expressroute/expressroute-introduction',
+          'https://learn.microsoft.com/en-us/azure/expressroute/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/express_route_circuit',
         restrictions:
@@ -390,7 +390,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview',
+          'https://learn.microsoft.com/en-us/azure/load-balancer/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb',
         restrictions:
@@ -409,7 +409,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview',
+          'https://learn.microsoft.com/en-us/azure/load-balancer/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb',
         restrictions:
@@ -428,7 +428,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-overview',
+          'https://learn.microsoft.com/en-us/azure/load-balancer/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/lb_rule',
         restrictions:
@@ -447,7 +447,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal',
+          'https://learn.microsoft.com/en-us/azure/vpn-gateway/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/local_network_gateway',
         restrictions:
@@ -460,13 +460,13 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'nat gateway',
-        slug: 'ng-',
+        slug: 'ngw-',
         description:
           'Azure NAT Gateway is a resource that provides outbound internet connectivity for virtual networks.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/nat-gateway/nat-overview',
+          'https://learn.microsoft.com/en-us/azure/nat-gateway/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/nat_gateway',
         restrictions:
@@ -485,7 +485,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/network_interface',
         restrictions:
@@ -557,22 +557,20 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'private link',
-        slug: 'pl-',
+        name: 'private endpoint',
+        slug: 'pe-',
         description:
-          'Azure Private Link provides private connectivity from a virtual network to Azure platform as a service (PaaS), customer-owned, or Microsoft partner services.',
+          'Azure Private Endpoint enables a private and secure connection to Azure PaaS, customer-owned, or Microsoft partner services, directly from your virtual network. The private connection uses a private IP address from your VNet, effectively bringing the service into your VNet.',
         length: '2-64',
         category: Categories.NETWORKING,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/private-link/private-link-overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_link_service',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/private-link/',
+        terraformUrl: 'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/private_endpoint',
         restrictions:
           'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.',
         resource: 'Microsoft.Network',
         entity: 'privateEndpoints',
         scope: 'resource group',
-        icon: '/icons/network/network-interfaces.png',
+        icon: '/icons/network/private-endpoint.png',
         code: '',
       },
       {
@@ -583,7 +581,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/ip-services/overview-ip-address-public',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/public_ip',
         restrictions:
@@ -653,7 +651,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'service endpoint policies',
-        slug: 'se-',
+        slug: 'sep-',
         description:
           'Service Endpoint Policies in Azure define which services are accessible from a subnet, providing granular network security for Azure service resources.',
         length: '1-80',
@@ -661,7 +659,7 @@ export const columns: ColumnType[] = [
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoint-policies-overview',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_endpoint_policy',
+          '',
         restrictions:
           'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.',
         resource: 'Microsoft.Network',
@@ -678,7 +676,7 @@ export const columns: ColumnType[] = [
         length: '1-63',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview',
+          'https://learn.microsoft.com/en-us/azure/traffic-manager/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/traffic_manager_profile',
         restrictions:
@@ -697,7 +695,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/tutorial-create-route-table-portal',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#user-defined',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/route',
         restrictions:
@@ -720,7 +718,7 @@ export const columns: ColumnType[] = [
         length: '2-64',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network',
         restrictions:
@@ -739,7 +737,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/subnet',
         restrictions:
@@ -758,7 +756,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering',
+          'https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network_peering',
         restrictions:
@@ -777,7 +775,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-wan/virtual-wan-about',
+          'https://learn.microsoft.com/en-us/azure/virtual-wan/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_wan',
         restrictions:
@@ -790,13 +788,13 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'vpn gateway',
-        slug: 'vpng-',
+        slug: 'vgw-',
         description:
           'Azure VPN Gateway connects your on-premises networks to Azure through Site-to-Site VPNs in a similar way that you set up and connect to a remote branch office. It allows secure connections from on-premises networks to Azure virtual networks.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways',
+          'https://learn.microsoft.com/en-us/azure/vpn-gateway/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/vpn_gateway',
         restrictions:
@@ -808,10 +806,10 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'vpn connection',
-        slug: 'vcn-',
+        name: 'vpn gateway connection',
+        slug: 'vgwc-',
         description:
-          'A VPN Connection in Azure is used to connect a virtual network gateway and a local network gateway, which is typically your on-premises network. It provides a secure, encrypted connection over the internet between your Azure virtual network and your on-premise network.',
+          'A VPN Gateway Connection in Azure is used to connect a virtual network gateway and a local network gateway, which is typically your on-premises network. It provides a secure, encrypted connection over the internet between your Azure virtual network and your on-premise network.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
@@ -847,7 +845,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'virtual network gateway',
-        slug: 'vgw-',
+        slug: 'vngw-',
         description:
           'A Virtual Network Gateway in Azure provides the capability to establish IPsec/IKE VPN tunnels between your virtual network and your on-premises hardware, or from a virtual network to a virtual network within Azure.',
         length: '1-80',
@@ -865,14 +863,14 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'web app firewall (waf) policy',
-        slug: 'waf',
+        name: 'web app firewall policy',
+        slug: 'waf-',
         description:
           'Azure Web Application Firewall (WAF) policy provides centralized protection of your web applications from common exploits and vulnerabilities. WAF on Azure Front Door protects your applications from common threats such as SQL injection and cross-site scripting.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview',
+          'https://learn.microsoft.com/en-us/azure/web-application-firewall/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_application_firewall_policy',
         restrictions:
@@ -884,14 +882,14 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: '(waf) policy rule group',
+        name: 'waf policy rule group',
         slug: 'wafrg',
         description:
           'A WAF Policy Rule Group in Azure represents a set of rules for a Web Application Firewall to act upon. The rules in a group are used to filter and control the incoming traffic to the web application.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/web-application-firewall/afds/waf-front-door-create-portal',
+          'https://learn.microsoft.com/en-us/azure/web-application-firewall/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/web_application_firewall_policy',
         restrictions:
