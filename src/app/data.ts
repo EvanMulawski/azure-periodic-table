@@ -98,6 +98,21 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
+        "name": "policy initiative",
+        "slug": "set-",
+        "description": "Azure Policy Set Definitions, also known as Initiatives, simplify managing and assigning policies. They are a set of Policy Definitions that are tailored towards achieving a singular overarching goal. By grouping policies together, you can ensure they're properly assigned to achieve full coverage across your resources.",
+        "length": "1-64",
+        "category": Categories.GENERAL,
+        "learnUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview#initiative-definition",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_set_definition",
+        "restrictions": "Display name can contain any characters. Resource name Can not use:<>*%&:?. +/ or control characters. Can not end with period or space.",
+        "resource": "Microsoft.Authorization",
+        "entity": "policySetDefinitions",
+        "scope": "scope of definition",
+        "icon": "/icons/general/information.png",
+        "code": "",
+      },
+      {
         name: 'policy definition',
         slug: 'def-',
         description:
@@ -105,7 +120,7 @@ export const columns: ColumnType[] = [
         length: '1-64',
         category: Categories.GENERAL,
         learnUrl:
-          'https://learn.microsoft.com/en-us/azure/governance/policy/',
+          'https://learn.microsoft.com/en-us/azure/governance/policy/overview#initiative-definition',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/policy_definition',
         restrictions:
@@ -237,7 +252,7 @@ export const columns: ColumnType[] = [
         description:
           "Azure DNS Zone is a service that allows you to host your domain's DNS records on Azure, providing name resolution using Microsoft Azure infrastructure. By hosting your domains in Azure, you can manage your DNS records using the same credentials and billing and support contract as your other Azure services.",
         length:
-          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
+          '1-63',
         category: Categories.NETWORKING,
         learnUrl: 'https://learn.microsoft.com/en-us/azure/dns/dns-overview',
         terraformUrl:
@@ -256,7 +271,7 @@ export const columns: ColumnType[] = [
         description:
           'Azure Private DNS Zone is a service that provides an ability to use your own custom domain names, rather than the Azure-provided names. It helps in name resolution for virtual machines (VMs) within a virtual network and between virtual networks.',
         length:
-          '1-63 characters2 to 34 labelsEach label is a set of characters separated by a period. For example, contoso.com has 2 labels.',
+          '1-63',
         category: Categories.NETWORKING,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/dns/private-dns-overview',
