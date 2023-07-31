@@ -1516,7 +1516,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.DBforPostgreSQL",
         "entity": "servers",
         "scope": "global",
-        "icon": "/icons/database/psql-servers.png",
+        "icon": "/icons/database/postgresql-servers.png",
         "code": ""
       },
       {
