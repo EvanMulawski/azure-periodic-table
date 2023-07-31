@@ -101,7 +101,7 @@ export default function Sidebar({
           </div>
         </div>
         <div className="my-6 text-left">
-          <span className="font-bold">Restrictions</span>
+          <span className="font-bold">Valid Characters</span>
           <div>
             <span>{activeElement?.restrictions}</span>
           </div>
