@@ -1272,7 +1272,7 @@ export const columns: ColumnType[] = [
           'Azure Kubernetes Service (AKS) is a managed container orchestration service provided by Azure, which simplifies Kubernetes management, deployment, and operations.',
         length: '1-63',
         category: Categories.CONTAINERS,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/aks/intro-kubernetes',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/aks/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/kubernetes_cluster',
         restrictions:
