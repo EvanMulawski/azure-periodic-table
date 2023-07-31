@@ -1341,14 +1341,14 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'cosmos db database account',
+        name: 'cosmos db account',
         slug: 'cdb-',
         description:
           'Azure Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide.',
         length: '3-44',
         category: Categories.DATABASES,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/cosmos-db/introduction',
+          'https://learn.microsoft.com/en-us/azure/cosmos-db/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account',
         restrictions:
@@ -1367,7 +1367,7 @@ export const columns: ColumnType[] = [
         length: '1-63',
         category: Categories.DATABASES,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-cache-for-redis/cache-overview',
+          'https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/redis_cache',
         restrictions:
@@ -1379,23 +1379,19 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'sql database server',
-        slug: 'sql-',
-        description:
-          'Azure SQL Database is a general-purpose relational database service, provided as a fully managed platform by Microsoft. You can build data-driven applications and websites in the programming language of your choice without needing to manage infrastructure.',
-        length: '1-63',
-        category: Categories.DATABASES,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_server',
-        restrictions:
-          'Lowercase letters, numbers, and hyphens. Can not start or end with hyphen.',
-        resource: 'Microsoft.Sql',
-        entity: 'servers',
-        scope: 'global',
-        icon: '/icons/database/sql-servers.png',
-        code: '',
+        "name": "sql server",
+        "slug": "sql-",
+        "description": "Azure SQL Server is a fully managed relational database service by Microsoft. It provides the broadest SQL Server engine compatibility and up-to-date security and compliance standards. Users can focus on optimizing their database management and data manipulation without the need to manage infrastructure.",
+        "length": "1-63",
+        "category": Categories.DATABASES,
+        "learnUrl": "https://learn.microsoft.com/en-us/azure/azure-sql/?view=azuresql-db",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_server",
+        "restrictions": "Lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.",
+        "resource": "Microsoft.Sql",
+        "entity": "servers",
+        "scope": "global",
+        "icon": "/icons/database/sql-servers.png",
+        "code": ""
       },
       {
         name: 'sql database',
@@ -1405,7 +1401,7 @@ export const columns: ColumnType[] = [
         length: '1-128',
         category: Categories.DATABASES,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-sql/database/sql-database-paas-overview',
+          'https://learn.microsoft.com/en-us/azure/azure-sql/?view=azuresql-db',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_database',
         restrictions:
@@ -1418,7 +1414,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'synapse analytics',
-        slug: 'syn',
+        slug: 'syn-',
         description:
           'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
         length: '1-50',
@@ -1432,25 +1428,6 @@ export const columns: ColumnType[] = [
         entity: 'workspaces',
         scope: 'global',
         icon: '/icons/database/synapse-analytics.png',
-        code: '',
-      },
-      {
-        name: 'synapse analytics workspace',
-        slug: 'synw',
-        description:
-          'Azure Synapse Analytics Workspaces provide a single point of control for security, monitoring, and metadata management. Each workspace is tied to an Azure Data Lake Store, allowing to manage big data easily.',
-        length: '1-50',
-        category: Categories.DATABASES,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/synapse-analytics/overview-what-is-workspace',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_workspace',
-        restrictions:
-          'Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can not contain -ondemand',
-        resource: 'Microsoft.Synapse',
-        entity: 'workspaces',
-        scope: 'global',
-        icon: '/icons/analytics/synapse-analytics.png',
         code: '',
       },
       {
@@ -1496,8 +1473,23 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
+        "name": "mysql server",
+        "slug": "mysql-",
+        "description": "Azure Database for MySQL is a fully managed relational database service provided by Microsoft. It offers seamless migration and robust applications with the power of the open-source MySQL database engine, combined with the operational and security benefits of Azure.",
+        "length": "1-63",
+        "category": Categories.DATABASES,
+        "learnUrl": "https://docs.microsoft.com/en-us/azure/mysql/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server",
+        "restrictions": "Lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.",
+        "resource": "Microsoft.DBforMySQL",
+        "entity": "servers",
+        "scope": "global",
+        "icon": "/icons/database/mysql-servers.png",
+        "code": ""
+      },
+      {
         name: 'mysql database',
-        slug: 'mysql-',
+        slug: 'mysqldb-',
         description:
           'Azure Database for MySQL provides a managed database service for app development and deployment that allows you to stand up a MySQL database in minutes and scale on the fly.',
         length: '1-63',
@@ -1513,8 +1505,23 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
+        "name": "postgresql server",
+        "slug": "psql-",
+        "description": "Azure Database for PostgreSQL is a fully managed relational database service provided by Microsoft. It delivers a rich array of fully managed, integrated services and capabilities that exploit the strong native capabilities of PostgreSQL, freeing developers to focus on their applications, not on managing their database.",
+        "length": "1-63",
+        "category": Categories.DATABASES,
+        "learnUrl": "https://docs.microsoft.com/en-us/azure/postgresql/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_server",
+        "restrictions": "Lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.",
+        "resource": "Microsoft.DBforPostgreSQL",
+        "entity": "servers",
+        "scope": "global",
+        "icon": "/icons/database/psql-servers.png",
+        "code": ""
+      },
+      {
         name: 'postgresql database',
-        slug: 'psql-',
+        slug: 'psqldb-',
         description:
           'Azure Database for PostgreSQL provides a managed database service for app development and deployment that allows you to stand up a PostgreSQL database in minutes and scale on the fly.',
         length: '1-63',
@@ -1537,7 +1544,7 @@ export const columns: ColumnType[] = [
         length: '1-128',
         category: Categories.DATABASES,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/sql-server-stretch-database/stretch-database',
+          'https://learn.microsoft.com/en-us/azure/sql-server-stretch-database/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/sql_database',
         restrictions:
