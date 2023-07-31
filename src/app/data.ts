@@ -912,14 +912,14 @@ export const columns: ColumnType[] = [
         length: '2-60',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/app-service/environment/intro',
+          'https://learn.microsoft.com/en-us/azure/app-service/environment/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service_environment',
         restrictions:
           'Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan not start or end with hyphen.',
         resource: 'Microsoft.Web',
         entity: 'sites',
-        scope: 'global or per domain. See note below.',
+        scope: 'global or per domain',
         icon: '/icons/web/app-service-environments.png',
         code: '',
       },
@@ -969,9 +969,9 @@ export const columns: ColumnType[] = [
         length: '1-40',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-arc/servers/overview',
+          'https://learn.microsoft.com/en-us/azure/azure-arc/servers/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/azure_arc_enabled_server',
+          '',
         restrictions:
           'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode',
         resource: 'Microsoft.Web',
@@ -990,32 +990,13 @@ export const columns: ColumnType[] = [
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/azure-arc/kubernetes/overview',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/azure_arc_enabled_kubernetes_cluster',
+          '',
         restrictions:
           'Alphanumerics, underscores, and hyphens. Start and end with alphanumeric.',
         resource: 'Microsoft.ContainerService',
         entity: 'managedClusters',
         scope: 'resource group',
         icon: '/icons/compute/kubernetes-services.png',
-        code: '',
-      },
-      {
-        name: 'cloud service',
-        slug: 'cld-',
-        description:
-          'Azure Cloud Services is an example of a platform as a service (PaaS). It lets developers concentrate on their application logic, while Azure takes care of the infrastructure needed to run and scale the apps.',
-        length: '1-15',
-        category: Categories.COMPUTEANDWEB,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/cloud-services/cloud-services-choose-me',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cloud_service',
-        restrictions:
-          'Can not use spaces, control characters, or these characters:~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Can not start with underscore. Can not end with period or hyphen.',
-        resource: 'Microsoft.Compute',
-        entity: 'cloudservices',
-        scope: 'resource group',
-        icon: '/icons/compute/cloud-services.png',
         code: '',
       },
       {
@@ -1026,7 +1007,7 @@ export const columns: ColumnType[] = [
         length: '1-80',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/virtual-machines/disk-encryption-set-overview',
+          'https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/disk_encryption_set',
         restrictions: 'Alphanumerics, underscores, and hyphens.',
@@ -1044,14 +1025,14 @@ export const columns: ColumnType[] = [
         length: '2-60',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview',
+          'https://learn.microsoft.com/en-us/azure/azure-functions/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/function_app',
         restrictions:
           'Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan not start or end with hyphen.',
         resource: 'Microsoft.Web',
         entity: 'sites',
-        scope: 'global or per domain. See note below.',
+        scope: 'global or per domain',
         icon: '/icons/compute/function-apps.png',
         code: '',
       },
@@ -1076,7 +1057,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'managed disk (os)',
-        slug: 'osdisk',
+        slug: 'osdisk-',
         description:
           'Azure Managed Disks are block-level storage volumes that are managed by Azure and used with Azure Virtual Machines. Managed Disks are like a physical disk in an on-premises server but virtualized.',
         length: '1-80',
@@ -1084,7 +1065,7 @@ export const columns: ColumnType[] = [
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/managed_disk',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine.html',
         restrictions: 'Alphanumerics, underscores, and hyphens.',
         resource: 'Microsoft.Compute',
         entity: 'disks',
@@ -1098,7 +1079,7 @@ export const columns: ColumnType[] = [
     items: [
       {
         name: 'managed disk (data)',
-        slug: 'disk',
+        slug: 'disk-',
         description:
           'Azure Managed Disks for data are block-level storage volumes that manage your data, used with Azure Virtual Machines. They operate like a physical disk in an on-premises server but are virtualized.',
         length: '1-80',
@@ -1116,7 +1097,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'notification hubs',
-        slug: 'ntf-',
+        slug: 'nh-',
         description:
           'Azure Notification Hubs provide a scalable, tailored notification infrastructure that enables you to push notifications from any backend (in the cloud or on-premises) to any platform (iOS, Android, Windows, etc.).',
         length: '1-260',
@@ -1134,13 +1115,13 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'notification hubs namespace',
-        slug: 'ntfns-',
+        slug: 'nhns-',
         description:
           'Azure Notification Hubs Namespaces provide a unique scoping container, in which you can create multiple notification hubs.',
         length: '6-50',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-push-notification-overview',
+          'https://learn.microsoft.com/en-us/azure/notification-hubs/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/notification_hub_namespace',
         restrictions:
@@ -1172,7 +1153,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'static web app',
-        slug: 'stapp',
+        slug: 'stapp-',
         description:
           'Azure Static Web Apps is a service that automatically builds and deploys full stack web apps to Azure from a GitHub repository.',
         length: '2-60',
@@ -1184,20 +1165,20 @@ export const columns: ColumnType[] = [
           'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.',
         resource: 'Microsoft.Web',
         entity: 'sites',
-        scope: 'global or per domain. See note below.',
+        scope: 'global or per domain',
         icon: '/icons/web/app-services.png',
         code: '',
       },
       {
-        name: 'virtual machine',
-        slug: 'vm',
+        name: 'virtual machine (windows)',
+        slug: 'VMW',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
         length: '1-15',
         category: Categories.COMPUTEANDWEB,
         learnUrl: 'https://docs.microsoft.com/en-us/azure/virtual-machines/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine',
         restrictions:
           'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Windows VMs Can not include period or end with hyphen. Linux VMs Can not end with period or hyphen and can have 1-64 characters rather than 15.',
         resource: 'Microsoft.Compute',
@@ -1207,16 +1188,34 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'virtual machine scale set',
+        name: 'virtual machine (linux)',
+        slug: 'VML',
+        description:
+          'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
+        length: '1-64',
+        category: Categories.COMPUTEANDWEB,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/virtual-machines/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine',
+        restrictions:
+          'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Windows VMs Can not include period or end with hyphen. Linux VMs Can not end with period or hyphen and can have 1-64 characters rather than 15.',
+        resource: 'Microsoft.Compute',
+        entity: 'virtualMachines',
+        scope: 'resource group',
+        icon: '/icons/compute/vm.png',
+        code: '',
+      },
+      {
+        name: 'virtual machine scale set (windows)',
         slug: 'vmss-',
         description:
           'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
-        length: '1-15 (Windows)1-64 (Linux)See note below.',
+        length: '1-15',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
           'https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_machine_scale_set',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_virtual_machine_scale_set',
         restrictions:
           'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Can not start with underscore. Can not end with period or hyphen.',
         resource: 'Microsoft.Compute',
@@ -1226,38 +1225,39 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'vm storage account',
-        slug: 'stvm',
+        name: 'virtual machine scale set (linux)',
+        slug: 'vmss-',
         description:
-          'Azure Storage Accounts offer a unique namespace to store and access your Azure Storage data objects.',
-        length: '3-24',
+          'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
+        length: '1-64',
         category: Categories.COMPUTEANDWEB,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview',
+          'https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account',
-        restrictions: 'Lowercase letters and numbers.',
-        resource: 'Microsoft.Storage',
-        entity: 'storageAccounts',
-        scope: 'global',
-        icon: '/icons/storage/storage-accounts.png',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/linux_virtual_machine_scale_set',
+        restrictions:
+          'Can not use spaces, control characters, or these characters: ~ ! @ # $ % ^ & * ( ) = + _ [ ] { }  | ;. Can not start with underscore. Can not end with period or hyphen.',
+        resource: 'Microsoft.Compute',
+        entity: 'virtualMachineScaleSets',
+        scope: 'resource group',
+        icon: '/icons/compute/vm-scale-set.png',
         code: '',
       },
       {
         name: 'web app',
         slug: 'app-',
         description:
-          'Azure Web Apps is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
+          'Azure Web App is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
         length: '2-60',
         category: Categories.COMPUTEANDWEB,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/app-service/overview',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/app-service/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_service',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_web_app',
         restrictions:
           'Alphanumeric, hyphens and Unicode characters that can be mapped to Punycode. Can not start or end with hyphen.',
         resource: 'Microsoft.Web',
         entity: 'sites',
-        scope: 'global or per domain. See note below.',
+        scope: 'global or per domain',
         icon: '/icons/web/app-services.png',
         code: '',
       },
@@ -2368,7 +2368,7 @@ export const columns: ColumnType[] = [
           'Alphanumerics and hyphens. Start with letter and end with alphanumeric.',
         resource: 'Microsoft.Automation',
         entity: 'automationAccounts',
-        scope: 'resource group & region (See note below)',
+        scope: 'resource group and region',
         icon: '/icons/compute/automanaged-vm.png',
         code: '',
       },
