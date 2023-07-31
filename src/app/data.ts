@@ -1600,9 +1600,9 @@ export const columns: ColumnType[] = [
         length: '2-50',
         category: Categories.STORAGE,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/storsimple/storsimple-overview',
+          'https://learn.microsoft.com/en-us/azure/storsimple/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storsimple_device',
+          '',
         restrictions:
           'Alphanumerics and hyphens. Start with letter. End with alphanumeric.',
         resource: 'Microsoft.StorSimple',
@@ -1612,14 +1612,14 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'search service',
+        name: 'cognitive search',
         slug: 'srch-',
         description:
           "Azure Cognitive Search is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what's relevant to user queries.",
         length: '2-64',
         category: Categories.AIANDML,
         learnUrl:
-          'https://docs.microsoft.com/en-us/azure/search/search-what-is-azure-search',
+          'https://learn.microsoft.com/en-us/azure/search/',
         terraformUrl:
           'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service',
         restrictions:
