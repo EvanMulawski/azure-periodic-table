@@ -1027,7 +1027,7 @@ export const columns: ColumnType[] = [
         learnUrl:
           'https://learn.microsoft.com/en-us/azure/azure-functions/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/function_app',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/windows_function_app',
         restrictions:
           'Alphanumeric, hyphens and Unicode characters that can be mapped to PunycodeCan not start or end with hyphen.',
         resource: 'Microsoft.Web',
