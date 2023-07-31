@@ -1413,66 +1413,6 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'synapse analytics',
-        slug: 'syn-',
-        description:
-          'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
-        length: '1-50',
-        category: Categories.DATABASES,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/synapse-analytics/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_workspace',
-        restrictions:
-          'Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can not contain -ondemand',
-        resource: 'Microsoft.Synapse',
-        entity: 'workspaces',
-        scope: 'global',
-        icon: '/icons/database/synapse-analytics.png',
-        code: '',
-      },
-      {
-        name: 'synapse analytics sql dedicated pool',
-        slug: 'syndp',
-        description:
-          'Azure Synapse SQL Dedicated Pool (formerly SQL Data Warehouse) is a distributed system designed to perform analytics on large data. It supports massive parallel processing (MPP), which makes it suitable for running high-performance analytics.',
-        length: '1-60',
-        category: Categories.DATABASES,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_sql_pool',
-        restrictions:
-          'Can not contain <>%&:/?@- or control characters. Can not end with . or space. Can not contain reserved word.',
-        resource: 'Microsoft.Synapse',
-        entity: 'workspaces / sqlPools',
-        scope: 'workspace',
-        icon: '/icons/analytics/synapse-analytics.png',
-        code: '',
-      },
-      {
-        name: 'synapse analytics spark pool',
-        slug: 'synsp',
-        description:
-          'Spark pools in Azure Synapse Analytics are used for big data processing. It provides a computation cluster that allows you to analyze large amounts of data using Spark jobs.',
-        length: '1-15',
-        category: Categories.DATABASES,
-        learnUrl:
-          'https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-overview',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_spark_pool',
-        restrictions:
-          'Letters and numbers. Start with letter. End with letter or number. Can not contain reserved word.',
-        resource: 'Microsoft.Synapse',
-        entity: 'workspaces / bigDataPools',
-        scope: 'workspace',
-        icon: '/icons/analytics/synapse-analytics.png',
-        code: '',
-      },
-    ],
-  },
-  {
-    items: [
-      {
         "name": "mysql server",
         "slug": "mysql-",
         "description": "Azure Database for MySQL is a fully managed relational database service provided by Microsoft. It offers seamless migration and robust applications with the power of the open-source MySQL database engine, combined with the operational and security benefits of Azure.",
@@ -1574,6 +1514,10 @@ export const columns: ColumnType[] = [
         icon: '/icons/database/sql-managed-instances.png',
         code: '',
       },
+    ],
+  },
+  {
+    items: [
       {
         name: 'storage account',
         slug: 'st',
@@ -2099,6 +2043,66 @@ export const columns: ColumnType[] = [
         icon: '/icons/iot/time-series-insights-environments.png',
         code: '',
       },
+      {
+        name: 'synapse analytics',
+        slug: 'syn-',
+        description:
+          'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
+        length: '1-50',
+        category: Categories.ANALYTICSANDIOT,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/synapse-analytics/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_workspace',
+        restrictions:
+          'Lowercase letters, hyphens, and numbers. Start and end with letter or number. Can not contain -ondemand',
+        resource: 'Microsoft.Synapse',
+        entity: 'workspaces',
+        scope: 'global',
+        icon: '/icons/database/synapse-analytics.png',
+        code: '',
+      },
+      {
+        name: 'synapse analytics sql dedicated pool',
+        slug: 'syndp',
+        description:
+          'Azure Synapse SQL Dedicated Pool (formerly SQL Data Warehouse) is a distributed system designed to perform analytics on large data. It supports massive parallel processing (MPP), which makes it suitable for running high-performance analytics.',
+        length: '1-60',
+        category: Categories.ANALYTICSANDIOT,
+        learnUrl:
+          'https://docs.microsoft.com/en-us/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_sql_pool',
+        restrictions:
+          'Can not contain <>%&:/?@- or control characters. Can not end with . or space. Can not contain reserved word.',
+        resource: 'Microsoft.Synapse',
+        entity: 'workspaces / sqlPools',
+        scope: 'workspace',
+        icon: '/icons/analytics/synapse-analytics.png',
+        code: '',
+      },
+      {
+        name: 'synapse analytics spark pool',
+        slug: 'synsp',
+        description:
+          'Spark pools in Azure Synapse Analytics are used for big data processing. It provides a computation cluster that allows you to analyze large amounts of data using Spark jobs.',
+        length: '1-15',
+        category: Categories.ANALYTICSANDIOT,
+        learnUrl:
+          'https://docs.microsoft.com/en-us/azure/synapse-analytics/spark/apache-spark-overview',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/synapse_spark_pool',
+        restrictions:
+          'Letters and numbers. Start with letter. End with letter or number. Can not contain reserved word.',
+        resource: 'Microsoft.Synapse',
+        entity: 'workspaces / bigDataPools',
+        scope: 'workspace',
+        icon: '/icons/analytics/synapse-analytics.png',
+        code: '',
+      },
+    ],
+  },
+  {
+    items: [
       {
         name: 'virtual desktop host pool',
         slug: 'vdp-',
