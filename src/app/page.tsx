@@ -4,7 +4,7 @@
 
 import { useState } from 'react';
 import { Item } from './data';
-import PeriodicTable, { compassData } from '@/components/periodic-table';
+import PeriodicTable, { categoryData } from '@/components/periodic-table';
 import Search from '@/components/search';
 import Sidebar from '@/components/sidebar';
 import Topbar from '@/components/topbar';
@@ -120,7 +120,7 @@ export default function Page() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-bg justify-center items-center flex-col max-h-52 overflow-scroll">
-                  {compassData.map((item, i) => {
+                  {categoryData.map((item, i) => {
                     const isActive =
                       activeCategory === null || activeCategory === item.name;
                     return (

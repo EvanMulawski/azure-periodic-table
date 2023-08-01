@@ -2,23 +2,23 @@
 
 import { Categories } from '@/app/constants';
 
-export type CompassData = {
+export type CategoryData = {
   name: Categories;
   color: string;
 }[];
 
-export const Compass = ({
+export const CategorySelector = ({
   activeCategory,
   setActiveCategory,
-  compassData,
+  categoryData,
 }: {
   activeCategory: Categories | null;
   setActiveCategory: Function;
-  compassData: CompassData;
+  categoryData: CategoryData;
 }) => {
   return (
     <div className="hidden xl:flex flex-shrink flex-wrap lg:flex-col md:ml-12 w-auto overflow-scroll text-white">
-      {compassData.map((item, i) => {
+      {categoryData.map((item, i) => {
         const isActive =
           activeCategory === null || activeCategory === item.name;
         return (

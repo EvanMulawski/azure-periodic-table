@@ -4,7 +4,7 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle } from './ui/sheet';
 import { useEffect, useState } from 'react';
 import type { Item } from '@/app/data';
 import { Check, CopyIcon } from 'lucide-react';
-import { compassData } from './periodic-table';
+import { categoryData } from './periodic-table';
 import { prefix } from '@/prefix';
 import useMobile from '@/custom-hooks/use-mobile';
 
@@ -81,8 +81,9 @@ export default function Sidebar({
           <div className="flex justify-center items-center">
             <div
               className={`lg:mx-0 w-6 h-6 rounded my-1 ${
-                compassData.find((item) => item.name === activeElement.category)
-                  ?.color
+                categoryData.find(
+                  (item) => item.name === activeElement.category
+                )?.color
               }`}
             />
             <span className="ml-2">{activeElement.category}</span>

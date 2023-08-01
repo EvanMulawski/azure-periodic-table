@@ -1,10 +1,10 @@
 /* src/components/grid.tsx */
 
 import type { Categories } from '@/app/constants';
-import type { CompassData } from './compass';
+import type { CategoryData } from './compass';
 import Image from 'next/image';
 import type { Item } from '@/app/data';
-import { createRef, useEffect, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
 
@@ -15,7 +15,7 @@ interface CellProps {
   setActiveCategory: (category: Categories | null) => void;
   select: () => void;
   setActiveElement: (element: any) => void;
-  compassData: CompassData;
+  categoryData: CategoryData;
   textSearch: string;
 }
 
@@ -25,12 +25,12 @@ const Cell: React.FC<CellProps> = ({
   activeCategory,
   select,
   setActiveElement,
-  compassData,
+  categoryData,
   textSearch,
 }) => {
   const ref = useRef<HTMLDivElement>(null); // Create a ref
 
-  const color = compassData.find((c) => c.name === item.category)?.color;
+  const color = categoryData.find((c) => c.name === item.category)?.color;
 
   const height =
     zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-[70px]' : 'h-28';
@@ -54,7 +54,7 @@ const Cell: React.FC<CellProps> = ({
 
   const transparent = isDisabled ? 'opacity-50' : 'opacity-100';
 
-  const hoverScale = isDisabled ? '' : 'hover:scale-200';
+  const hoverScale = isDisabled ? '' : 'hover:scale-150';
 
   const isMobile = useMobile();
 
@@ -105,24 +105,24 @@ const Cell: React.FC<CellProps> = ({
   );
 };
 
-interface GridProps {
+interface ColumnProps {
   items: Item[];
   activeCategory: Categories | null;
   setActiveCategory: (category: Categories | null) => void;
   select: () => void;
   setActiveElement: (element: any) => void;
-  compassData: CompassData;
+  categoryData: CategoryData;
   textSearch: string;
   zoomLevel: 0 | 1 | 2;
 }
 
-export const Grid: React.FC<GridProps> = ({
+export const Column: React.FC<ColumnProps> = ({
   items,
   activeCategory,
   setActiveCategory,
   select,
   setActiveElement,
-  compassData,
+  categoryData,
   textSearch,
   zoomLevel,
 }) => {
@@ -137,7 +137,7 @@ export const Grid: React.FC<GridProps> = ({
           item={item}
           select={select}
           setActiveElement={setActiveElement}
-          compassData={compassData}
+          categoryData={categoryData}
           zoomLevel={zoomLevel}
         />
       ))}

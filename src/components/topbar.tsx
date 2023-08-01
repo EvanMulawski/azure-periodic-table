@@ -5,15 +5,7 @@ import { siteConfig } from '@/config';
 import { useTheme } from 'next-themes';
 import { themes } from '@/lib/utils';
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTitle } from './ui/sheet';
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from './ui/dropdown-menu';
+import { Sheet, SheetContent } from './ui/sheet';
 
 export default function Topbar() {
   const { theme, setTheme } = useTheme();

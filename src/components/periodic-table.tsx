@@ -1,11 +1,11 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { Grid } from './grid';
-import { Compass, type CompassData } from './compass';
+import { Column } from './grid';
+import { CategorySelector, type CategoryData } from './compass';
 import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
 import { colorConfig } from '@/config';
 
-export const compassData: CompassData = [
+export const categoryData: CategoryData = [
   { name: Categories.GENERAL, color: colorConfig.gray },
   { name: Categories.NETWORKING, color: colorConfig.red },
   { name: Categories.COMPUTEANDWEB, color: colorConfig.orange },
@@ -40,7 +40,7 @@ export default function PeriodicTable({
     <div className="flex-col-reverse flex w-full lg:flex-row lg:flex text-white justify-start md:justify-center items-start py-6 overflow-scroll md:overflow-visible flex-nowrap">
       <div className="flex justify-start md:justify-center items-start">
         {columns.map((group, i) => (
-          <Grid
+          <Column
             select={() => setOpen(true)}
             activeCategory={activeCategory}
             setActiveCategory={setActiveCategory}
@@ -48,16 +48,16 @@ export default function PeriodicTable({
             items={group.items}
             textSearch={textSearch}
             setActiveElement={setActiveElement}
-            compassData={compassData}
+            categoryData={categoryData}
             zoomLevel={zoomLevel}
           />
         ))}
       </div>
 
-      <Compass
+      <CategorySelector
         activeCategory={activeCategory}
         setActiveCategory={setActiveCategory}
-        compassData={compassData}
+        categoryData={categoryData}
       />
     </div>
   );

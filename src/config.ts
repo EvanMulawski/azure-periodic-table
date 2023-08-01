@@ -6,10 +6,10 @@ export const siteConfig = {
   linkedin: 'https://www.linkedin.com/in/justin-o-connor-67376483/',
 };
 
-const twitterUsername = 'justinOConnor';
+const twitterUsername = "Justin O'Connor";
 const encodedWebsite = encodeURIComponent(siteConfig.url);
-const encodedUsername = encodeURIComponent('@' + twitterUsername);
-const hashtag = '%23Azure';
+const encodedUsername = encodeURIComponent(twitterUsername);
+const hashtag = '%23AzurePeriodicTable';
 
 export const socialConfig = {
   twitterUsername: 'reillyjodonnell',
