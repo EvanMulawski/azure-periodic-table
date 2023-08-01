@@ -71,18 +71,30 @@ export default function Sidebar({
             </div>
           </div>
         </SheetTitle>
-
+        <div className="mb-4">
+          <span className="text-left break-words w-full mb-4">
+            {activeElement?.description}
+          </span>
+        </div>
         <div className="mb-4">
           <CodeSnippet codeString={activeElement?.code ?? ''} />
         </div>
-        <span className="text-left break-words w-full mb-4">
-          {activeElement?.description}
-        </span>
         <div className="flex flex-col justify-center items-start my-6">
-          <span className="mr-2 whitespace-nowrap">
-            <span className="font-bold">Category </span>
-          </span>
           <div className="flex justify-center items-center">
+          <span className="mr-6">
+              {activeElement?.learnUrl && (
+                <a
+                  target="_blank"
+                  href={activeElement?.learnUrl}
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
+                >
+                  <div className="mr-2">
+                    <MicrosoftLogo width={24} height={24} />
+                  </div>
+                  <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
+                </a>
+              )}
+            </span>
             <div
               className={`lg:mx-0 w-6 h-6 rounded my-1 ${compassData.find((item) => item.name === activeElement.category)
                 ?.color

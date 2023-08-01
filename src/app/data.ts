@@ -1652,7 +1652,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'stream analytics',
-        slug: 'asa-',
+        slug: 'sa-',
         description:
           'Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.',
         length: '3-63',
