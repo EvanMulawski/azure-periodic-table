@@ -141,7 +141,7 @@ export default function Sidebar({
                 <div className="mr-2">
                   <TerraformLogo width={24} height={24} />
                 </div>
-                <span>{isMobile ? 'Terraform' : 'AzureRm Provider'}</span>
+                <span>{isMobile ? 'Terraform' : 'Terraform'}</span>
               </a>
             )}
 
@@ -166,16 +166,6 @@ export default function Sidebar({
                     <MicrosoftLogo width={24} height={24} />
                   </div>
                   <span>{isMobile ? 'ARM' : 'ARM Template'}</span>
-                </a>
-                <a
-                  target="_blank"
-                  href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-terraform`}
-                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mb-4"
-                >
-                  <div className="mr-2">
-                    <TerraformLogo width={24} height={24} />
-                  </div>
-                  <span>{isMobile ? 'AzAPI' : 'AzAPI Provider'}</span>
                 </a>
               </>
             )}
