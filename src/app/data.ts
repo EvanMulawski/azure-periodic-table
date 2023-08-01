@@ -46,7 +46,7 @@ export const columns: ColumnType[] = [
       },
       {
         "name": "Subscriptions",
-        "slug": "-",
+        "slug": "sub-",
         "description": "Subscriptions in Azure act as a single billing unit and provide the ability to administer resources, control resource usage, and organize resources according to individual business needs.",
         "length": "1-90",
         "category": Categories.GENERAL,
@@ -883,7 +883,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'waf policy rule group',
-        slug: 'wafrg',
+        slug: 'wafrg-',
         description:
           'A WAF Policy Rule Group in Azure represents a set of rules for a Web Application Firewall to act upon. The rules in a group are used to filter and control the incoming traffic to the web application.',
         length: '1-80',
@@ -982,7 +982,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'arc enabled kubernetes cluster',
-        slug: 'arck',
+        slug: 'arck-',
         description:
           'Azure Arc-enabled Kubernetes enables you to attach and configure Kubernetes clusters anywhere using Azure. When a Kubernetes cluster is attached to Azure Arc, it will appear in the Azure portal, where you can use familiar Azure services and management capabilities.',
         length: '1-63',
@@ -1001,7 +1001,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'disk encryption set',
-        slug: 'des',
+        slug: 'des-',
         description:
           'Azure Disk Encryption Sets is a resource that is used to provide disk encryption keys for Azure managed disks. It uses keys from your Azure Key Vault to encrypt and decrypt the disks of your virtual machines.',
         length: '1-80',
@@ -1171,7 +1171,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'virtual machine (windows)',
-        slug: 'VMW',
+        slug: 'vmw',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
         length: '1-15',
@@ -1189,7 +1189,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'virtual machine (linux)',
-        slug: 'VML',
+        slug: 'vml',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
         length: '1-64',
@@ -1538,7 +1538,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'storsimple',
-        slug: 'ssimp',
+        slug: 'ssimp-',
         description:
           'Azure StorSimple is a hybrid cloud storage solution that integrates your on-premises IT environment with the Azure storage infrastructure. It provides primary storage, archive, backup, and disaster recovery, while reducing cost and IT workload.',
         length: '2-50',
@@ -1686,7 +1686,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'data explorer cluster database',
-        slug: 'dedb',
+        slug: 'dedb-',
         description:
           'A database in Azure Data Explorer (ADX) is a logical container for data. Each database belongs to a cluster and contains a set of tables where each table is a collection of ordered columns.',
         length: '1-260',
