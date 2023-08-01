@@ -5,6 +5,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
+import Head from 'next/head';
+import PeriodicTable from '/periodic-table.png';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,6 +22,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" style={{ width: '100%' }}>
+      <Head>
+        <meta
+          property="og:image"
+          content="https://azure-periodic-table.onwardplatforms.com/periodic-table.png"
+        />
+        <meta
+          property="og:image:alt"
+          content="Azure Resource Naming Convention Periodic Table"
+        />
+        <meta
+          property="twitter:image"
+          content="https://azure-periodic-table.onwardplatforms.com/periodic-table.png"
+        />
+        <meta
+          property="twitter:image:alt"
+          content="Azure Resource Naming Convention Periodic Table"
+        />
+      </Head>
       <Script
         async
         strategy="afterInteractive"
