@@ -1,7 +1,7 @@
 /* src/components/grid.tsx */
 
 import type { Categories } from '@/app/constants';
-import type { CategoryData } from './compass';
+import type { CategoryData } from './category-selector';
 import Image from 'next/image';
 import type { Item } from '@/app/data';
 import { useLayoutEffect, useRef } from 'react';
