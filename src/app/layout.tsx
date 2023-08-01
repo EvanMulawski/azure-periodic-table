@@ -6,7 +6,12 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Script from 'next/script';
 import Head from 'next/head';
-import PeriodicTable from '/periodic-table.png';
+
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
 
 const inter = Inter({ subsets: ['latin'] });
 

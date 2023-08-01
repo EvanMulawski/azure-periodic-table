@@ -7,6 +7,7 @@ import type { Item } from '@/app/data';
 import { useLayoutEffect, useRef } from 'react';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
+import { handleGoogleTag } from '@/lib/utils';
 
 interface CellProps {
   item: Item;
@@ -76,6 +77,7 @@ const Cell: React.FC<CellProps> = ({
       ref={ref} // Pass the ref to the div
       onClick={() => {
         if (isDisabled) return;
+        handleGoogleTag(item);
         setActiveElement(item);
         select();
       }}
