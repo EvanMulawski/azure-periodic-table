@@ -66,8 +66,12 @@ export default function Sidebar({
             <div className="flex">
               <span className="font-bold text-xl">{activeElement.name}</span>
             </div>
+            <div className="font-light text-xs">
+              <span>{activeElement?.resource}/{activeElement?.entity}</span>
+            </div>
           </div>
         </SheetTitle>
+
         <div className="mb-4">
           <CodeSnippet codeString={activeElement?.code ?? ''} />
         </div>
@@ -80,21 +84,15 @@ export default function Sidebar({
           </span>
           <div className="flex justify-center items-center">
             <div
-              className={`lg:mx-0 w-6 h-6 rounded my-1 ${
-                compassData.find((item) => item.name === activeElement.category)
-                  ?.color
-              }`}
+              className={`lg:mx-0 w-6 h-6 rounded my-1 ${compassData.find((item) => item.name === activeElement.category)
+                ?.color
+                }`}
             />
             <span className="ml-2">{activeElement.category}</span>
           </div>
         </div>
         <div className="my-6 text-left">
-          <span className="font-bold">Scope</span>
-          <div>
-            <span>{activeElement?.scope}</span>
-          </div>
-        </div>
-        <div className="my-6 text-left">
+          <div className="font-bold text-xl my-6">Naming Rules and Restrictions</div>
           <span className="font-bold">Length</span>
           <div>
             <span>{activeElement?.length}</span>
@@ -106,33 +104,66 @@ export default function Sidebar({
             <span>{activeElement?.restrictions}</span>
           </div>
         </div>
-        <div />
-        <div className="flex justify-start items-center my-6">
-          {activeElement?.terraformUrl && (
-            <a
-              target="_blank"
-              href={activeElement?.terraformUrl}
-              className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4"
-            >
-              <div className="mr-2">
-                <TerraformLogo width={24} height={24} />
-              </div>
-              <span>{isMobile ? 'Code' : 'Terraform Code'}</span>
-            </a>
-          )}
-          {activeElement?.learnUrl && (
-            <a
-              target="_blank"
-              href={activeElement?.learnUrl}
-              className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all"
-            >
-              <div className="mr-2">
-                <LearnLogo width={24} height={24} />
-              </div>
-              <span>{isMobile ? 'Learn' : 'Microsoft Learn'}</span>
-            </a>
-          )}
+        <div className="my-6 text-left">
+          <span className="font-bold">Scope</span>
+          <div>
+            <span>{activeElement?.scope}</span>
+          </div>
         </div>
+        <div />
+        <div className="my-6 text-left">
+          <span className="font-bold text-xl">Code</span>
+          <div className="flex justify-start items-center my-2 flex-wrap">
+            {activeElement?.terraformUrl && (
+              <a
+                target="_blank"
+                href={activeElement?.terraformUrl}
+                className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-4"
+              >
+                <div className="mr-2">
+                  <TerraformLogo width={24} height={24} />
+                </div>
+                <span>{isMobile ? 'Terraform' : 'AzureRm Provider'}</span>
+              </a>
+            )}
+
+            {activeElement?.resource && activeElement?.entity && (
+              <>
+                <a
+                  target="_blank"
+                  href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-bicep`}
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-4"
+                >
+                  <div className="mr-2">
+                    <MicrosoftLogo width={24} height={24} />
+                  </div>
+                  <span>{isMobile ? 'Bicep' : 'Bicep'}</span>
+                </a>
+                <a
+                  target="_blank"
+                  href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-arm-template`}
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-4"
+                >
+                  <div className="mr-2">
+                    <MicrosoftLogo width={24} height={24} />
+                  </div>
+                  <span>{isMobile ? 'ARM' : 'ARM Template'}</span>
+                </a>
+                <a
+                  target="_blank"
+                  href={`https://learn.microsoft.com/en-us/azure/templates/${activeElement?.resource}/${activeElement?.entity}?pivots=deployment-language-terraform`}
+                  className="flex justify-start items-center text-sm flex break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mb-4"
+                >
+                  <div className="mr-2">
+                    <TerraformLogo width={24} height={24} />
+                  </div>
+                  <span>{isMobile ? 'AzAPI' : 'AzAPI Provider'}</span>
+                </a>
+              </>
+            )}
+          </div>
+        </div>
+
       </SheetContent>
     </Sheet>
   );
@@ -159,7 +190,7 @@ function TerraformLogo({ width: width = 32, height: height = 32 }) {
   );
 }
 
-function LearnLogo({ width: width = 32, height: height = 32 }) {
+function MicrosoftLogo({ width: width = 32, height: height = 32 }) {
   return (
     <svg
       width={width}
