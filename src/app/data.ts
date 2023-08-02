@@ -1484,10 +1484,6 @@ export const columns: ColumnType[] = [
         icon: '/icons/Data/SQL Managed Instance.png',
         code: '',
       },
-    ],
-  },
-  {
-    items: [
       {
         name: 'storage account',
         slug: 'st',
@@ -1525,6 +1521,10 @@ export const columns: ColumnType[] = [
         icon: '/icons/Data/StorSimple Device Manager.png',
         code: '',
       },
+    ],
+  },
+  {
+    items: [
       {
         name: 'machine learning workspace',
         slug: 'mlw-',
@@ -1671,10 +1671,6 @@ export const columns: ColumnType[] = [
         icon: '/icons/AI/Cognitive Services Face API.png',
         code: '',
       },
-    ],
-  },
-  {
-    items: [
       {
         name: 'anonaly detector service',
         slug: 'anod-',
@@ -1711,6 +1707,10 @@ export const columns: ColumnType[] = [
         icon: '/icons/AI/Content Safety.png',
         code: '',
       },
+    ],
+  },
+  {
+    items: [
       {
         name: 'personalizer service',
         slug: 'pers-',
