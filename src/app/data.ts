@@ -2325,6 +2325,21 @@ export const columns: ColumnType[] = [
         icon: '/icons/Data/Azure Synapse Analytics Spark Pool.png',
         code: '',
       },
+      {
+        name: "digital twins instance",
+        slug: "dt-",
+        description: "Azure Digital Twins is a developer platform for next-generation IoT solutions that lets you create, run, and manage digital representations of your business environment, securely and efficiently in the cloud.",
+        length: "3-63",
+        category: Categories.ANALYTICSANDIOT,
+        learnUrl: "https://learn.microsoft.com/en-us/azure/digital-twins/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_instance",
+        restrictions: "Alphanumerics and hyphens are allowed. Value must start and end with an alphanumeric.",
+        resource: "Microsoft.DigitalTwins",
+        entity: "digitalTwinsInstances",
+        scope: "resource group",
+        icon: "/icons/IoT/IoT Digital Twin.png",
+        code: "",
+      }
     ],
   },
   {
