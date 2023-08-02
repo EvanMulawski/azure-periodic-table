@@ -1695,7 +1695,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'translator service',
-        slug: 'trans-',
+        slug: 'tran-',
         description:
           'Azure Translator service allows applications to translate text in real-time or batch across more than 60 languages, supporting multi-lingual user experiences.',
         length: '2-64',
@@ -1749,7 +1749,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'anonaly detector service',
-        slug: 'anod-',
+        slug: 'ad-',
         description:
           'Azure Anomaly Detector service provides AI-based anomaly detection capabilities to identify abnormal patterns or trends in your data quickly and accurately.',
         length: '2-64',
@@ -1843,7 +1843,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'metrics advisor service',
-        slug: 'mad-',
+        slug: 'ma-',
         description:
           'Azure Metrics Advisor service provides an AI-powered anomaly detection and metric monitoring tool for personalized alert configuration, root cause analysis, and proactive problem remediation.',
         length: '2-64',
@@ -1861,7 +1861,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'video indexer service',
-        slug: 'vidi-',
+        slug: 'vi-',
         description:
           'Azure Video Indexer service extracts insights from videos using AI technologies, including emotions, sentiment, spoken and written words, people, and objects.',
         length: '2-64',
@@ -1879,7 +1879,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'immersive reader service',
-        slug: 'imr-',
+        slug: 'ir-',
         description:
           'Azure Immersive Reader service enhances reading and comprehension of text, offering features like reading aloud, translating into different languages, and focus mode.',
         length: '2-64',
