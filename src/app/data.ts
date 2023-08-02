@@ -3,11 +3,15 @@
 import { Categories } from './constants';
 
 /*
+Review databases and add items:
+https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
+
 Consider adding:
 - Cloud service: 	Microsoft.Compute/cloudServices
 - Communcation services: Microsoft.Communication/communicationServices
 - Hosting environment:	Microsoft.Web/hostingEnvironments
 - Image template: Microsoft.VirtualMachineImages/imageTemplates
+- WebPubSub: Microsoft.SignalRService/webPubSub
 */
 
 export type Item = {
@@ -1413,7 +1417,7 @@ export const columns: ColumnType[] = [
     items: [
       {
         name: 'cosmos db account',
-        slug: 'cdb-',
+        slug: 'cosmos-',
         description:
           'Azure Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide.',
         length: '3-44',
@@ -1519,7 +1523,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'sql server stretch database',
-        slug: 'sqlsdb-',
+        slug: 'sqlstrdb-',
         description:
           'Azure SQL Stretch Database is a service that lets you extend your SQL Server databases into the Azure cloud. This allows you to keep more of your historical data at your fingertips.',
         length: '1-128',
@@ -2533,6 +2537,21 @@ export const columns: ColumnType[] = [
         icon: '/icons/Application/SignalR.png',
         code: '',
       },
+      {
+        name: "maps account",
+        slug: "map-",
+        description: "Azure Maps Account provides access to Azure Maps services and geospatial capabilities. It includes a range of APIs providing mapping, search, routing, traffic, time zones, geolocation, geofencing, and other geospatial capabilities, enabling the development of location-aware applications and IoT solutions.",
+        length: "1-98",
+        category: Categories.DEVTOOLS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/azure-maps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/maps_account",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.",
+        resource: "Microsoft.Maps",
+        entity: "accounts",
+        scope: "resource group",
+        icon: "/icons/Application/Azure Maps Account.png",
+        code: "",
+      }
     ],
   },
   {
