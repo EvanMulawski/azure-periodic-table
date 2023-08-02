@@ -179,7 +179,7 @@ export default function Sidebar({
 function TerraformLogo({ width: width = 32, height: height = 32 }) {
   return (
     <svg width={width} height={height} viewBox="0 0 128 128">
-      <g fill-rule="evenodd">
+      <g fillRule="evenodd">
         <path
           d="M77.941 44.5v36.836L46.324 62.918V26.082zm0 0"
           fill="#5c4ee5"

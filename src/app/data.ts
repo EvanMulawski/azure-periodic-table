@@ -2,6 +2,19 @@
 
 import { Categories } from './constants';
 
+/*
+Review databases and add items:
+https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/azure-best-practices/resource-abbreviations
+
+Consider adding:
+- Cloud service: 	Microsoft.Compute/cloudServices
+- Communcation services: Microsoft.Communication/communicationServices
+- Hosting environment:	Microsoft.Web/hostingEnvironments
+- Image template: Microsoft.VirtualMachineImages/imageTemplates
+- WebPubSub: Microsoft.SignalRService/webPubSub
+- Service Bus Topic Subscription: Microsoft.ServiceBus/namespaces/topics/subscriptions
+*/
+
 export type Item = {
   name: string;
   slug: string;
@@ -41,7 +54,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Management',
         entity: 'managementGroups',
         scope: 'tenant',
-        icon: '/icons/general/managementgroups.png',
+        icon: '/icons/Management/Management Group.png',
         code: '',
       },
       {
@@ -56,7 +69,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Subscription",
         "entity": "subscriptions",
         "scope": "tenant",
-        "icon": "/icons/general/subscriptions.png",
+        "icon": "/icons/Management/Subscription.png",
         "code": ""
       },
       {
@@ -75,7 +88,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Resources',
         entity: 'resourcegroups',
         scope: 'subscription',
-        icon: '/icons/general/resourcegroups.png',
+        icon: '/icons/Management/Resource Group.png',
         code: '',
       },
       {
@@ -94,7 +107,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ManagedIdentity',
         entity: 'userAssignedIdentities',
         scope: 'resource group',
-        icon: '/icons/identity/managed-identities.png',
+        icon: '/icons/Identity/Managed Identity.png',
         code: '',
       },
       {
@@ -109,7 +122,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Authorization",
         "entity": "policySetDefinitions",
         "scope": "scope of definition",
-        "icon": "/icons/general/information.png",
+        "icon": "/icons/Management/Policy Initiative.png",
         "code": "",
       },
       {
@@ -128,7 +141,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Authorization',
         entity: 'policyDefinitions',
         scope: 'scope of definition',
-        icon: '/icons/general/information.png',
+        icon: '/icons/Management/Policy Definition.png',
         code: '',
       }
     ],
@@ -151,7 +164,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'applicationGateways',
         scope: 'resource group',
-        icon: '/icons/network/application-gateway.png',
+        icon: '/icons/Networking/Application Gateway.png',
         code: '',
       },
       {
@@ -170,25 +183,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'applicationSecurityGroups',
         scope: 'resource group',
-        icon: '/icons/network/application-security-groups.png',
-        code: '',
-      },
-      {
-        name: 'bastion',
-        slug: 'bas-',
-        description:
-          'Azure Bastion is a fully managed network security service that provides secure and seamless Remote Desktop Protocol (RDP) and Secure Shell (SSH) access to your virtual machines directly from the Azure portal.',
-        length: '1-80',
-        category: Categories.NETWORKING,
-        learnUrl: 'https://learn.microsoft.com/en-us/azure/bastion/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host',
-        restrictions:
-          'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.',
-        resource: 'Microsoft.Network',
-        entity: 'bastionHosts',
-        scope: 'resource group',
-        icon: '/icons/network/bastion.png',
+        icon: '/icons/Application/Application Security Group.png',
         code: '',
       },
       {
@@ -206,7 +201,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cdn',
         entity: 'profiles',
         scope: 'resource group',
-        icon: '/icons/network/cdn-profiles.png',
+        icon: '/icons/Networking/CDN Profile.png',
         code: '',
       },
       {
@@ -224,14 +219,33 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cdn',
         entity: 'profiles/endpoints',
         scope: 'global',
-        icon: '/icons/network/cdn-profiles.png',
+        icon: '/icons/Networking/CDN Profile.png',
         code: '',
       },
       {
-        name: 'gateway connections',
+        name: 'expressroute circuit',
+        slug: 'erc-',
+        description:
+          'Azure ExpressRoute is a service that enables establishing dedicated, private network connections between Azure datacenters and your on-premises infrastructure.',
+        length: '1-80',
+        category: Categories.NETWORKING,
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/expressroute/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/express_route_circuit',
+        restrictions:
+          'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.',
+        resource: 'Microsoft.Network',
+        entity: 'expressRouteCircuits',
+        scope: 'resource group',
+        icon: '/icons/Networking/ExpressRoute Circuit.png',
+        code: '',
+      },
+      {
+        name: 'expressroute connection',
         slug: 'gc-',
         description:
-          'Azure Connections represent the peerings that exist between virtual networks. Through Azure Connections, you can create complex network topologies or chain virtual networks together for resource access.',
+          'Azure ExpressRoute Connections enable private and dedicated network connections between your on-premises datacenter or network and Microsoft Azure. Through ExpressRoute, you can establish a reliable, low-latency, and high-bandwidth connection, which provides enhanced security and performance for accessing Azure resources.',
         length: '1-80',
         category: Categories.NETWORKING,
         learnUrl:
@@ -243,7 +257,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'connections',
         scope: 'resource group',
-        icon: '/icons/network/connections.png',
+        icon: '/icons/Networking/ExpressRoute Connection.png',
         code: '',
       },
       {
@@ -262,7 +276,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'dnsZones',
         scope: 'resource group',
-        icon: '/icons/network/dns-zones.png',
+        icon: '/icons/Networking/DNS Zone (Public).png',
         code: '',
       },
       {
@@ -282,7 +296,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'privateDnsZones',
         scope: 'resource group',
-        icon: '/icons/network/dns-private-zones.png',
+        icon: '/icons/Networking/DNS Zone (Private).png',
         code: '',
       },
       {
@@ -300,7 +314,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'azureFirewalls',
         scope: 'resource group',
-        icon: '/icons/network/firewall.png',
+        icon: '/icons/Security/Azure Firewall.png',
         code: '',
       },
       {
@@ -319,7 +333,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies',
         scope: 'resource group',
-        icon: '/icons/security/defender.png',
+        icon: '/icons/Security/Azure Firewall Policy.png',
         code: '',
       },
     ],
@@ -327,22 +341,21 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'expressroute circuit',
-        slug: 'erc-',
+        name: 'bastion',
+        slug: 'bas-',
         description:
-          'Azure ExpressRoute is a service that enables establishing dedicated, private network connections between Azure datacenters and your on-premises infrastructure.',
+          'Azure Bastion is a fully managed network security service that provides secure and seamless Remote Desktop Protocol (RDP) and Secure Shell (SSH) access to your virtual machines directly from the Azure portal.',
         length: '1-80',
         category: Categories.NETWORKING,
-        learnUrl:
-          'https://learn.microsoft.com/en-us/azure/expressroute/',
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/bastion/',
         terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/express_route_circuit',
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/bastion_host',
         restrictions:
-          'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.  End alphanumeric or underscore.',
+          'Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric. End alphanumeric or underscore.',
         resource: 'Microsoft.Network',
-        entity: 'expressRouteCircuits',
+        entity: 'bastionHosts',
         scope: 'resource group',
-        icon: '/icons/network/expressroute-circuits.png',
+        icon: '/icons/Networking/Bastion.png',
         code: '',
       },
       {
@@ -361,7 +374,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'frontDoors',
         scope: 'global',
-        icon: '/icons/network/front-doors.png',
+        icon: '/icons/Networking/Azure Front Door.png',
         code: '',
       },
       {
@@ -379,7 +392,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'frontdoorWebApplicationFirewallPolicies',
         scope: 'resource group',
-        icon: '/icons/network/front-doors.png',
+        icon: '/icons/Networking/Azure Front Door.png',
         code: '',
       },
       {
@@ -398,7 +411,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers',
         scope: 'resource group',
-        icon: '/icons/network/load-balancers.png',
+        icon: '/icons/Networking/Load Balancer.png',
         code: '',
       },
       {
@@ -417,7 +430,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers',
         scope: 'resource group',
-        icon: '/icons/network/load-balancers.png',
+        icon: '/icons/Networking/Load Balancer.png',
         code: '',
       },
       {
@@ -436,7 +449,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers/inboundNatRules',
         scope: 'load balancer',
-        icon: '/icons/network/load-balancers.png',
+        icon: '/icons/Networking/Load Balancer Backend Load Balancing Rule.png',
         code: '',
       },
       {
@@ -455,7 +468,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'localNetworkGateways',
         scope: 'resource group',
-        icon: '/icons/network/local-network-gateways.png',
+        icon: '/icons/Networking/Local Network Gateway.png',
         code: '',
       },
       {
@@ -474,7 +487,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'natGateways',
         scope: 'resource group',
-        icon: '/icons/network/network-watcher.png',
+        icon: '/icons/Networking/NAT Gateway.png',
         code: '',
       },
       {
@@ -493,7 +506,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkInterfaces',
         scope: 'resource group',
-        icon: '/icons/network/network-interfaces.png',
+        icon: '/icons/Networking/Network Interface.png',
         code: '',
       },
       {
@@ -512,7 +525,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkSecurityGroups',
         scope: 'resource group',
-        icon: '/icons/network/network-security-groups-classic.png',
+        icon: '/icons/Networking/Network Security Group.png',
         code: '',
       },
     ],
@@ -535,7 +548,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkSecurityGroups/securityRules',
         scope: 'network security group',
-        icon: '/icons/network/network-security-groups-classic.png',
+        icon: '/icons/Networking/Network Security Group Inbound Rule.png',
         code: '',
       },
       {
@@ -553,12 +566,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkWatchers',
         scope: 'resource group',
-        icon: '/icons/network/network-watcher.png',
+        icon: '/icons/Networking/Network Watcher.png',
         code: '',
       },
       {
         name: 'private endpoint',
-        slug: 'pe-',
+        slug: 'pep-',
         description:
           'Azure Private Endpoint enables a private and secure connection to Azure PaaS, customer-owned, or Microsoft partner services, directly from your virtual network. The private connection uses a private IP address from your VNet, effectively bringing the service into your VNet.',
         length: '2-64',
@@ -570,7 +583,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'privateEndpoints',
         scope: 'resource group',
-        icon: '/icons/network/private-endpoint.png',
+        icon: '/icons/Networking/Private Endpoint.png',
         code: '',
       },
       {
@@ -589,7 +602,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'publicIPAddresses',
         scope: 'resource group',
-        icon: '/icons/network/public-ip-addresses.png',
+        icon: '/icons/Networking/Public IP Address.png',
         code: '',
       },
       {
@@ -608,7 +621,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'publicIPPrefixes',
         scope: 'resource group',
-        icon: '/icons/network/public-ip-addresses.png',
+        icon: '/icons/Networking/Public IP Prefix.png',
         code: '',
       },
       {
@@ -627,7 +640,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeFilters',
         scope: 'resource group',
-        icon: '/icons/network/route-filters.png',
+        icon: '/icons/Networking/Route Filter.png',
         code: '',
       },
       {
@@ -646,12 +659,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeTables',
         scope: 'resource group',
-        icon: '/icons/network/route-tables.png',
+        icon: '/icons/Networking/Route Table.png',
         code: '',
       },
       {
-        name: 'service endpoint policies',
-        slug: 'sep-',
+        name: 'service endpoint policy',
+        slug: 'se-',
         description:
           'Service Endpoint Policies in Azure define which services are accessible from a subnet, providing granular network security for Azure service resources.',
         length: '1-80',
@@ -665,7 +678,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'serviceEndpointPolicies',
         scope: 'resource group',
-        icon: '/icons/network/service-endpoint-policies.png',
+        icon: '/icons/Application/Service Endpoint Policy.png',
         code: '',
       },
       {
@@ -684,7 +697,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'trafficmanagerprofiles',
         scope: 'global',
-        icon: '/icons/network/traffic-manager-profiles.png',
+        icon: '/icons/Networking/Traffic Manager Profile.png',
         code: '',
       },
       {
@@ -703,7 +716,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeTables/routes',
         scope: 'route table',
-        icon: '/icons/network/route-tables.png',
+        icon: '/icons/Networking/Route Table.png',
         code: '',
       },
     ],
@@ -726,7 +739,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworks',
         scope: 'resource group',
-        icon: '/icons/network/virtual-networks.png',
+        icon: '/icons/Networking/Virtual Network.png',
         code: '',
       },
       {
@@ -745,7 +758,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualnetworks/subnets',
         scope: 'virtual network',
-        icon: '/icons/network/subnets.png',
+        icon: '/icons/Networking/Virtual Subnet.png',
         code: '',
       },
       {
@@ -764,11 +777,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworks/virtualNetworkPeerings',
         scope: 'virtual network',
-        icon: '/icons/network/virtual-networks.png',
+        icon: '/icons/Networking/Virtual Network Peering.png',
         code: '',
       },
       {
-        name: 'virtual wide-area-network',
+        name: 'virtual wan',
         slug: 'vwan-',
         description:
           'Azure Virtual WAN is a networking service that brings many networking, security, and routing functionalities together to provide a single operational interface. It enables global transit network architecture by connecting, and configuring multiple types of networks.',
@@ -783,12 +796,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualWans',
         scope: 'resource group',
-        icon: '/icons/network/virtual-wans.png',
+        icon: '/icons/Networking/Virtual WAN.png',
         code: '',
       },
       {
         name: 'vpn gateway',
-        slug: 'vgw-',
+        slug: 'vpng-',
         description:
           'Azure VPN Gateway connects your on-premises networks to Azure through Site-to-Site VPNs in a similar way that you set up and connect to a remote branch office. It allows secure connections from on-premises networks to Azure virtual networks.',
         length: '1-80',
@@ -802,12 +815,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnGateways',
         scope: 'resource group',
-        icon: '/icons/network/virtual-network-gateways.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
         name: 'vpn gateway connection',
-        slug: 'vgwc-',
+        slug: 'vcn-',
         description:
           'A VPN Gateway Connection in Azure is used to connect a virtual network gateway and a local network gateway, which is typically your on-premises network. It provides a secure, encrypted connection over the internet between your Azure virtual network and your on-premise network.',
         length: '1-80',
@@ -821,7 +834,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnGateways/vpnConnections',
         scope: 'VPN gateway',
-        icon: '/icons/network/virtual-network-gateways.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -840,12 +853,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnSites',
         scope: 'resource group',
-        icon: '/icons/network/virtual-network-gateways.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
         name: 'virtual network gateway',
-        slug: 'vngw-',
+        slug: 'vgw-',
         description:
           'A Virtual Network Gateway in Azure provides the capability to establish IPsec/IKE VPN tunnels between your virtual network and your on-premises hardware, or from a virtual network to a virtual network within Azure.',
         length: '1-80',
@@ -859,7 +872,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworkGateways',
         scope: 'resource group',
-        icon: '/icons/network/virtual-network-gateways.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -878,7 +891,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies',
         scope: 'resource group',
-        icon: '/icons/network/firewall.png',
+        icon: '/icons/Security/WAF Policy.png',
         code: '',
       },
       {
@@ -897,7 +910,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies/ruleGroups',
         scope: 'firewall policy',
-        icon: '/icons/network/firewall.png',
+        icon: '/icons/Security/WAF Policy.png',
         code: '',
       },
     ],
@@ -920,12 +933,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icons/web/app-service-environments.png',
+        icon: '/icons/Application/Application Service Environment.png',
         code: '',
       },
       {
         name: 'app service plan',
-        slug: 'plan-',
+        slug: 'asp-',
         description:
           'An Azure App Service Plan defines a set of compute resources for a web app to run, including the Tier, Number of Instances, and Size of the VMs.',
         length: '1-40',
@@ -939,7 +952,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'serverfarms',
         scope: 'resource group',
-        icon: '/icons/web/app-service-plans.png',
+        icon: '/icons/Application/Application Service Plan.png',
         code: '',
       },
       {
@@ -958,7 +971,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'availabilitySets',
         scope: 'resource group',
-        icon: '/icons/compute/availability-sets.png',
+        icon: '/icons/Compute/Virtual Machine Availability Set.png',
         code: '',
       },
       {
@@ -977,7 +990,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'serverfarms',
         scope: 'resource group',
-        icon: '/icons/compute/vm.png',
+        icon: '/icons/Management/Azure Arc SCVMM Management Server.png',
         code: '',
       },
       {
@@ -996,7 +1009,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerService',
         entity: 'managedClusters',
         scope: 'resource group',
-        icon: '/icons/compute/kubernetes-services.png',
+        icon: '/icons/Management/Azure Arc Kubernetes.png',
         code: '',
       },
       {
@@ -1014,7 +1027,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'diskEncryptionSets',
         scope: 'resource group',
-        icon: '/icons/compute/disk-encryption-sets.png',
+        icon: '/icons/Storage/Disk Encryption Set.png',
         code: '',
       },
       {
@@ -1033,11 +1046,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites/functions',
         scope: 'global or per domain',
-        icon: '/icons/compute/function-apps.png',
+        icon: '/icons/Application/Function App.png',
         code: '',
       },
       {
-        name: 'gallery',
+        name: 'shared image gallery',
         slug: 'gal',
         description:
           "Azure Shared Image Gallery is a service that helps you build structure and organization around your images. It provides grouping of image definitions within a 'gallery' container where each can have multiple versions.",
@@ -1052,7 +1065,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'galleries',
         scope: 'resource group',
-        icon: '/icons/compute/shared-image-galleries.png',
+        icon: '/icons/Compute/Shared Image Gallery.png',
         code: '',
       },
       {
@@ -1070,8 +1083,23 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'disks',
         scope: 'resource group',
-        icon: '/icons/compute/disks.png',
+        icon: '/icons/Storage/Managed Disk Standard SSD.png',
         code: '',
+      },
+      {
+        name: "load testing service",
+        slug: "lt-",
+        description: "Microsoft Load Testing Service is a fully managed service in Azure, designed to help developers and testers generate high-scale load and run simulations. The service supports creating tests quickly without deep knowledge of load-testing tools, or allows uploading of existing Apache JMeter scripts. It provides actionable insights into performance, scalability, and capacity, supporting continuous improvement through automated CI/CD workflows.",
+        length: "1-64",
+        category: Categories.COMPUTEANDWEB,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/load-testing/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/load_test",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens.",
+        resource: "Microsoft.LoadTestService",
+        entity: "loadTests",
+        scope: "resource group",
+        icon: "/icons/Management/Azure Load Testing.png",
+        code: "",
       },
     ],
   },
@@ -1092,12 +1120,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'disks',
         scope: 'resource group',
-        icon: '/icons/compute/disks.png',
+        icon: '/icons/Storage/Managed Disk Standard SSD.png',
         code: '',
       },
       {
         name: 'notification hubs',
-        slug: 'nh-',
+        slug: 'nft-',
         description:
           'Azure Notification Hubs provide a scalable, tailored notification infrastructure that enables you to push notifications from any backend (in the cloud or on-premises) to any platform (iOS, Android, Windows, etc.).',
         length: '1-260',
@@ -1110,12 +1138,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.NotificationHubs',
         entity: 'namespaces/notificationHubs',
         scope: 'namespace',
-        icon: '/icons/mobile/notification-hubs.png',
+        icon: '/icons/Application/Notification Hub.png',
         code: '',
       },
       {
         name: 'notification hubs namespace',
-        slug: 'nhns-',
+        slug: 'nftns-',
         description:
           'Azure Notification Hubs Namespaces provide a unique scoping container, in which you can create multiple notification hubs.',
         length: '6-50',
@@ -1129,7 +1157,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.NotificationHubs',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icons/mobile/notification-hubs.png',
+        icon: '/icons/Application/Notification Hub.png',
         code: '',
       },
       {
@@ -1148,7 +1176,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'snapshots',
         scope: 'resource group',
-        icon: '/icons/compute/disk-snapshots.png',
+        icon: '/icons/Storage/Managed Disk Snapshot.png',
         code: '',
       },
       {
@@ -1166,11 +1194,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icons/web/app-services.png',
+        icon: '/icons/Application/Static Web App.png',
         code: '',
       },
       {
-        name: 'virtual machine (windows)',
+        name: 'virtual machine windows',
         slug: 'vmw',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
@@ -1184,11 +1212,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachines',
         scope: 'resource group',
-        icon: '/icons/compute/vm.png',
+        icon: '/icons/Compute/Virtual Machine Windows.png',
         code: '',
       },
       {
-        name: 'virtual machine (linux)',
+        name: 'virtual machine linux',
         slug: 'vml',
         description:
           'Azure Virtual Machines (VMs) provide on-demand, high-scale, secure, virtualized infrastructure using Windows or Linux.',
@@ -1202,11 +1230,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachines',
         scope: 'resource group',
-        icon: '/icons/compute/vm.png',
+        icon: '/icons/Compute/Virtual Machine Linux.png',
         code: '',
       },
       {
-        name: 'virtual machine scale set (windows)',
+        name: 'virtual machine scale set windows',
         slug: 'vmss-',
         description:
           'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
@@ -1221,11 +1249,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
-        icon: '/icons/compute/vm-scale-set.png',
+        icon: '/icons/Compute/Virtual Machine Scale Set.png',
         code: '',
       },
       {
-        name: 'virtual machine scale set (linux)',
+        name: 'virtual machine scale set linux',
         slug: 'vmss-',
         description:
           'Azure Virtual Machine Scale Sets allow you to create and manage a group of identical, load balanced VMs, scaling automatically in response to demand.',
@@ -1240,14 +1268,14 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
-        icon: '/icons/compute/vm-scale-set.png',
+        icon: '/icons/Compute/Virtual Machine Scale Set.png',
         code: '',
       },
       {
-        name: 'web app',
+        name: 'app service',
         slug: 'app-',
         description:
-          'Azure Web App is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
+          'Azure App Service is a fully managed platform that enables you to build, deploy, and scale enterprise-grade web applications with ease.',
         length: '2-60',
         category: Categories.COMPUTEANDWEB,
         learnUrl: 'https://learn.microsoft.com/en-us/azure/app-service/',
@@ -1258,7 +1286,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icons/web/app-services.png',
+        icon: '/icons/Application/Application Service.png',
         code: '',
       },
     ],
@@ -1266,7 +1294,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'aks cluster',
+        name: 'container kubernetes service',
         slug: 'aks-',
         description:
           'Azure Kubernetes Service (AKS) is a managed container orchestration service provided by Azure, which simplifies Kubernetes management, deployment, and operations.',
@@ -1280,7 +1308,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerService',
         entity: 'managedClusters',
         scope: 'resource group',
-        icon: '/icons/compute/kubernetes-services.png',
+        icon: '/icons/Compute/Container Kubernetes Service.png',
         code: '',
       },
       {
@@ -1297,7 +1325,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerRegistry',
         entity: 'registries',
         scope: 'global',
-        icon: '/icons/compute/container-registries.png',
+        icon: '/icons/Compute/Container Registry.png',
         code: '',
       },
       {
@@ -1315,7 +1343,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerInstance',
         entity: 'containerGroups',
         scope: 'resource group',
-        icon: '/icons/compute/container-instances.png',
+        icon: '/icons/Compute/Container Instance.png',
         code: '',
       },
       {
@@ -1333,8 +1361,56 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceFabric',
         entity: 'clusters',
         scope: 'region',
-        icon: '/icons/compute/service-fabric-clusters.png',
+        icon: '/icons/Compute/Container Service Fabric Cluster.png',
         code: '',
+      },
+      {
+        name: 'service fabric managed cluster',
+        slug: 'sfmc-',
+        description:
+          'Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.',
+        length: '4-23',
+        category: Categories.CONTAINERS,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/service-fabric/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_fabric_cluster',
+        restrictions:
+          'Lowercase letters, numbers, and hyphens. Start with lowercase letter. End with lowercase letter or number.',
+        resource: 'Microsoft.ServiceFabric',
+        entity: 'managedClusters',
+        scope: 'region',
+        icon: '/icons/Application/Service Fabric Managed Cluster.png',
+        code: '',
+      },
+      {
+        name: "Container App Environment",
+        slug: "cae-",
+        description: "A Container Apps environment is a secure boundary around groups of container apps that share the same virtual network and write logs to the same logging destination. They are fully managed where Azure handles OS upgrades, scale operations, failover procedures, and resource balancing.",
+        length: "2-32",
+        category: Categories.CONTAINERS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/container-apps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app_environment",
+        restrictions: "Lowercase letters, numbers, and hyphens. Start with a letter and end with an alphanumeric character.",
+        resource: "Microsoft.App",
+        entity: "managedEnvironments",
+        scope: "resource group",
+        icon: "/icons/Application/Container App Environment.png",
+        code: "",
+      },
+      {
+        name: "Container App",
+        slug: "ca-",
+        description: "Azure Container Apps is a fully managed platform for running containerized applications in the cloud. It supports both Linux and Windows containers, allowing developers to build and deploy a variety of applications without having to manage the underlying infrastructure.",
+        length: "2-32",
+        category: Categories.CONTAINERS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/container-apps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app",
+        restrictions: "Lowercase letters, numbers, and hyphens. Start with a letter and end with an alphanumeric character.",
+        resource: "Microsoft.App",
+        entity: "containerApps",
+        scope: "resource group",
+        icon: "/icons/Application/Container App.png",
+        code: "",
       },
     ],
   },
@@ -1342,7 +1418,7 @@ export const columns: ColumnType[] = [
     items: [
       {
         name: 'cosmos db account',
-        slug: 'cdb-',
+        slug: 'cosmos-',
         description:
           'Azure Cosmos DB is a globally distributed, multi-model database service that enables you to elastically and independently scale throughput and storage across any number of Azure regions worldwide.',
         length: '3-44',
@@ -1356,7 +1432,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DocumentDB',
         entity: 'databaseAccounts',
         scope: 'global',
-        icon: '/icons/database/cosmos-db.png',
+        icon: '/icons/Data/Azure Cosmos DB.png',
         code: '',
       },
       {
@@ -1375,7 +1451,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cache',
         entity: 'Redis',
         scope: 'global',
-        icon: '/icons/database/cache-for-redis.png',
+        icon: '/icons/Networking/Azure Cache for Redis.png',
         code: '',
       },
       {
@@ -1390,7 +1466,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Sql",
         "entity": "servers",
         "scope": "global",
-        "icon": "/icons/database/sql-servers.png",
+        "icon": "/icons/Data/SQL Server.png",
         "code": ""
       },
       {
@@ -1409,23 +1485,8 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'servers/databases',
         scope: 'server',
-        icon: '/icons/database/sql-databases.png',
+        icon: '/icons/Data/SQL Database.png',
         code: '',
-      },
-      {
-        "name": "mysql server",
-        "slug": "mysql-",
-        "description": "Azure Database for MySQL is a fully managed relational database service provided by Microsoft. It offers seamless migration and robust applications with the power of the open-source MySQL database engine, combined with the operational and security benefits of Azure.",
-        "length": "1-63",
-        "category": Categories.DATABASES,
-        "learnUrl": "https://docs.microsoft.com/en-us/azure/mysql/",
-        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/mysql_server",
-        "restrictions": "Lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.",
-        "resource": "Microsoft.DBforMySQL",
-        "entity": "servers",
-        "scope": "global",
-        "icon": "/icons/database/mysql-servers.png",
-        "code": ""
       },
       {
         name: 'mysql database',
@@ -1441,23 +1502,8 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DBforMySQL',
         entity: 'servers/databases',
         scope: 'servers',
-        icon: '/icons/database/database-for-mysql-servers.png',
+        icon: '/icons/Data/Azure Database for MySQL.png',
         code: '',
-      },
-      {
-        "name": "postgresql server",
-        "slug": "psql-",
-        "description": "Azure Database for PostgreSQL is a fully managed relational database service provided by Microsoft. It delivers a rich array of fully managed, integrated services and capabilities that exploit the strong native capabilities of PostgreSQL, freeing developers to focus on their applications, not on managing their database.",
-        "length": "1-63",
-        "category": Categories.DATABASES,
-        "learnUrl": "https://docs.microsoft.com/en-us/azure/postgresql/",
-        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/postgresql_server",
-        "restrictions": "Lowercase letters, numbers, and hyphens. Cannot start or end with a hyphen.",
-        "resource": "Microsoft.DBforPostgreSQL",
-        "entity": "servers",
-        "scope": "global",
-        "icon": "/icons/database/postgresql-servers.png",
-        "code": ""
       },
       {
         name: 'postgresql database',
@@ -1473,12 +1519,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DBforPostgreSQL',
         entity: 'servers/databases',
         scope: 'servers',
-        icon: '/icons/database/database-for-postgresql-servers.png',
+        icon: '/icons/Data/Azure Database for PostgreSQL.png',
         code: '',
       },
       {
         name: 'sql server stretch database',
-        slug: 'sqlsdb-',
+        slug: 'sqlstrdb-',
         description:
           'Azure SQL Stretch Database is a service that lets you extend your SQL Server databases into the Azure cloud. This allows you to keep more of your historical data at your fingertips.',
         length: '1-128',
@@ -1492,7 +1538,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'servers/databases',
         scope: 'server',
-        icon: '/icons/database/sql-server-stretch-databases.png',
+        icon: '/icons/Data/SQL Database.png',
         code: '',
       },
       {
@@ -1511,13 +1557,9 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'managedInstances',
         scope: 'global',
-        icon: '/icons/database/sql-managed-instances.png',
+        icon: '/icons/Data/SQL Managed Instance.png',
         code: '',
       },
-    ],
-  },
-  {
-    items: [
       {
         name: 'storage account',
         slug: 'st',
@@ -1533,7 +1575,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Storage',
         entity: 'storageAccounts',
         scope: 'global',
-        icon: '/icons/storage/storage-accounts.png',
+        icon: '/icons/Storage/Storage Account.png',
         code: '',
       },
       {
@@ -1552,46 +1594,13 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.StorSimple',
         entity: 'managers',
         scope: 'resource group',
-        icon: '/icons/storage/storsimple-device-managers.png',
+        icon: '/icons/Data/StorSimple Device Manager.png',
         code: '',
       },
-      {
-        name: 'cognitive search',
-        slug: 'srch-',
-        description:
-          "Azure Cognitive Search is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what's relevant to user queries.",
-        length: '2-64',
-        category: Categories.AIANDML,
-        learnUrl:
-          'https://learn.microsoft.com/en-us/azure/search/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service',
-        restrictions:
-          'Alphanumerics and hyphens. Start and end with alphanumeric.',
-        resource: 'Microsoft.Search',
-        entity: 'searchServices',
-        scope: 'resource group',
-        icon: '/icons/web/search.png',
-        code: '',
-      },
-      {
-        name: 'cognitive services',
-        slug: 'cog-',
-        description:
-          'Azure Cognitive Services is a collection of APIs, SDKs, and services available to help developers build intelligent applications without having direct AI or data science skills or knowledge, by enabling them to easily add cognitive features into their applications.',
-        length: '2-64',
-        category: Categories.AIANDML,
-        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
-        restrictions:
-          'Alphanumerics and hyphens. Start and end with alphanumeric.',
-        resource: 'Microsoft.CognitiveServices',
-        entity: 'accounts',
-        scope: 'resource group',
-        icon: '/icons/ml/cognitive-services.png',
-        code: '',
-      },
+    ],
+  },
+  {
+    items: [
       {
         name: 'machine learning workspace',
         slug: 'mlw-',
@@ -1608,9 +1617,302 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.MachineLearning',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icons/ml/machine-learning-service-workspaces.png',
+        icon: '/icons/AI/Machine Learning.png',
         code: '',
       },
+      {
+        name: 'search service',
+        slug: 'srch-',
+        description:
+          "Azure Search Service is a fully managed cloud search service that provides a rich search experience to custom applications. You can populate it with your own data and the service finds what's relevant to user queries.",
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/search/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/search_service',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.Search',
+        entity: 'searchServices',
+        scope: 'resource group',
+        icon: '/icons/AI/Search Service.png',
+        code: '',
+      },
+      {
+        name: 'openai service',
+        slug: 'oai-',
+        description:
+          'Azure OpenAI service offers natural language processing capabilities, aiding applications in tasks such as translation, text summarization, sentiment analysis, and more.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Azure OpenAI.png',
+        code: '',
+      },
+      {
+        name: 'speach service',
+        slug: 'spch-',
+        description:
+          'Azure Speech service provides real-time and batch speech-to-text and text-to-speech conversion capabilities, enabling applications to understand and speak naturally.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Speech Service.png',
+        code: '',
+      },
+      {
+        name: 'language service',
+        slug: 'lang-',
+        description:
+          'Azure Language service facilitates understanding and translation of human languages, enhancing applications with capabilities like sentiment analysis, entity extraction, and language identification.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Language.png',
+        code: '',
+      },
+      {
+        name: 'translator service',
+        slug: 'tran-',
+        description:
+          'Azure Translator service allows applications to translate text in real-time or batch across more than 60 languages, supporting multi-lingual user experiences.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Text Translator.png',
+        code: '',
+      },
+      {
+        name: 'vision service',
+        slug: 'vis-',
+        description:
+          'Azure Vision service offers image-processing algorithms to smartly identify, caption, index, and moderate pictures and videos for comprehensive visual experiences.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Vision.png',
+        code: '',
+      },
+      {
+        name: 'face service',
+        slug: 'face-',
+        description:
+          'Azure Face service enables detecting, recognizing, and analyzing human faces in images, empowering applications to handle tasks like face verification and similar face searching.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Face API.png',
+        code: '',
+      },
+      {
+        name: 'anonaly detector service',
+        slug: 'ad-',
+        description:
+          'Azure Anomaly Detector service provides AI-based anomaly detection capabilities to identify abnormal patterns or trends in your data quickly and accurately.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Anomaly Detector.png',
+        code: '',
+      },
+      {
+        name: 'content safety service',
+        slug: 'cs-',
+        description:
+          'Azure Content Safety service is designed to identify potentially harmful or inappropriate content across images, text, and videos to ensure user safety and compliance.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Content Safety.png',
+        code: '',
+      },
+    ],
+  },
+  {
+    items: [
+      {
+        name: 'personalizer service',
+        slug: 'pers-',
+        description:
+          'Azure Personalizer service offers real-time personalization capabilities, helping to deliver personalized experiences to each user based on their specific needs and preferences.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Personaliser.png',
+        code: '',
+      },
+      {
+        name: 'bot service',
+        slug: 'bot-',
+        description:
+          'Azure Bot Service enables rapid intelligent bot development powered by the Microsoft Bot Framework, allowing you to build, connect, test, and deploy AI-rich bots.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Bot Service.png',
+        code: '',
+      },
+      {
+        name: 'document intelligence service',
+        slug: 'doci-',
+        description:
+          'Azure Document Intelligence service enables extraction of insights and information from unstructured documents, turning them into actionable results.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Form Recogniser.png',
+        code: '',
+      },
+      {
+        name: 'metrics advisor service',
+        slug: 'ma-',
+        description:
+          'Azure Metrics Advisor service provides an AI-powered anomaly detection and metric monitoring tool for personalized alert configuration, root cause analysis, and proactive problem remediation.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/Management/Metrics Advisor.png',
+        code: '',
+      },
+      {
+        name: 'video indexer service',
+        slug: 'vi-',
+        description:
+          'Azure Video Indexer service extracts insights from videos using AI technologies, including emotions, sentiment, spoken and written words, people, and objects.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Video Indexer.png',
+        code: '',
+      },
+      {
+        name: 'immersive reader service',
+        slug: 'ir-',
+        description:
+          'Azure Immersive Reader service enhances reading and comprehension of text, offering features like reading aloud, translating into different languages, and focus mode.',
+        length: '2-64',
+        category: Categories.AIANDML,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/cognitive-services/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cognitive_account',
+        restrictions:
+          'Alphanumerics and hyphens. Start and end with alphanumeric.',
+        resource: 'Microsoft.CognitiveServices',
+        entity: 'accounts',
+        scope: 'resource group',
+        icon: '/icons/AI/Cognitive Services Immersive Reader.png',
+        code: '',
+      },
+      {
+        name: 'Microsoft Fabric',
+        slug: 'fab-',
+        description:
+          'Microsoft Fabric is an all-in-one analytics solution for enterprises. It covers everything from data movement to data science, Real-Time Analytics, and business intelligence. The service offers a comprehensive suite of services, including data lake, data engineering, and data integration, all in one place. It is built on a foundation of Software as a Service (SaaS), which takes simplicity and integration to a whole new level.',
+        length: '3-63',
+        category: Categories.AIANDML,
+        learnUrl: 'https://learn.microsoft.com/en-us/fabric/get-started/',
+        terraformUrl:
+          '',
+        restrictions:
+          'Alphanumerics. Start with alphanumeric.',
+        resource: 'Microsoft.Fabric',
+        entity: 'capacity',
+        scope: 'region',
+        icon: '/icons/AI/Microsoft Fabric.png',
+        code: '',
+      }
     ],
   },
   {
@@ -1630,7 +1932,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.AnalysisServices',
         entity: 'servers',
         scope: 'resource group',
-        icon: '/icons/analytics/analysis-services.png',
+        icon: '/icons/Data/Analysis Service.png',
         code: '',
       },
       {
@@ -1647,12 +1949,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Databricks',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icons/analytics/databricks.png',
+        icon: '/icons/Data/Azure Databricks.png',
         code: '',
       },
       {
         name: 'stream analytics',
-        slug: 'sa-',
+        slug: 'asa-',
         description:
           'Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.',
         length: '3-63',
@@ -1664,7 +1966,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.StreamAnalytics',
         entity: 'streamingjobs',
         scope: 'resource group',
-        icon: '/icons/analytics/stream-analytics-jobs.png',
+        icon: '/icons/Application/Stream Analytics Job.png',
         code: '',
       },
       {
@@ -1681,7 +1983,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Kusto',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/data-explorer-clusters.png',
+        icon: '/icons/Data/Azure Data Explorer Cluster.png',
         code: '',
       },
       {
@@ -1697,7 +1999,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Kusto',
         entity: '/clusters/databases',
         scope: 'cluster',
-        icon: '/icons/analytics/data-explorer-clusters.png',
+        icon: '/icons/Data/Azure Data Explorer Cluster.png',
         code: '',
       },
       {
@@ -1715,7 +2017,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataFactory',
         entity: 'factories',
         scope: 'global',
-        icon: '/icons/analytics/data-factories.png',
+        icon: '/icons/Data/Data Factory.png',
         code: '',
       },
       {
@@ -1733,7 +2035,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataLakeAnalytics',
         entity: 'accounts/dataLakeStoreAccounts',
         scope: 'account',
-        icon: '/icons/database/data-lake.png',
+        icon: '/icons/Data/Data Lake.png',
         code: '',
       },
       {
@@ -1751,7 +2053,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataLakeAnalytics',
         entity: 'accounts',
         scope: 'global',
-        icon: '/icons/analytics/data-lake-analytics.png',
+        icon: '/icons/Data/Data Lake Analytics.png',
         code: '',
       },
       {
@@ -1769,7 +2071,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventHub',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icons/analytics/event-hubs.png',
+        icon: '/icons/Application/Event Hub.png',
         code: '',
       },
       {
@@ -1787,7 +2089,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventHub',
         entity: 'clusters',
         scope: 'resource group',
-        icon: '/icons/analytics/event-hubs.png',
+        icon: '/icons/Application/Event Hub.png',
         code: '',
       },
     ],
@@ -1808,12 +2110,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'domains',
         scope: 'resource group',
-        icon: '/icons/integration/event-grid-topics.png',
+        icon: '/icons/Application/Event Grid Namespace.png',
         code: '',
       },
       {
         name: 'event grid subscription',
-        slug: 'evgs-',
+        slug: 'egst-',
         description:
           'Event Grid subscriptions represent the relationship between an event source and an endpoint. They define the events you want to track, and where to send the events.',
         length: '3-64',
@@ -1825,7 +2127,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'eventSubscriptions',
         scope: 'resource group',
-        icon: '/icons/integration/event-grid-subscriptions.png',
+        icon: '/icons/Application/Event Grid Subscription.png',
         code: '',
       },
       {
@@ -1842,12 +2144,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'domains/topics',
         scope: 'domain',
-        icon: '/icons/integration/event-grid-topics.png',
+        icon: '/icons/Application/Event Grid Topic.png',
         code: '',
       },
       {
         name: 'hdinsight - hadoop cluster',
-        slug: 'hadp-',
+        slug: 'hadoop-',
         description:
           'Azure HDInsight Hadoop cluster is a cloud distribution of Hadoop components. It provides a software framework designed for processing, analyzing and deriving insights from data.',
         length: '3-59',
@@ -1860,7 +2162,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1878,7 +2180,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1896,7 +2198,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1914,7 +2216,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1932,7 +2234,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1949,7 +2251,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icons/analytics/hdinsightclusters.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -1966,7 +2268,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'IotHubs',
         scope: 'global',
-        icon: '/icons/iot/iot-hub.png',
+        icon: '/icons/IoT/IoT Hub.png',
         code: '',
       },
     ],
@@ -1974,7 +2276,7 @@ export const columns: ColumnType[] = [
   {
     items: [
       {
-        name: 'provisioning services',
+        name: 'iot device provisioning services',
         slug: 'provs-',
         description:
           'Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub that enables zero-touch, just-in-time provisioning to the right IoT hub without requiring human intervention.',
@@ -1987,7 +2289,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'provisioningServices',
         scope: 'resource group',
-        icon: '/icons/iot/device-provisioning-services.png',
+        icon: '/icons/IoT/IoT Device Provisioning Service.png',
         code: '',
       },
       {
@@ -2004,12 +2306,27 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'provisioningServices/certificates',
         scope: 'provisioningServices',
-        icon: '/icons/iot/device-provisioning-services.png',
+        icon: '/icons/IoT/IoT Device Provisioning Service.png',
         code: '',
       },
       {
-        name: 'power bi',
-        slug: 'pbi-',
+        "name": "power bi embedded",
+        "slug": "pbi-",
+        "description": "Power BI Embedded is a Microsoft Azure service that lets developers embed visuals, reports, and dashboards into an application. This embedding is done through a capacity-based, hourly metered model. It provides data insights and analytics capabilities without the need for building the features from scratch.",
+        "length": "3-63",
+        "category": Categories.ANALYTICSANDIOT,
+        "learnUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/powerbi_embedded",
+        "restrictions": "Alphanumerics and hyphens. Cannot start with hyphen. Cannot use consecutive hyphens.",
+        "resource": "Microsoft.PowerBIDedicated",
+        "entity": "capacities",
+        "scope": "resource group",
+        "icon": "/icons/AI/Power BI Embedded.png",
+        "code": "",
+      },
+      {
+        name: 'power bi workspace',
+        slug: 'pbiw-',
         description:
           'Power BI is a suite of business analytics tools by Microsoft that deliver insights throughout your organization. It connects to hundreds of data sources, simplifies data prep and drives ad hoc analysis.',
         length: '3-63',
@@ -2022,11 +2339,11 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.PowerBI',
         entity: 'workspaceCollections',
         scope: 'region',
-        icon: '/icons/general/allresources.png',
+        icon: '/icons/AI/Power BI.png',
         code: '',
       },
       {
-        name: 'time series insights',
+        name: 'time series insights environment',
         slug: 'tsi-',
         description:
           'Azure Time Series Insights is a fully managed analytics, storage, and visualization service for managing IoT-scale time-series data in the cloud. It provides a way to store, visualize, and query large amounts of time series data.',
@@ -2040,12 +2357,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.TimeSeriesInsights',
         entity: 'environments',
         scope: 'resource group',
-        icon: '/icons/iot/time-series-insights-environments.png',
+        icon: '/icons/Data/Time Series Insights Environment.png',
         code: '',
       },
       {
-        name: 'synapse analytics',
-        slug: 'syn-',
+        name: 'synapse analytics workspace',
+        slug: 'synw-',
         description:
           'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
         length: '1-50',
@@ -2058,7 +2375,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces',
         scope: 'global',
-        icon: '/icons/database/synapse-analytics.png',
+        icon: '/icons/Data/Azure Synapse Analytics.png',
         code: '',
       },
       {
@@ -2077,7 +2394,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces/sqlPools',
         scope: 'workspace',
-        icon: '/icons/analytics/synapse-analytics.png',
+        icon: '/icons/Data/Azure Synapse Analytics Dedicated SQL Pool.png',
         code: '',
       },
       {
@@ -2096,8 +2413,38 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces/bigDataPools',
         scope: 'workspace',
-        icon: '/icons/analytics/synapse-analytics.png',
+        icon: '/icons/Data/Azure Synapse Analytics Spark Pool.png',
         code: '',
+      },
+      {
+        name: "digital twins instance",
+        slug: "dt-",
+        description: "Azure Digital Twins is a developer platform for next-generation IoT solutions that lets you create, run, and manage digital representations of your business environment, securely and efficiently in the cloud.",
+        length: "3-63",
+        category: Categories.ANALYTICSANDIOT,
+        learnUrl: "https://learn.microsoft.com/en-us/azure/digital-twins/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/digital_twins_instance",
+        restrictions: "Alphanumerics and hyphens are allowed. Value must start and end with an alphanumeric.",
+        resource: "Microsoft.DigitalTwins",
+        entity: "digitalTwinsInstances",
+        scope: "resource group",
+        icon: "/icons/IoT/IoT Digital Twin.png",
+        code: "",
+      },
+      {
+        "name": "batch account",
+        "slug": "ba-",
+        "description": "Azure Batch is a cloud-based job scheduling service that parallelizes and distributes the processing of large volumes of data across many computers. Ideal for high-performance computing (HPC) applications, it's designed to provide scalable and efficient computation with no server management.",
+        "length": "3-24",
+        "category": Categories.ANALYTICSANDIOT,
+        "learnUrl": "https://docs.microsoft.com/en-us/azure/batch/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/batch_account",
+        "restrictions": "Lowercase letters and numbers.",
+        "resource": "Microsoft.Batch",
+        "entity": "batchAccounts",
+        "scope": "region",
+        "icon": "/icons/Data/Azure Batch Account.png",
+        "code": "",
       },
     ],
   },
@@ -2105,7 +2452,7 @@ export const columns: ColumnType[] = [
     items: [
       {
         name: 'virtual desktop host pool',
-        slug: 'vdp-',
+        slug: 'vdpool-',
         description:
           'Azure Virtual Desktop Host Pool is a collection of VMs in Azure Virtual Desktop environment. It hosts remote apps and desktops that users can access from anywhere.',
         length: '1-64',
@@ -2117,7 +2464,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'hostPools',
         scope: 'resource group',
-        icon: '/icons/compute/cloudsimple-virtual-machines.png',
+        icon: '/icons/Compute/AVD Host Pool.png',
         code: '',
       },
       {
@@ -2135,7 +2482,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'applicationGroups',
         scope: 'resource group',
-        icon: '/icons/compute/cloudsimple-virtual-machines.png',
+        icon: '/icons/Application/Application Group.png',
         code: '',
       },
       {
@@ -2152,7 +2499,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icons/compute/workspaces.png',
+        icon: '/icons/Compute/AVD Workspace.png',
         code: '',
       },
       {
@@ -2170,7 +2517,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.AppConfiguration',
         entity: 'configurationStores',
         scope: 'resource group',
-        icon: '/icons/integration/app-configuration.png',
+        icon: '/icons/Application/App Configuration.png',
         code: '',
       },
       {
@@ -2188,9 +2535,24 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.SignalRService',
         entity: 'signalR',
         scope: 'global',
-        icon: '/icons/web/signalr.png',
+        icon: '/icons/Application/SignalR.png',
         code: '',
       },
+      {
+        name: "maps account",
+        slug: "map-",
+        description: "Azure Maps Account provides access to Azure Maps services and geospatial capabilities. It includes a range of APIs providing mapping, search, routing, traffic, time zones, geolocation, geofencing, and other geospatial capabilities, enabling the development of location-aware applications and IoT solutions.",
+        length: "1-98",
+        category: Categories.DEVTOOLS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/azure-maps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/maps_account",
+        restrictions: "Alphanumerics, underscores, periods, and hyphens. Start with alphanumeric.",
+        resource: "Microsoft.Maps",
+        entity: "accounts",
+        scope: "resource group",
+        icon: "/icons/Application/Azure Maps Account.png",
+        code: "",
+      }
     ],
   },
   {
@@ -2210,7 +2572,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ApiManagement',
         entity: 'service',
         scope: 'global',
-        icon: '/icons/integration/api-management.png',
+        icon: '/icons/Management/API Management Service.png',
         code: '',
       },
       {
@@ -2229,7 +2591,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Logic',
         entity: 'integrationAccounts',
         scope: 'resource group',
-        icon: '/icons/integration/integration-accounts.png',
+        icon: '/icons/Deployment/Integration Account.png',
         code: '',
       },
       {
@@ -2247,12 +2609,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Logic',
         entity: 'workflows',
         scope: 'resource group',
-        icon: '/icons/integration/logic-apps.png',
+        icon: '/icons/Application/Logic App.png',
         code: '',
       },
       {
-        name: 'service bus',
-        slug: 'sb-',
+        name: 'service bus namespace',
+        slug: 'sbns-',
         description:
           'Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics. It provides a reliable and secure platform for asynchronous transfer of data and state.',
         length: '6-50',
@@ -2266,7 +2628,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icons/integration/service-bus.png',
+        icon: '/icons/Data/Service Bus.png',
         code: '',
       },
       {
@@ -2285,7 +2647,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces/queues',
         scope: 'namespace',
-        icon: '/icons/integration/service-bus.png',
+        icon: '/icons/Data/Service Bus Queue.png',
         code: '',
       },
       {
@@ -2304,25 +2666,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces/topics',
         scope: 'namespace',
-        icon: '/icons/integration/service-bus.png',
-        code: '',
-      },
-      {
-        name: 'migration project',
-        slug: 'migr-',
-        description:
-          'Azure Migration Projects provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.',
-        length: '2-57',
-        category: Categories.MIGRATION,
-        learnUrl: 'https://learn.microsoft.com/en-us/azure/migrate/',
-        terraformUrl:
-          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/database_migration_projectt',
-        restrictions:
-          'Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric.',
-        resource: 'Microsoft.DataMigration',
-        entity: 'services/projects',
-        scope: 'service',
-        icon: '/icons/migration/migration-projects.png',
+        icon: '/icons/Data/Service Bus Topic.png',
         code: '',
       },
       {
@@ -2340,7 +2684,25 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataMigration',
         entity: 'services',
         scope: 'resource group',
-        icon: '/icons/migration/database-migration-services.png',
+        icon: '/icons/Management/Database Migration Service.png',
+        code: '',
+      },
+      {
+        name: 'database migration project',
+        slug: 'migr-',
+        description:
+          'Azure Migration Projects provides a centralized hub to discover, assess, and migrate to Azure on-premises servers, infrastructure, applications, and data. It provides tools to help you plan, track, and conduct migrations.',
+        length: '2-57',
+        category: Categories.MIGRATION,
+        learnUrl: 'https://learn.microsoft.com/en-us/azure/migrate/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/database_migration_projectt',
+        restrictions:
+          'Alphanumerics, hyphens, periods, and underscores. Start with alphanumeric.',
+        resource: 'Microsoft.DataMigration',
+        entity: 'services/projects',
+        scope: 'service',
+        icon: '/icons/Management/Database Migration Project.png',
         code: '',
       },
       {
@@ -2358,7 +2720,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.RecoveryServices',
         entity: 'vaults',
         scope: 'resource group',
-        icon: '/icons/migration/recovery-services-vaults.png',
+        icon: '/icons/Management/Recovery Services Vault.png',
         code: '',
       },
     ],
@@ -2380,7 +2742,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Automation',
         entity: 'automationAccounts',
         scope: 'resource group and region',
-        icon: '/icons/compute/automanaged-vm.png',
+        icon: '/icons/Management/Automation Account.png',
         code: '',
       },
       {
@@ -2399,7 +2761,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Insights',
         entity: 'components',
         scope: 'resource group',
-        icon: '/icons/devops/application-insights.png',
+        icon: '/icons/Management/Application Insights.png',
         code: '',
       },
       {
@@ -2418,7 +2780,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Insights',
         entity: 'actionGroups',
         scope: 'resource group',
-        icon: '/icons/general/allresources.png',
+        icon: '/icons/Management/Azure Monitor.png',
         code: '',
       },
       {
@@ -2434,7 +2796,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Purview',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icons/general/allresources.png',
+        icon: '/icons/Data/Purview Account.png',
         code: '',
       },
       {
@@ -2451,12 +2813,12 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Blueprint',
         entity: 'blueprint',
         scope: 'Management groups, Subscriptions, Resource groups',
-        icon: '/icons/general/allresources.png',
+        icon: '/icons/Deployment/Blueprint.png',
         code: '',
       },
       {
         name: 'blueprint assignment',
-        slug: 'bps-',
+        slug: 'bpa-',
         description:
           'Blueprint Assignment in Azure is the process of assigning a blueprint to a subscription, allowing the blueprint to create, update, or delete resources to align with the blueprint definition.',
         length: '90',
@@ -2468,7 +2830,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Blueprint',
         entity: 'blueprintAssignments',
         scope: 'Management groups, Subscriptions, Resource groups',
-        icon: '/icons/general/allresources.png',
+        icon: '/icons/Deployment/Blueprint.png',
         code: '',
       },
       {
@@ -2486,7 +2848,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.KeyVault',
         entity: 'vaults',
         scope: 'global',
-        icon: '/icons/security/key-vaults.png',
+        icon: '/icons/Security/Key Vault.png',
         code: '',
       },
       {
@@ -2505,7 +2867,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.OperationalInsights',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icons/analytics/log-analytics-workspaces.png',
+        icon: '/icons/Management/Log Analytics Workspace.png',
         code: '',
       },
     ],

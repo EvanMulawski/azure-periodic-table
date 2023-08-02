@@ -1,7 +1,7 @@
 /* src/components/grid.tsx */
 
 import type { Categories } from '@/app/constants';
-import type { CategoryData } from './compass';
+import type { CategoryData } from './category-selector';
 import Image from 'next/image';
 import type { Item } from '@/app/data';
 import { useLayoutEffect, useRef } from 'react';
@@ -80,8 +80,8 @@ const Cell: React.FC<CellProps> = ({
     if (window.gtag) {
       window.gtag('event', 'element_selected', {
         event_category: item.category,
-        event_label: 'resource',
-        event_value: item.name,
+        event_label: item.name,
+        event_value: 1,
       });
     }
   }

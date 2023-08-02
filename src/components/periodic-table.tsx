@@ -1,6 +1,6 @@
 import type { Dispatch, SetStateAction } from 'react';
 import { Column } from './grid';
-import { CategorySelector, type CategoryData } from './compass';
+import { CategorySelector, type CategoryData } from './category-selector';
 import { Item, columns } from '@/app/data';
 import { Categories } from '@/app/constants';
 import { colorConfig } from '@/config';
