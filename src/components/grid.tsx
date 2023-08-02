@@ -33,9 +33,9 @@ const Cell: React.FC<CellProps> = ({
   const color = categoryData.find((c) => c.name === item.category)?.color;
 
   const height =
-    zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-[70px]' : 'h-28';
+    zoomLevel === 0 ? 'h-16' : zoomLevel === 1 ? 'h-[68px]' : 'h-28';
   const width =
-    zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-[70px]' : 'w-28';
+    zoomLevel === 0 ? 'w-16' : zoomLevel === 1 ? 'w-[68px]' : 'w-28';
 
   const isActiveCategory =
     activeCategory === null || activeCategory === item.category;
