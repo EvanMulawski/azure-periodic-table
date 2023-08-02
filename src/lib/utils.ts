@@ -1,5 +1,6 @@
 /* src/lib/utils.ts */
 
+import { type Item } from '@/app/data';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 

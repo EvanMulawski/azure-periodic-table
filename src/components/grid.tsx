@@ -71,11 +71,27 @@ const Cell: React.FC<CellProps> = ({
     }
   }, [activeCategory, item.category, ref, isMobile]);
 
+  function handleGoogleTag(item: Item) {
+    if (process.env.NODE_ENV !== 'production') return;
+    // check if window is valid
+    if (typeof window === 'undefined') return;
+
+    // Check if the gtag function is defined
+    if (window.gtag) {
+      window.gtag('event', 'element_selected', {
+        event_category: item.category,
+        event_label: 'resource',
+        event_value: item.name,
+      });
+    }
+  }
+
   return (
     <div
       ref={ref} // Pass the ref to the div
       onClick={() => {
         if (isDisabled) return;
+        handleGoogleTag(item);
         setActiveElement(item);
         select();
       }}
