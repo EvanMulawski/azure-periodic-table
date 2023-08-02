@@ -41,7 +41,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Management',
         entity: 'managementGroups',
         scope: 'tenant',
-        icon: '/icon/Management/Management Group.png',
+        icon: '/icons/Management/Management Group.png',
         code: '',
       },
       {
@@ -56,7 +56,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Subscription",
         "entity": "subscriptions",
         "scope": "tenant",
-        "icon": "/icon/Management/Subscription.png",
+        "icon": "/icons/Management/Subscription.png",
         "code": ""
       },
       {
@@ -75,7 +75,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Resources',
         entity: 'resourcegroups',
         scope: 'subscription',
-        icon: '/icon/Management/Resource Group.png',
+        icon: '/icons/Management/Resource Group.png',
         code: '',
       },
       {
@@ -94,7 +94,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ManagedIdentity',
         entity: 'userAssignedIdentities',
         scope: 'resource group',
-        icon: '/icon/Security/Managed Identity.png',
+        icon: '/icons/Security/Managed Identity.png',
         code: '',
       },
       {
@@ -109,7 +109,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Authorization",
         "entity": "policySetDefinitions",
         "scope": "scope of definition",
-        "icon": "/icon/Management/Policy Initiative.png",
+        "icon": "/icons/Management/Policy Initiative.png",
         "code": "",
       },
       {
@@ -128,7 +128,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Authorization',
         entity: 'policyDefinitions',
         scope: 'scope of definition',
-        icon: '/icon/Management/Policy Definition.png',
+        icon: '/icons/Management/Policy Definition.png',
         code: '',
       }
     ],
@@ -151,7 +151,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'applicationGateways',
         scope: 'resource group',
-        icon: '/icon/Networking/Application Gateway.png',
+        icon: '/icons/Networking/Application Gateway.png',
         code: '',
       },
       {
@@ -170,7 +170,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'applicationSecurityGroups',
         scope: 'resource group',
-        icon: '/icon/Application/Application Security Group.png',
+        icon: '/icons/Application/Application Security Group.png',
         code: '',
       },
       {
@@ -188,7 +188,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cdn',
         entity: 'profiles',
         scope: 'resource group',
-        icon: '/icon/Networking/CDN Profile.png',
+        icon: '/icons/Networking/CDN Profile.png',
         code: '',
       },
       {
@@ -206,7 +206,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cdn',
         entity: 'profiles/endpoints',
         scope: 'global',
-        icon: '/icon/Networking/CDN Profile.png',
+        icon: '/icons/Networking/CDN Profile.png',
         code: '',
       },
       {
@@ -225,7 +225,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'expressRouteCircuits',
         scope: 'resource group',
-        icon: '/icon/Networking/ExpressRoute Circuit.png',
+        icon: '/icons/Networking/ExpressRoute Circuit.png',
         code: '',
       },
       {
@@ -244,7 +244,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'connections',
         scope: 'resource group',
-        icon: '/icon/Networking/ExpressRoute Connection.png',
+        icon: '/icons/Networking/ExpressRoute Connection.png',
         code: '',
       },
       {
@@ -263,7 +263,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'dnsZones',
         scope: 'resource group',
-        icon: '/icon/Networking/DNS Zone (Public).png',
+        icon: '/icons/Networking/DNS Zone (Public).png',
         code: '',
       },
       {
@@ -283,7 +283,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'privateDnsZones',
         scope: 'resource group',
-        icon: '/icon/Networking/DNS Zone (Private).png',
+        icon: '/icons/Networking/DNS Zone (Private).png',
         code: '',
       },
       {
@@ -301,7 +301,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'azureFirewalls',
         scope: 'resource group',
-        icon: '/icon/Security/Azure Firewall.png',
+        icon: '/icons/Security/Azure Firewall.png',
         code: '',
       },
       {
@@ -320,7 +320,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies',
         scope: 'resource group',
-        icon: '/icon/Security/Azure Firewall Policy.png',
+        icon: '/icons/Security/Azure Firewall Policy.png',
         code: '',
       },
     ],
@@ -342,7 +342,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'bastionHosts',
         scope: 'resource group',
-        icon: '/icon/Networking/Bastion.png',
+        icon: '/icons/Networking/Bastion.png',
         code: '',
       },
       {
@@ -361,7 +361,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'frontDoors',
         scope: 'global',
-        icon: '/icon/Networking/Azure Front Door.png',
+        icon: '/icons/Networking/Azure Front Door.png',
         code: '',
       },
       {
@@ -379,7 +379,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'frontdoorWebApplicationFirewallPolicies',
         scope: 'resource group',
-        icon: '/icon/Networking/Azure Front Door.png',
+        icon: '/icons/Networking/Azure Front Door.png',
         code: '',
       },
       {
@@ -398,7 +398,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers',
         scope: 'resource group',
-        icon: '/icon/Networking/Load Balancer.png',
+        icon: '/icons/Networking/Load Balancer.png',
         code: '',
       },
       {
@@ -417,7 +417,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers',
         scope: 'resource group',
-        icon: '/icon/Networking/Load Balancer.png',
+        icon: '/icons/Networking/Load Balancer.png',
         code: '',
       },
       {
@@ -436,7 +436,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers/inboundNatRules',
         scope: 'load balancer',
-        icon: '/icon/Networking/Load Balancer Backend Load Balancing Rule',
+        icon: '/icons/Networking/Load Balancer Backend Load Balancing Rule',
         code: '',
       },
       {
@@ -455,7 +455,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'localNetworkGateways',
         scope: 'resource group',
-        icon: '/icon/Networking/Local Network Gateway.png',
+        icon: '/icons/Networking/Local Network Gateway.png',
         code: '',
       },
       {
@@ -474,7 +474,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'natGateways',
         scope: 'resource group',
-        icon: '/icon/Networking/NAT Gateway.png',
+        icon: '/icons/Networking/NAT Gateway.png',
         code: '',
       },
       {
@@ -493,7 +493,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkInterfaces',
         scope: 'resource group',
-        icon: '/icon/Networking/Network Interface.png',
+        icon: '/icons/Networking/Network Interface.png',
         code: '',
       },
       {
@@ -512,7 +512,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkSecurityGroups',
         scope: 'resource group',
-        icon: '/icon/Networking/Network Security Group.png',
+        icon: '/icons/Networking/Network Security Group.png',
         code: '',
       },
     ],
@@ -535,7 +535,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkSecurityGroups/securityRules',
         scope: 'network security group',
-        icon: '/icon/Networking/Network Security Group Inbound Rule.png',
+        icon: '/icons/Networking/Network Security Group Inbound Rule.png',
         code: '',
       },
       {
@@ -553,7 +553,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'networkWatchers',
         scope: 'resource group',
-        icon: '/icon/Networking/Network Watcher.png',
+        icon: '/icons/Networking/Network Watcher.png',
         code: '',
       },
       {
@@ -570,7 +570,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'privateEndpoints',
         scope: 'resource group',
-        icon: '/icon/Networking/Private Endpoint.png',
+        icon: '/icons/Networking/Private Endpoint.png',
         code: '',
       },
       {
@@ -589,7 +589,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'publicIPAddresses',
         scope: 'resource group',
-        icon: '/icon/Networking/Public IP Address.png',
+        icon: '/icons/Networking/Public IP Address.png',
         code: '',
       },
       {
@@ -608,7 +608,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'publicIPPrefixes',
         scope: 'resource group',
-        icon: '/icon/Networking/Public IP Prefix.png',
+        icon: '/icons/Networking/Public IP Prefix.png',
         code: '',
       },
       {
@@ -627,7 +627,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeFilters',
         scope: 'resource group',
-        icon: '/icon/Networking/Route Filter.png',
+        icon: '/icons/Networking/Route Filter.png',
         code: '',
       },
       {
@@ -646,7 +646,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeTables',
         scope: 'resource group',
-        icon: '/icon/Networking/Route Table.png',
+        icon: '/icons/Networking/Route Table.png',
         code: '',
       },
       {
@@ -665,7 +665,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'serviceEndpointPolicies',
         scope: 'resource group',
-        icon: '/icon/Networking/Service Endpoint Policy.png',
+        icon: '/icons/Networking/Service Endpoint Policy.png',
         code: '',
       },
       {
@@ -684,7 +684,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'trafficmanagerprofiles',
         scope: 'global',
-        icon: '/icon/Networking/Traffic Manager Profile.png',
+        icon: '/icons/Networking/Traffic Manager Profile.png',
         code: '',
       },
       {
@@ -703,7 +703,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'routeTables/routes',
         scope: 'route table',
-        icon: '/icon/Networking/Route Table.png',
+        icon: '/icons/Networking/Route Table.png',
         code: '',
       },
     ],
@@ -726,7 +726,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworks',
         scope: 'resource group',
-        icon: '/icon/Networking/Virtual Network.png',
+        icon: '/icons/Networking/Virtual Network.png',
         code: '',
       },
       {
@@ -745,7 +745,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualnetworks/subnets',
         scope: 'virtual network',
-        icon: '/icon/Networking/Virtual Subnet.png',
+        icon: '/icons/Networking/Virtual Subnet.png',
         code: '',
       },
       {
@@ -764,7 +764,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworks/virtualNetworkPeerings',
         scope: 'virtual network',
-        icon: '/icon/Networking/Virtual Network Peering.png',
+        icon: '/icons/Networking/Virtual Network Peering.png',
         code: '',
       },
       {
@@ -783,7 +783,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualWans',
         scope: 'resource group',
-        icon: '/icon/Networking/Virtual WAN.png',
+        icon: '/icons/Networking/Virtual WAN.png',
         code: '',
       },
       {
@@ -802,7 +802,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnGateways',
         scope: 'resource group',
-        icon: '/icon/Networking/Virtual Network Gateway.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -821,7 +821,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnGateways/vpnConnections',
         scope: 'VPN gateway',
-        icon: '/icon/Networking/Virtual Network Gateway.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -840,7 +840,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'vpnSites',
         scope: 'resource group',
-        icon: '/icon/Networking/Virtual Network Gateway.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -859,7 +859,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'virtualNetworkGateways',
         scope: 'resource group',
-        icon: '/icon/Networking/Virtual Network Gateway.png',
+        icon: '/icons/Networking/Virtual Network Gateway.png',
         code: '',
       },
       {
@@ -878,7 +878,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies',
         scope: 'resource group',
-        icon: '/icon/Security/WAF Policy.png',
+        icon: '/icons/Security/WAF Policy.png',
         code: '',
       },
       {
@@ -897,7 +897,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'firewallPolicies/ruleGroups',
         scope: 'firewall policy',
-        icon: '/icon/Security/WAF Policy.png',
+        icon: '/icons/Security/WAF Policy.png',
         code: '',
       },
     ],
@@ -920,7 +920,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icon/Application/Application Service Environment.png',
+        icon: '/icons/Application/Application Service Environment.png',
         code: '',
       },
       {
@@ -939,7 +939,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'serverfarms',
         scope: 'resource group',
-        icon: '/icon/Application/Application Service Plan.png',
+        icon: '/icons/Application/Application Service Plan.png',
         code: '',
       },
       {
@@ -958,7 +958,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'availabilitySets',
         scope: 'resource group',
-        icon: '/icon/Compute/Virtual Machine Availability Set.png',
+        icon: '/icons/Compute/Virtual Machine Availability Set.png',
         code: '',
       },
       {
@@ -977,7 +977,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'serverfarms',
         scope: 'resource group',
-        icon: '/icon/Management/Azure Arc SCVMM Management Server.png',
+        icon: '/icons/Management/Azure Arc SCVMM Management Server.png',
         code: '',
       },
       {
@@ -996,7 +996,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerService',
         entity: 'managedClusters',
         scope: 'resource group',
-        icon: '/icon/Management/Azure Arc Kubernetes.png',
+        icon: '/icons/Management/Azure Arc Kubernetes.png',
         code: '',
       },
       {
@@ -1014,7 +1014,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'diskEncryptionSets',
         scope: 'resource group',
-        icon: '/icon/Storage/Disk Encryption Set.png',
+        icon: '/icons/Storage/Disk Encryption Set.png',
         code: '',
       },
       {
@@ -1033,7 +1033,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites/functions',
         scope: 'global or per domain',
-        icon: '/icon/Application/Function App.png',
+        icon: '/icons/Application/Function App.png',
         code: '',
       },
       {
@@ -1052,7 +1052,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'galleries',
         scope: 'resource group',
-        icon: '/icon/Compute/Shared Image Gallery.png',
+        icon: '/icons/Compute/Shared Image Gallery.png',
         code: '',
       },
       {
@@ -1070,7 +1070,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'disks',
         scope: 'resource group',
-        icon: '/icon/Storage/Managed Disk Standard SSD.png',
+        icon: '/icons/Storage/Managed Disk Standard SSD.png',
         code: '',
       },
     ],
@@ -1092,7 +1092,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'disks',
         scope: 'resource group',
-        icon: '/icon/Storage/Managed Disk Standard SSD.png',
+        icon: '/icons/Storage/Managed Disk Standard SSD.png',
         code: '',
       },
       {
@@ -1110,7 +1110,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.NotificationHubs',
         entity: 'namespaces/notificationHubs',
         scope: 'namespace',
-        icon: '/icon/Application/Notification Hub.png',
+        icon: '/icons/Application/Notification Hub.png',
         code: '',
       },
       {
@@ -1129,7 +1129,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.NotificationHubs',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icon/Application/Notification Hub.png',
+        icon: '/icons/Application/Notification Hub.png',
         code: '',
       },
       {
@@ -1148,7 +1148,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'snapshots',
         scope: 'resource group',
-        icon: '/icon/Storage/Managed Disk Snapshot.png',
+        icon: '/icons/Storage/Managed Disk Snapshot.png',
         code: '',
       },
       {
@@ -1166,7 +1166,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icon/Application/Static Web App.png',
+        icon: '/icons/Application/Static Web App.png',
         code: '',
       },
       {
@@ -1184,7 +1184,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachines',
         scope: 'resource group',
-        icon: '/icon/Compute/Virtual Machine Windows.png',
+        icon: '/icons/Compute/Virtual Machine Windows.png',
         code: '',
       },
       {
@@ -1202,7 +1202,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachines',
         scope: 'resource group',
-        icon: '/icon/Compute/Virtual Machine Linux.png',
+        icon: '/icons/Compute/Virtual Machine Linux.png',
         code: '',
       },
       {
@@ -1221,7 +1221,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
-        icon: '/icon/Compute/Virtual Machine Scale Set.png',
+        icon: '/icons/Compute/Virtual Machine Scale Set.png',
         code: '',
       },
       {
@@ -1240,7 +1240,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Compute',
         entity: 'virtualMachineScaleSets',
         scope: 'resource group',
-        icon: '/icon/Compute/Virtual Machine Scale Set.png',
+        icon: '/icons/Compute/Virtual Machine Scale Set.png',
         code: '',
       },
       {
@@ -1258,7 +1258,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Web',
         entity: 'sites',
         scope: 'global or per domain',
-        icon: '/icon/Application/Application Service.png',
+        icon: '/icons/Application/Application Service.png',
         code: '',
       },
     ],
@@ -1280,7 +1280,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerService',
         entity: 'managedClusters',
         scope: 'resource group',
-        icon: '/icon/Compute/Container Kubernetes Service.png',
+        icon: '/icons/Compute/Container Kubernetes Service.png',
         code: '',
       },
       {
@@ -1297,7 +1297,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerRegistry',
         entity: 'registries',
         scope: 'global',
-        icon: '/icon/Compute/Container Registry.png',
+        icon: '/icons/Compute/Container Registry.png',
         code: '',
       },
       {
@@ -1315,7 +1315,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerInstance',
         entity: 'containerGroups',
         scope: 'resource group',
-        icon: '/icon/compute/Container Instance.png',
+        icon: '/icons/compute/Container Instance.png',
         code: '',
       },
       {
@@ -1333,7 +1333,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceFabric',
         entity: 'clusters',
         scope: 'region',
-        icon: '/icon/Compute/Container Service Fabric Cluster.png',
+        icon: '/icons/Compute/Container Service Fabric Cluster.png',
         code: '',
       },
     ],
@@ -1356,7 +1356,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DocumentDB',
         entity: 'databaseAccounts',
         scope: 'global',
-        icon: '/icon/Data/Azure Cosmos DB.png',
+        icon: '/icons/Data/Azure Cosmos DB.png',
         code: '',
       },
       {
@@ -1375,7 +1375,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Cache',
         entity: 'Redis',
         scope: 'global',
-        icon: '/icon/Networking/Azure Cache for Redis.png',
+        icon: '/icons/Networking/Azure Cache for Redis.png',
         code: '',
       },
       {
@@ -1390,7 +1390,7 @@ export const columns: ColumnType[] = [
         "resource": "Microsoft.Sql",
         "entity": "servers",
         "scope": "global",
-        "icon": "/icon/Data/SQL Server.png",
+        "icon": "/icons/Data/SQL Server.png",
         "code": ""
       },
       {
@@ -1409,7 +1409,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'servers/databases',
         scope: 'server',
-        icon: '/icon/Data/SQL Database.png',
+        icon: '/icons/Data/SQL Database.png',
         code: '',
       },
       {
@@ -1426,7 +1426,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DBforMySQL',
         entity: 'servers/databases',
         scope: 'servers',
-        icon: '/icon/Data/Azure Database for MySQL.png',
+        icon: '/icons/Data/Azure Database for MySQL.png',
         code: '',
       },
       {
@@ -1443,7 +1443,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DBforPostgreSQL',
         entity: 'servers/databases',
         scope: 'servers',
-        icon: '/icon/Data/Azure Database for PostgreSQL.png',
+        icon: '/icons/Data/Azure Database for PostgreSQL.png',
         code: '',
       },
       {
@@ -1462,7 +1462,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'servers/databases',
         scope: 'server',
-        icon: '/icon/Data/SQL Database.pngg',
+        icon: '/icons/Data/SQL Database.pngg',
         code: '',
       },
       {
@@ -1481,7 +1481,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'managedInstances',
         scope: 'global',
-        icon: '/icon/Data/SQL Managed Instance.png',
+        icon: '/icons/Data/SQL Managed Instance.png',
         code: '',
       },
     ],
@@ -1503,7 +1503,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Storage',
         entity: 'storageAccounts',
         scope: 'global',
-        icon: '/icon/Storage/Storage Account.png',
+        icon: '/icons/Storage/Storage Account.png',
         code: '',
       },
       {
@@ -1522,7 +1522,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.StorSimple',
         entity: 'managers',
         scope: 'resource group',
-        icon: '/icon/Data/StorSimple Device Manager.png',
+        icon: '/icons/Data/StorSimple Device Manager.png',
         code: '',
       },
       {
@@ -1541,7 +1541,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.MachineLearning',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icon/AI/Machine Learning.png',
+        icon: '/icons/AI/Machine Learning.png',
         code: '',
       },
       {
@@ -1560,7 +1560,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Search',
         entity: 'searchServices',
         scope: 'resource group',
-        icon: '/icon/AI/Search Service.png',
+        icon: '/icons/AI/Search Service.png',
         code: '',
       },
       {
@@ -1578,7 +1578,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Azure OpenAI.png',
+        icon: '/icons/AI/Azure OpenAI.png',
         code: '',
       },
       {
@@ -1596,7 +1596,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Speech Service.png',
+        icon: '/icons/AI/Speech Service.png',
         code: '',
       },
       {
@@ -1614,7 +1614,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Language.png',
+        icon: '/icons/AI/Cognitive Services Language.png',
         code: '',
       },
       {
@@ -1632,7 +1632,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Text Translator.png',
+        icon: '/icons/AI/Cognitive Services Text Translator.png',
         code: '',
       },
       {
@@ -1650,7 +1650,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Vision.png',
+        icon: '/icons/AI/Cognitive Services Vision.png',
         code: '',
       },
       {
@@ -1668,7 +1668,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Face API.png',
+        icon: '/icons/AI/Cognitive Services Face API.png',
         code: '',
       },
     ],
@@ -1690,7 +1690,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Anomaly Detector.png',
+        icon: '/icons/AI/Cognitive Services Anomaly Detector.png',
         code: '',
       },
       {
@@ -1708,7 +1708,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Content Safety.png',
+        icon: '/icons/AI/Content Safety.png',
         code: '',
       },
       {
@@ -1726,7 +1726,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Personaliser.png',
+        icon: '/icons/AI/Cognitive Services Personaliser.png',
         code: '',
       },
       {
@@ -1744,7 +1744,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Bot Service.png',
+        icon: '/icons/AI/Bot Service.png',
         code: '',
       },
       {
@@ -1762,7 +1762,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Form Recogniser.png',
+        icon: '/icons/AI/Cognitive Services Form Recogniser.png',
         code: '',
       },
       {
@@ -1780,7 +1780,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/Management/Metrics Advisor.png',
+        icon: '/icons/Management/Metrics Advisor.png',
         code: '',
       },
       {
@@ -1798,7 +1798,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Video Indexer.png',
+        icon: '/icons/AI/Cognitive Services Video Indexer.png',
         code: '',
       },
       {
@@ -1816,7 +1816,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.CognitiveServices',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/AI/Cognitive Services Immersive Reader.png',
+        icon: '/icons/AI/Cognitive Services Immersive Reader.png',
         code: '',
       },
       {
@@ -1834,7 +1834,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Fabric',
         entity: 'capacity',
         scope: 'region',
-        icon: '/icon/AI/Microsoft Fabric.png',
+        icon: '/icons/AI/Microsoft Fabric.png',
         code: '',
       }
     ],
@@ -1856,7 +1856,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.AnalysisServices',
         entity: 'servers',
         scope: 'resource group',
-        icon: '/icon/Data/Analysis Service.png',
+        icon: '/icons/Data/Analysis Service.png',
         code: '',
       },
       {
@@ -1873,7 +1873,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Databricks',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icon/Data/Azure Databricks.png',
+        icon: '/icons/Data/Azure Databricks.png',
         code: '',
       },
       {
@@ -1890,7 +1890,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.StreamAnalytics',
         entity: 'streamingjobs',
         scope: 'resource group',
-        icon: '/icon/Application/Stream Analytics Job.png',
+        icon: '/icons/Application/Stream Analytics Job.png',
         code: '',
       },
       {
@@ -1907,7 +1907,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Kusto',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Data/Azure Data Explorer Cluster.png',
+        icon: '/icons/Data/Azure Data Explorer Cluster.png',
         code: '',
       },
       {
@@ -1923,7 +1923,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Kusto',
         entity: '/clusters/databases',
         scope: 'cluster',
-        icon: '/icon/Data/Azure Data Explorer Cluster.png',
+        icon: '/icons/Data/Azure Data Explorer Cluster.png',
         code: '',
       },
       {
@@ -1941,7 +1941,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataFactory',
         entity: 'factories',
         scope: 'global',
-        icon: '/icon/Data/Data Factory.png',
+        icon: '/icons/Data/Data Factory.png',
         code: '',
       },
       {
@@ -1959,7 +1959,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataLakeAnalytics',
         entity: 'accounts/dataLakeStoreAccounts',
         scope: 'account',
-        icon: '/icon/Data/Data Lake.png',
+        icon: '/icons/Data/Data Lake.png',
         code: '',
       },
       {
@@ -1977,7 +1977,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataLakeAnalytics',
         entity: 'accounts',
         scope: 'global',
-        icon: '/icon/Data/Data Lake Analytics.png',
+        icon: '/icons/Data/Data Lake Analytics.png',
         code: '',
       },
       {
@@ -1995,7 +1995,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventHub',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icon/Application/Event Hub.png',
+        icon: '/icons/Application/Event Hub.png',
         code: '',
       },
       {
@@ -2013,7 +2013,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventHub',
         entity: 'clusters',
         scope: 'resource group',
-        icon: '/icon/Application/Event Hub.png',
+        icon: '/icons/Application/Event Hub.png',
         code: '',
       },
     ],
@@ -2034,7 +2034,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'domains',
         scope: 'resource group',
-        icon: '/icon/Application/Event Grid Namespace.png',
+        icon: '/icons/Application/Event Grid Namespace.png',
         code: '',
       },
       {
@@ -2051,7 +2051,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'eventSubscriptions',
         scope: 'resource group',
-        icon: '/icon/Application/Event Grid Subscription.png',
+        icon: '/icons/Application/Event Grid Subscription.png',
         code: '',
       },
       {
@@ -2068,7 +2068,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.EventGrid',
         entity: 'domains/topics',
         scope: 'domain',
-        icon: '/icon/Application/Event Grid Topic.png',
+        icon: '/icons/Application/Event Grid Topic.png',
         code: '',
       },
       {
@@ -2086,7 +2086,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2104,7 +2104,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2122,7 +2122,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2140,7 +2140,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2158,7 +2158,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2175,7 +2175,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.HDInsight',
         entity: 'clusters',
         scope: 'global',
-        icon: '/icon/Compute/HDInsight Cluster.png',
+        icon: '/icons/Compute/HDInsight Cluster.png',
         code: '',
       },
       {
@@ -2192,7 +2192,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'IotHubs',
         scope: 'global',
-        icon: '/icon/IoT/IoT Hub.png',
+        icon: '/icons/IoT/IoT Hub.png',
         code: '',
       },
     ],
@@ -2213,7 +2213,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'provisioningServices',
         scope: 'resource group',
-        icon: '/icon/IoT/IoT Device Provisioning Service.png',
+        icon: '/icons/IoT/IoT Device Provisioning Service.png',
         code: '',
       },
       {
@@ -2230,7 +2230,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Devices',
         entity: 'provisioningServices/certificates',
         scope: 'provisioningServices',
-        icon: '/icon/IoT/IoT Device Provisioning Service.png',
+        icon: '/icons/IoT/IoT Device Provisioning Service.png',
         code: '',
       },
       {
@@ -2248,7 +2248,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.PowerBI',
         entity: 'workspaceCollections',
         scope: 'region',
-        icon: '/icon/AI/Power BI.png',
+        icon: '/icons/AI/Power BI.png',
         code: '',
       },
       {
@@ -2266,7 +2266,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.TimeSeriesInsights',
         entity: 'environments',
         scope: 'resource group',
-        icon: '/icon/Data/Time Series Insights Environment.png',
+        icon: '/icons/Data/Time Series Insights Environment.png',
         code: '',
       },
       {
@@ -2284,7 +2284,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces',
         scope: 'global',
-        icon: '/icon/Data/Azure Synapse Analytics.png',
+        icon: '/icons/Data/Azure Synapse Analytics.png',
         code: '',
       },
       {
@@ -2303,7 +2303,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces/sqlPools',
         scope: 'workspace',
-        icon: '/icon/Data/Azure Synapse Analytics Dedicated SQL Pool.png',
+        icon: '/icons/Data/Azure Synapse Analytics Dedicated SQL Pool.png',
         code: '',
       },
       {
@@ -2322,7 +2322,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Synapse',
         entity: 'workspaces/bigDataPools',
         scope: 'workspace',
-        icon: '/icon/Data/Azure Synapse Analytics Spark Pool.png',
+        icon: '/icons/Data/Azure Synapse Analytics Spark Pool.png',
         code: '',
       },
     ],
@@ -2343,7 +2343,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'hostPools',
         scope: 'resource group',
-        icon: '/icon/Compute/AVD Host Pool.png',
+        icon: '/icons/Compute/AVD Host Pool.png',
         code: '',
       },
       {
@@ -2361,7 +2361,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'applicationGroups',
         scope: 'resource group',
-        icon: '/icon/Application/Application Group.png',
+        icon: '/icons/Application/Application Group.png',
         code: '',
       },
       {
@@ -2378,7 +2378,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DesktopVirtualization',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icon/Compute/AVD Workspace.png',
+        icon: '/icons/Compute/AVD Workspace.png',
         code: '',
       },
       {
@@ -2396,7 +2396,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.AppConfiguration',
         entity: 'configurationStores',
         scope: 'resource group',
-        icon: '/icon/Application/App Configuration.png',
+        icon: '/icons/Application/App Configuration.png',
         code: '',
       },
       {
@@ -2414,7 +2414,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.SignalRService',
         entity: 'signalR',
         scope: 'global',
-        icon: '/icon/Application/SignalR.png',
+        icon: '/icons/Application/SignalR.png',
         code: '',
       },
     ],
@@ -2436,7 +2436,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ApiManagement',
         entity: 'service',
         scope: 'global',
-        icon: '/icon/Management/API Management Service.png',
+        icon: '/icons/Management/API Management Service.png',
         code: '',
       },
       {
@@ -2455,7 +2455,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Logic',
         entity: 'integrationAccounts',
         scope: 'resource group',
-        icon: '/icon/Deployment/Integration Account.png',
+        icon: '/icons/Deployment/Integration Account.png',
         code: '',
       },
       {
@@ -2473,7 +2473,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Logic',
         entity: 'workflows',
         scope: 'resource group',
-        icon: '/icon/Application/Logic App.png',
+        icon: '/icons/Application/Logic App.png',
         code: '',
       },
       {
@@ -2492,7 +2492,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces',
         scope: 'global',
-        icon: '/icon/Data/Service Bus.png',
+        icon: '/icons/Data/Service Bus.png',
         code: '',
       },
       {
@@ -2511,7 +2511,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces/queues',
         scope: 'namespace',
-        icon: '/icon/Data/Service Bus Queue.png',
+        icon: '/icons/Data/Service Bus Queue.png',
         code: '',
       },
       {
@@ -2530,7 +2530,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ServiceBus',
         entity: 'namespaces/topics',
         scope: 'namespace',
-        icon: '/icon/Data/Service Bus Topic.png',
+        icon: '/icons/Data/Service Bus Topic.png',
         code: '',
       },
       {
@@ -2548,7 +2548,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataMigration',
         entity: 'services',
         scope: 'resource group',
-        icon: '/icon/Management/Database Migration Service.png',
+        icon: '/icons/Management/Database Migration Service.png',
         code: '',
       },
       {
@@ -2566,7 +2566,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.DataMigration',
         entity: 'services/projects',
         scope: 'service',
-        icon: '/icon/Management/Database Migration Project.png',
+        icon: '/icons/Management/Database Migration Project.png',
         code: '',
       },
       {
@@ -2584,7 +2584,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.RecoveryServices',
         entity: 'vaults',
         scope: 'resource group',
-        icon: '/icon/Management/Recovery Services Vault.png',
+        icon: '/icons/Management/Recovery Services Vault.png',
         code: '',
       },
     ],
@@ -2606,7 +2606,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Automation',
         entity: 'automationAccounts',
         scope: 'resource group and region',
-        icon: '/icon/Management/Automation Account.png',
+        icon: '/icons/Management/Automation Account.png',
         code: '',
       },
       {
@@ -2625,7 +2625,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Insights',
         entity: 'components',
         scope: 'resource group',
-        icon: '/icon/Management/Application Insights.png',
+        icon: '/icons/Management/Application Insights.png',
         code: '',
       },
       {
@@ -2644,7 +2644,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Insights',
         entity: 'actionGroups',
         scope: 'resource group',
-        icon: '/icon/Management/Azure Monitor.png',
+        icon: '/icons/Management/Azure Monitor.png',
         code: '',
       },
       {
@@ -2660,7 +2660,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Purview',
         entity: 'accounts',
         scope: 'resource group',
-        icon: '/icon/Data/Purview Account.png',
+        icon: '/icons/Data/Purview Account.png',
         code: '',
       },
       {
@@ -2677,7 +2677,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Blueprint',
         entity: 'blueprint',
         scope: 'Management groups, Subscriptions, Resource groups',
-        icon: '/icon/Deployment/Blueprint.png',
+        icon: '/icons/Deployment/Blueprint.png',
         code: '',
       },
       {
@@ -2694,7 +2694,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Blueprint',
         entity: 'blueprintAssignments',
         scope: 'Management groups, Subscriptions, Resource groups',
-        icon: '/icon/Deployment/Blueprint.png',
+        icon: '/icons/Deployment/Blueprint.png',
         code: '',
       },
       {
@@ -2712,7 +2712,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.KeyVault',
         entity: 'vaults',
         scope: 'global',
-        icon: '/icon/Security/Key Vault.png',
+        icon: '/icons/Security/Key Vault.png',
         code: '',
       },
       {
@@ -2731,7 +2731,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.OperationalInsights',
         entity: 'workspaces',
         scope: 'resource group',
-        icon: '/icon/Management/Log Analytics Workspace.png',
+        icon: '/icons/Management/Log Analytics Workspace.png',
         code: '',
       },
     ],
