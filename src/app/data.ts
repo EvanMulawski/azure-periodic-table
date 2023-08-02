@@ -94,7 +94,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ManagedIdentity',
         entity: 'userAssignedIdentities',
         scope: 'resource group',
-        icon: '/icons/Security/Managed Identity.png',
+        icon: '/icons/Identity/Managed Identity.png',
         code: '',
       },
       {
@@ -436,7 +436,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'loadBalancers/inboundNatRules',
         scope: 'load balancer',
-        icon: '/icons/Networking/Load Balancer Backend Load Balancing Rule',
+        icon: '/icons/Networking/Load Balancer Backend Load Balancing Rule.png',
         code: '',
       },
       {
@@ -665,7 +665,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Network',
         entity: 'serviceEndpointPolicies',
         scope: 'resource group',
-        icon: '/icons/Networking/Service Endpoint Policy.png',
+        icon: '/icons/Application/Service Endpoint Policy.png',
         code: '',
       },
       {
@@ -1315,7 +1315,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.ContainerInstance',
         entity: 'containerGroups',
         scope: 'resource group',
-        icon: '/icons/compute/Container Instance.png',
+        icon: '/icons/Compute/Container Instance.png',
         code: '',
       },
       {
@@ -1462,7 +1462,7 @@ export const columns: ColumnType[] = [
         resource: 'Microsoft.Sql',
         entity: 'servers/databases',
         scope: 'server',
-        icon: '/icons/Data/SQL Database.pngg',
+        icon: '/icons/Data/SQL Database.png',
         code: '',
       },
       {
