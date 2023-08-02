@@ -12,6 +12,7 @@ Consider adding:
 - Hosting environment:	Microsoft.Web/hostingEnvironments
 - Image template: Microsoft.VirtualMachineImages/imageTemplates
 - WebPubSub: Microsoft.SignalRService/webPubSub
+- Service Bus Topic Subscription: Microsoft.ServiceBus/namespaces/topics/subscriptions
 */
 
 export type Item = {
@@ -662,8 +663,8 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'service endpoint policies',
-        slug: 'sep-',
+        name: 'service endpoint policy',
+        slug: 'se-',
         description:
           'Service Endpoint Policies in Azure define which services are accessible from a subnet, providing granular network security for Azure service resources.',
         length: '1-80',
@@ -800,7 +801,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'vpn gateway',
-        slug: 'vgw-',
+        slug: 'vpng-',
         description:
           'Azure VPN Gateway connects your on-premises networks to Azure through Site-to-Site VPNs in a similar way that you set up and connect to a remote branch office. It allows secure connections from on-premises networks to Azure virtual networks.',
         length: '1-80',
@@ -819,7 +820,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'vpn gateway connection',
-        slug: 'vgwc-',
+        slug: 'vcn-',
         description:
           'A VPN Gateway Connection in Azure is used to connect a virtual network gateway and a local network gateway, which is typically your on-premises network. It provides a secure, encrypted connection over the internet between your Azure virtual network and your on-premise network.',
         length: '1-80',
@@ -857,7 +858,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'virtual network gateway',
-        slug: 'vngw-',
+        slug: 'vgw-',
         description:
           'A Virtual Network Gateway in Azure provides the capability to establish IPsec/IKE VPN tunnels between your virtual network and your on-premises hardware, or from a virtual network to a virtual network within Azure.',
         length: '1-80',
@@ -2451,7 +2452,7 @@ export const columns: ColumnType[] = [
     items: [
       {
         name: 'virtual desktop host pool',
-        slug: 'vdp-',
+        slug: 'vdpool-',
         description:
           'Azure Virtual Desktop Host Pool is a collection of VMs in Azure Virtual Desktop environment. It hosts remote apps and desktops that users can access from anywhere.',
         length: '1-64',
@@ -2612,8 +2613,8 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'service bus',
-        slug: 'sb-',
+        name: 'service bus namespace',
+        slug: 'sbns-',
         description:
           'Azure Service Bus is a fully managed enterprise message broker with message queues and publish-subscribe topics. It provides a reliable and secure platform for asynchronous transfer of data and state.',
         length: '6-50',
@@ -2817,7 +2818,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'blueprint assignment',
-        slug: 'bps-',
+        slug: 'bpa-',
         description:
           'Blueprint Assignment in Azure is the process of assigning a blueprint to a subscription, allowing the blueprint to create, update, or delete resources to align with the blueprint definition.',
         length: '90',
