@@ -2,6 +2,14 @@
 
 import { Categories } from './constants';
 
+/*
+Consider adding:
+- Cloud service: 	Microsoft.Compute/cloudServices
+- Communcation services: Microsoft.Communication/communicationServices
+- Hosting environment:	Microsoft.Web/hostingEnvironments
+- Image template: Microsoft.VirtualMachineImages/imageTemplates
+*/
+
 export type Item = {
   name: string;
   slug: string;
@@ -1038,7 +1046,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'shared image gallery',
-        slug: 'sig',
+        slug: 'gal',
         description:
           "Azure Shared Image Gallery is a service that helps you build structure and organization around your images. It provides grouping of image definitions within a 'gallery' container where each can have multiple versions.",
         length: '1-80',
@@ -1112,7 +1120,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'notification hubs',
-        slug: 'nh-',
+        slug: 'nft-',
         description:
           'Azure Notification Hubs provide a scalable, tailored notification infrastructure that enables you to push notifications from any backend (in the cloud or on-premises) to any platform (iOS, Android, Windows, etc.).',
         length: '1-260',
@@ -1130,7 +1138,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'notification hubs namespace',
-        slug: 'nhns-',
+        slug: 'nftns-',
         description:
           'Azure Notification Hubs Namespaces provide a unique scoping container, in which you can create multiple notification hubs.',
         length: '6-50',
@@ -1334,7 +1342,7 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'container service fabric cluster',
+        name: 'service fabric cluster',
         slug: 'sf-',
         description:
           'Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.',
@@ -1350,6 +1358,54 @@ export const columns: ColumnType[] = [
         scope: 'region',
         icon: '/icons/Compute/Container Service Fabric Cluster.png',
         code: '',
+      },
+      {
+        name: 'service fabric managed cluster',
+        slug: 'sfmc-',
+        description:
+          'Azure Service Fabric is a distributed systems platform that makes it easy to package, deploy, and manage scalable and reliable microservices and containers.',
+        length: '4-23',
+        category: Categories.CONTAINERS,
+        learnUrl: 'https://docs.microsoft.com/en-us/azure/service-fabric/',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/service_fabric_cluster',
+        restrictions:
+          'Lowercase letters, numbers, and hyphens. Start with lowercase letter. End with lowercase letter or number.',
+        resource: 'Microsoft.ServiceFabric',
+        entity: 'managedClusters',
+        scope: 'region',
+        icon: '/icons/Application/Service Fabric Managed Cluster.png',
+        code: '',
+      },
+      {
+        name: "Container App Environment",
+        slug: "cae-",
+        description: "A Container Apps environment is a secure boundary around groups of container apps that share the same virtual network and write logs to the same logging destination. They are fully managed where Azure handles OS upgrades, scale operations, failover procedures, and resource balancing.",
+        length: "2-32",
+        category: Categories.CONTAINERS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/container-apps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app_environment",
+        restrictions: "Lowercase letters, numbers, and hyphens. Start with a letter and end with an alphanumeric character.",
+        resource: "Microsoft.App",
+        entity: "managedEnvironments",
+        scope: "resource group",
+        icon: "/icons/Application/Container App Environment.png",
+        code: "",
+      },
+      {
+        name: "Container App",
+        slug: "ca-",
+        description: "Azure Container Apps is a fully managed platform for running containerized applications in the cloud. It supports both Linux and Windows containers, allowing developers to build and deploy a variety of applications without having to manage the underlying infrastructure.",
+        length: "2-32",
+        category: Categories.CONTAINERS,
+        learnUrl: "https://docs.microsoft.com/en-us/azure/container-apps/",
+        terraformUrl: "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/container_app",
+        restrictions: "Lowercase letters, numbers, and hyphens. Start with a letter and end with an alphanumeric character.",
+        resource: "Microsoft.App",
+        entity: "containerApps",
+        scope: "resource group",
+        icon: "/icons/Application/Container App.png",
+        code: "",
       },
     ],
   },
