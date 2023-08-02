@@ -1878,7 +1878,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'stream analytics',
-        slug: 'sa-',
+        slug: 'asa-',
         description:
           'Azure Stream Analytics is a real-time analytics and complex event-processing engine that is designed to analyze and visualize streaming data in real-time. It enables you to setup real-time analytic computations on streaming data from multiple sources such as devices, sensors, web sites, social media, applications, infrastructure systems, and more.',
         length: '3-63',
@@ -2039,7 +2039,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'event grid subscription',
-        slug: 'evgs-',
+        slug: 'egst-',
         description:
           'Event Grid subscriptions represent the relationship between an event source and an endpoint. They define the events you want to track, and where to send the events.',
         length: '3-64',
@@ -2073,7 +2073,7 @@ export const columns: ColumnType[] = [
       },
       {
         name: 'hdinsight - hadoop cluster',
-        slug: 'hadp-',
+        slug: 'hadoop-',
         description:
           'Azure HDInsight Hadoop cluster is a cloud distribution of Hadoop components. It provides a software framework designed for processing, analyzing and deriving insights from data.',
         length: '3-59',
@@ -2234,8 +2234,23 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'power bi',
-        slug: 'pbi-',
+        "name": "power bi embedded",
+        "slug": "pbi-",
+        "description": "Power BI Embedded is a Microsoft Azure service that lets developers embed visuals, reports, and dashboards into an application. This embedding is done through a capacity-based, hourly metered model. It provides data insights and analytics capabilities without the need for building the features from scratch.",
+        "length": "3-63",
+        "category": Categories.ANALYTICSANDIOT,
+        "learnUrl": "https://learn.microsoft.com/en-us/power-bi/fundamentals/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/powerbi_embedded",
+        "restrictions": "Alphanumerics and hyphens. Cannot start with hyphen. Cannot use consecutive hyphens.",
+        "resource": "Microsoft.PowerBIDedicated",
+        "entity": "capacities",
+        "scope": "resource group",
+        "icon": "/icons/AI/Power BI Embedded.png",
+        "code": "",
+      },
+      {
+        name: 'power bi workspace',
+        slug: 'pbiw-',
         description:
           'Power BI is a suite of business analytics tools by Microsoft that deliver insights throughout your organization. It connects to hundreds of data sources, simplifies data prep and drives ad hoc analysis.',
         length: '3-63',
@@ -2270,8 +2285,8 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: 'synapse analytics',
-        slug: 'syn-',
+        name: 'synapse analytics workspace',
+        slug: 'synw-',
         description:
           'Azure Synapse Analytics is an integrated analytics service that accelerates the time it takes to get insights and to unlock the value of your data.',
         length: '1-50',
