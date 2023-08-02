@@ -1074,7 +1074,7 @@ export const columns: ColumnType[] = [
         code: '',
       },
       {
-        name: "Microsoft Load Testing Service",
+        name: "load testing service",
         slug: "lt-",
         description: "Microsoft Load Testing Service is a fully managed service in Azure, designed to help developers and testers generate high-scale load and run simulations. The service supports creating tests quickly without deep knowledge of load-testing tools, or allows uploading of existing Apache JMeter scripts. It provides actionable insights into performance, scalability, and capacity, supporting continuous improvement through automated CI/CD workflows.",
         length: "1-64",
@@ -2369,7 +2369,22 @@ export const columns: ColumnType[] = [
         scope: "resource group",
         icon: "/icons/IoT/IoT Digital Twin.png",
         code: "",
-      }
+      },
+      {
+        "name": "batch account",
+        "slug": "ba-",
+        "description": "Azure Batch is a cloud-based job scheduling service that parallelizes and distributes the processing of large volumes of data across many computers. Ideal for high-performance computing (HPC) applications, it's designed to provide scalable and efficient computation with no server management.",
+        "length": "3-24",
+        "category": Categories.ANALYTICSANDIOT,
+        "learnUrl": "https://docs.microsoft.com/en-us/azure/batch/",
+        "terraformUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/batch_account",
+        "restrictions": "Lowercase letters and numbers.",
+        "resource": "Microsoft.Batch",
+        "entity": "batchAccounts",
+        "scope": "region",
+        "icon": "/icons/Data/Azure Batch Account.png",
+        "code": "",
+      },
     ],
   },
   {
