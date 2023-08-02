@@ -80,8 +80,8 @@ const Cell: React.FC<CellProps> = ({
     if (window.gtag) {
       window.gtag('event', 'element_selected', {
         event_category: item.category,
-        event_label: 'resource',
-        event_value: item.name,
+        event_label: item.name,
+        event_value: 1,
       });
     }
   }
