@@ -87,7 +87,7 @@ const Cell: React.FC<CellProps> = ({
   }
 
   return (
-    <div
+    <article
       ref={ref} // Pass the ref to the div
       onClick={() => {
         if (isDisabled) return;
@@ -96,28 +96,33 @@ const Cell: React.FC<CellProps> = ({
         select();
       }}
       className={`${height} ${width}  dark:border-white border-black border m-0.5 p-1 ${colorOption} ${transparent} justify-center items-center cursor-pointer transition-all ${hoverScale} z-0 hover:z-10 `}
+      aria-describedby={`${item.slug}-desc`}
     >
       <div className="flex flex-col  relative h-full w-full">
         <div className="flex w-full justify-between items-center">
           {item.icon ? (
-            <Image
-              alt={`icon for ${item.name}`}
-              width={10}
-              height={10}
-              className=""
-              src={`${prefix}${item.icon}`}
-            />
+            <figure>
+              <Image
+                alt={`icon for ${item.name}`}
+                width={10}
+                height={10}
+                className=""
+                src={`${prefix}${item.icon}`}
+              />
+              <figcaption className="hidden">{`Icon for ${item.name}`}</figcaption>
+            </figure>
           ) : null}
           <span className="text-[0.5rem]">{item.length ?? '1-100'}</span>
         </div>
-        <div className="justify-start w-full font-bold text-xs">
+        <h2 className="justify-start w-full font-bold text-xs">
           {item.slug}
-        </div>
-        <div className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
+        </h2>
+        <p className="justify-center items-center w-full text-[0.4rem] h-full  overflow-hidden">
           <span>{item.name}</span>
-        </div>
+        </p>
       </div>
-    </div>
+      <div id={`${item.slug}`} className="hidden">{item.description}</div>
+    </article>
   );
 };
 
