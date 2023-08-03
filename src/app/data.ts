@@ -3024,6 +3024,26 @@ export const columns: ColumnType[] = [
         code: '',
         viewAllURL: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.OperationalInsights%2Fworkspaces',
       },
+      {
+        name: 'monitor data collection rule',
+        slug: 'dcr-',
+        description:
+          'Data collection rules (DCRs) define the data collection process in Azure Monitor. DCRs specify what data should be collected, how to transform that data, and where to send that data.',
+        length: '1-64',
+        category: Categories.MANAGEMENT,
+        learnUrl:
+          'https://learn.microsoft.com/en-us/azure/azure-monitor/essentials/data-collection-rule-overview',
+        terraformUrl:
+          'https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/monitor_data_collection_rule',
+        restrictions:
+          'Alphanumerics, underscores, and hyphens. Cannot start or end in a space. The name must be unique in the current resource group.',
+        resource: 'Microsoft.Insights',
+        entity: 'dataCollectionRules',
+        scope: 'resource group',
+        icon: '/icons/Management/Data Collection Rule.png',
+        code: '',
+        viewAllURL: 'https://portal.azure.com/#view/HubsExtension/BrowseResource/resourceType/Microsoft.Insights%2FdataCollectionRules',
+      },
     ],
   },
 ];
