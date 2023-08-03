@@ -1,3 +1,5 @@
+import { ArrowsUpFromLine } from "lucide-react";
+
 export const siteConfig = {
   title: 'Onward Platforms',
   url: 'https://azure-periodic-table.onwardplatforms.com/',
