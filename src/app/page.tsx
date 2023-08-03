@@ -22,6 +22,7 @@ import { Share } from '@/components/share';
 import useFullScreen from '@/custom-hooks/use-full-screen';
 import useMobile from '@/custom-hooks/use-mobile';
 import { prefix } from '@/prefix';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function Page() {
   const [activeElement, setActiveElement] = useState<Item | null>(null);
@@ -160,6 +161,7 @@ export default function Page() {
             setOpen={setOpen}
             zoomLevel={isFullScreen ? 1 : 0}
           />
+          <Analytics />
         </main>
       </div>
     </main>
