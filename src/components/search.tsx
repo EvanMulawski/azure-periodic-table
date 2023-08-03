@@ -1,14 +1,11 @@
 import { cn } from '@/lib/utils';
 import { Command, CommandInput } from './ui/command';
-import React from 'react';
 
-/* test */
-
-interface Props extends React.HTMLAttributes<HTMLDivElement> {
-  setTextSearch: (value: string) => void;
+interface props extends React.HTMLAttributes<HTMLDivElement> {
+  setTextSearch: Function;
 }
 
-const Search: React.FC<Props> = ({ setTextSearch, className }) => {
+export default function Search({ setTextSearch, className }: props) {
   return (
     <Command
       className={cn(
@@ -17,12 +14,10 @@ const Search: React.FC<Props> = ({ setTextSearch, className }) => {
       )}
     >
       <CommandInput
-        onValueChange={setTextSearch}
-        className="bg-transparent w-96 dark:text-white text-black"
+        onValueChange={(value) => setTextSearch(value)}
+        className={`bg-transparent w-96 dark:text-white text-black`}
         placeholder="Search Azure resources..."
       />
     </Command>
   );
 }
-
-export default Search;
