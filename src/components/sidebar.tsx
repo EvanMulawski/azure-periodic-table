@@ -170,6 +170,23 @@ export default function Sidebar({
               </>
             )}
           </div>
+          <div className="my-6 text-left">
+          <span className="font-bold text-xl">Utilities</span>
+            <div className="flex justify-start items-center my-2 flex-wrap">
+              {activeElement?.seeAllURL && (
+                <a
+                  target="_blank"
+                  href={activeElement?.seeAllURL}
+                  className="flex justify-start items-center text-sm break-all border p-2 rounded-lg border-gray-500 hover:border-gray-200 transition-all mr-4 mb-4"
+                >
+                  <div className="mr-2">
+                    <MicrosoftLogo width={24} height={24} />
+                  </div>
+                  <span>{isMobile ? 'View in Portal' : 'View in Portal'}</span>
+                </a>
+              )}
+            </div>
+          </div>
         </div>
       </SheetContent>
     </Sheet>
