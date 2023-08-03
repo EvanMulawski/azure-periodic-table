@@ -8,7 +8,7 @@
     "start": "next start",
     "serve": "serve -s out",
     "export": "next export",
-    "lint": "next lint"
+    "lint": "next lint && eslint ."
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.4",
