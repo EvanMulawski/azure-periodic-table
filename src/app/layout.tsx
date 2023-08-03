@@ -16,8 +16,8 @@ declare global {
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Periodic Table',
-  description: 'Azure Resource Naming Convention Periodic Table',
+  title: 'The Azure Periodic Table',
+  description: 'An essential resource for cloud developers, engineers, architects, and consultants seeking to understand Azure services. It provides links to Microsoft Learn documentation, examples of infrastructure as code using Terraform, Bicep, and ARM templates, as well as direct links to the Azure Portal for managing and deploying new resources.',
 };
 
 export default function RootLayout({
